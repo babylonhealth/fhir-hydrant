@@ -20,7 +20,7 @@ See [this talk](https://www.youtube.com/watch?v=nD8DI6Years) for more motivation
 
 ### Quick Start
 
-Hydrant is published to Maven Central. You can add the following to your build
+Hydrant is (almost) published to Maven Central. You can add the following to your build
 ```
 TODO sbt core dependency
 ```
@@ -193,6 +193,5 @@ See the [advanced profile generation options](https://github.com/babylonhealth/f
 
 ## Coming soon
 - Protobuf dfhir schema generation
-- Property based testing for templates
 - Command line interface
 - Java wrappers
