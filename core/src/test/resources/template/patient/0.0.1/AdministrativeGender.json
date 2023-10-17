@@ -1,0 +1,22 @@
+{
+  "id" : "AdministrativeGender",
+  "name" : "Administrative Gender",
+  "description" : "Administrative gender",
+  "domain" : "patient",
+  "url" : "http://hl7.org/fhir/ValueSet/administrative-gender",
+  "allowAbsent" : true,
+  "values" : [
+    {
+      "value" : "male"
+    },
+    {
+      "value" : "female"
+    },
+    {
+      "value" : "other"
+    },
+    {
+      "value" : "unknown"
+    }
+  ]
+}

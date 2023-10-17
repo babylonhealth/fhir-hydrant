@@ -1,0 +1,23 @@
+{
+  "id" : "BblEnumWithComments",
+  "name" : "Enum",
+  "domain" : "enum",
+  "description" : "Some enum",
+  "values" : [
+    {
+      "value" : "a-thing",
+      "description" : "Comment A-thing"
+    },
+    {
+      "value" : "b thang",
+      "description" : "Comment B-thang"
+    },
+    {
+      "value" : "C wat",
+      "description" : "Comment C wat"
+    }
+  ],
+  "allowAbsent" : false,
+  "system" : "https://bbl.health",
+  "default" : "a-thing"
+}

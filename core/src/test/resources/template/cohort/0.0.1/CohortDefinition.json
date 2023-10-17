@@ -1,0 +1,113 @@
+{
+  "id": "CohortDefinition",
+  "name": "Cohort / Segment Definition",
+  "domain": "cohort",
+  "description": "Definition of a group of patients",
+  "params": {
+    "id": {
+      "type": "uuid",
+      "description": "Id of a version of the cohort definition"
+    },
+    "name": {
+      "type": "string",
+      "description": "String label for the cohort"
+    },
+    "description": {
+      "type": "string",
+      "description": "Human readable description of the definition and purpose of this cohort"
+    },
+    "definitionId": {
+      "type": "uuid",
+      "description": "The id of the cohort definition"
+    },
+    "updated": {
+      "type": "dateTime",
+      "description": "The time at which the definition was updated to create this version"
+    },
+    "managingEntity": {
+      "type": "uuid",
+      "description": "The creator of the cohort"
+    },
+    "reviewingEntity": {
+      "type": "uuid",
+      "description": "The reviewer of the cohort",
+      "optional": true
+    },
+    "openSearchQuery": {
+      "type": "string",
+      "description": "The Opensearch query used to define and fetch the cohort",
+      "optional": true
+    },
+    "isManual": {
+      "type": "boolean",
+      "description": "Was the cohort manually curated (as opposed to the result of a query run)",
+      "optional": true
+    },
+    "tags": {
+      "type": "CohortTag",
+      "description": "Tags for organising the cohorts",
+      "repeated": true
+    },
+    "cron": {
+      "type": "string",
+      "description": "Cron tab for defining when this cohort should be run",
+      "optional": true
+    }
+  },
+  "hydrated": {
+    "resourceType": "Group",
+    "meta": {
+      "profile": [
+        "https://fhir.bbl.health/StructureDefinition/BblCohortDefinition"
+      ],
+      "tag": [
+        "{{{tags}}}"
+      ]
+    },
+    "id": "{{{id}}}",
+    "identifier": [
+      {
+        "system": "https://cohort.bbl.health/Group",
+        "value": "{{{id}}}"
+      },
+      {
+        "system": "https://cohort-definition.bbl.health/Group",
+        "value": "{{{definitionId}}}",
+        "period": {
+          "start": "{{{updated}}}"
+        }
+      }
+    ],
+    "type": "person",
+    "actual": false,
+    "extension": [
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblCohortOpenSearchQuery",
+        "valueString": "{{{openSearchQuery}}}"
+      },
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblCohortReviewingEntity",
+        "valueReference": {
+          "reference": "https://user.bbl.health/Practitioner/{{{reviewingEntity}}}"
+        }
+      },
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblCohortDefinitionIsManual",
+        "valueBoolean": "{{{isManual}}}"
+      },
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblCohortDefinitionCron",
+        "valueString": "{{{cron}}}"
+      }
+    ],
+    "text": {
+      "status": "additional",
+      "div": "{{{description}}}"
+    },
+    "name": "{{{name}}}",
+    "managingEntity": {
+      "reference": "https://user.bbl.health/Practitioner/{{{managingEntity}}}"
+    }
+  },
+  "modelUrl": "https://bbl.health/modelling/14514074-fb5a-4ab2-beec-9ee043a5a273/submit"
+}

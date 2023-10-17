@@ -1,0 +1,32 @@
+{
+  "id" : "ReportedConditionAltCode",
+  "name" : "Reported Condition Alt Code",
+  "version" : "0.0.1",
+  "domain" : "reportedcondition",
+  "description" : "A code representing a medical condition taken from any coding system other than https://bbl.health",
+  "params" : {
+    "system" : {
+      "type" : "string",
+      "description" : "Identity of the terminology system"
+    },
+    "code" : {
+      "type" : "string",
+      "description" : "A valid value within the terminology system"
+    },
+    "userSelected" : {
+      "type" : "boolean",
+      "description" : "Indicates that this altCode was code selected by the recorder, other codes were inferred based on language rules or processing. The userSelected code should be used for future translations, if there is no userSelected code then the babylon code should be used."
+    },
+    "display" : {
+      "type" : "string",
+      "description" : "A textual representation of the code",
+      "optional": true
+    }
+  },
+  "hydrated" : {
+    "system": "{{{system}}}",
+    "code": "{{{code}}}",
+    "display": "{{{display}}}",
+    "userSelected": "{{{userSelected}}}"
+  }
+}

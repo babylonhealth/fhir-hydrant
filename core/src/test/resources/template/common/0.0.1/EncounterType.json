@@ -1,0 +1,25 @@
+{
+  "id" : "EncounterType",
+  "name" : "Encounter Type",
+  "domain" : "common",
+  "description" : "All encounter url prefixes",
+  "values" : [
+    {
+      "name" : "COMMON_ENCOUNTER_TYPE_CONSULTATION",
+      "value" : "https://consultation.bbl.health/Encounter",
+      "description" : "Clinical portal encounters"
+    },
+    {
+      "name" : "COMMON_ENCOUNTER_TYPE_TRIAGE",
+      "value" : "https://triage.bbl.health/Encounter",
+      "description" : "Checkbase encounters"
+    },
+    {
+      "name" : "COMMON_ENCOUNTER_TYPE_CHAT",
+      "value" : "https://chat.bbl.health/Encounter",
+      "description" : "Miscellaneous chat-router encounters with no primary store (e.g. simple-chat-provider)"
+    }
+  ],
+  "allowAbsent" : false,
+  "default" : "https://triage.bbl.health/Encounter"
+}

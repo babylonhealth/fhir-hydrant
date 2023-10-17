@@ -1,0 +1,27 @@
+{
+    "id": "MedicationStatementDosageRoute",
+    "name": "Medication Statement Dosage Route",
+    "domain": "prescription",
+    "description": "",
+    "notes": {},
+    "params" : {
+        "system" : {
+            "type" : "string",
+            "description" : "The terminology system defining the route"
+        },
+        "code" : {
+            "type" : "string",
+            "description" : "A valid value within the terminology system representing the route"
+        },
+        "display" : {
+            "type" : "string",
+            "description" : "A textual representation of the code",
+            "optional" : true
+        }
+    },
+    "hydrated" : {
+        "system": "{{{system}}}",
+        "code": "{{{code}}}",
+        "display": "{{{display}}}"
+    }
+}

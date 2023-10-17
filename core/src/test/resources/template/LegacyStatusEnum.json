@@ -1,0 +1,19 @@
+{
+  "id" : "LegacyStatusEnum",
+  "name" : "Legacy Status Enum",
+  "domain" : "legacy",
+  "version" : "0.0.1",
+  "packageName" : "deprecated",
+  "description" : "Some enum",
+  "values" : [
+    {
+      "value" : "finished"
+    },
+    {
+      "value" : "planned"
+    }
+  ],
+  "allowAbsent" : false,
+  "system" : "http://hl7.org/fhir/encounter-status",
+  "default" : "planned"
+}

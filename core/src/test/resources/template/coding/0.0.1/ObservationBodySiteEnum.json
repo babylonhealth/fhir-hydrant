@@ -1,0 +1,24 @@
+{
+  "id" : "ObservationBodySiteEnum",
+  "name" : "Observation BodySite Enum",
+  "domain" : "testing",
+  "description" : "The body site of the Observation",
+  "values" : [
+    {
+      "name" : "OBSERVATION_BODY_SITE_CHEST",
+      "value" : {
+        "code" : "vN2BhNIPwg",
+        "system" : "https://bbl.health"
+      }
+    },
+    {
+      "name" : "OBSERVATION_BODY_SITE_HEAD_AND_NECK",
+      "value" : {
+        "code" : "774007",
+        "system" : "http://snomed.info/sct"
+      }
+    }
+  ],
+  "absentName" : "OBSERVATION_BODY_SITE_ABSENT",
+  "allowAbsent" : false
+}

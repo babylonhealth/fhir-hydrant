@@ -1,0 +1,271 @@
+[
+  {
+    "id": "QuestionnaireResponse",
+    "name": "QuestionnaireResponse - Health Assessment",
+    "version": "0.0.1",
+    "domain": "HealthAssessment",
+    "packageName": "questionnaire",
+    "description": "Based on https://www.hl7.org/fhir/questionnaireresponse.html#QuestionnaireResponse.",
+    "abstract": true,
+    "params": {
+      "id": {"type":  "uuid", "description": "id (NOT identifier)"},
+      "questionnaire": {"type": "Questionnaire", "description": "FHIR Questionnaire"},
+      "status": {"type": "QuestionnaireResponseStatus", "description": "FHIR Status. Note that STOPPED here currently means 'early exit for safeguarding reasons'."},
+      "subject": {"type": "uuid", "description": "FHIR subject - always a babylon patient uuid"},
+      "authored": {"type": "dateTime", "description": "FHIR authored - when the full set of responses are validated/submitted by the author", "tags":  {"other_date":  true}},
+      "author": {"type": "QuestionnaireResponseAuthor", "description": "FHIR author - the entity that validates/submits the questionnaire responses in full", "optional": true},
+      "item": {"type": "QuestionnaireResponseItem", "description": "FHIR item", "optional": true, "repeated": true, "tags": {"spii":  true}}
+    },
+    "hydrated": {
+      "meta": {
+        "profile": ["https://fhir.bbl.health/StructureDefinition/BblHealthAssessmentQuestionnaireResponse"]
+      },
+      "resourceType": "QuestionnaireResponse",
+      "id": "{{{id}}}",
+      "questionnaire": "{{{questionnaire}}}",
+      "status": "{{{status}}}",
+      "subject": {
+        "reference": "https://administration.bbl.health/Patient/{{{subject}}}"
+      },
+      "authored": "{{{authored}}}",
+      "author": "{{{author}}}",
+      "item": [
+        "{{{item}}}"
+      ]
+    }
+  },
+  {
+    "id": "Questionnaire",
+    "name": "Health Assessment Questionnaire",
+    "version": "0.0.1",
+    "domain": "HealthAssessment",
+    "packageName": "questionnaire",
+    "description": "https://www.hl7.org/fhir/questionnaireresponse.html#Questionnaire",
+    "params": {
+      "id": {"type":  "uuid", "description": "FHIR id (NOT identifier)"},
+      "name": {"type": "string", "description": "FHIR name - computer readable"},
+      "title": {"type": "string", "description": "FHIR title - human readable"},
+      "description": {"type": "string", "description": "FHIR description"},
+      "code": {"type": "QuestionnaireCode", "description": "FHIR code"},
+      "sectionItem": {"type": "QuestionnaireSectionItem", "description": "item - used for sections", "optional": true, "repeated": true}
+    },
+    "hydrated": {
+      "resourceType": "Questionnaire",
+      "meta": {"profile": ["https://fhir.bbl.health/StructureDefinition/BblHealthAssessmentQuestionnaire"]},
+      "publisher": "Babylon",
+      "status": "active",
+      "id": "{{{id}}}",
+      "name": "{{{name}}}",
+      "title": "{{{title}}}",
+      "description": "{{{description}}}",
+      "code": [{"system": "https://bbl.health", "code": "{{{code}}}"}],
+      "item": [ "{{{sectionItem}}}" ],
+      "url": "https://healthassessment.bbl.health/Questionnaire/{{{id}}}"
+    }
+  },
+  {
+    "id": "QuestionnaireCode",
+    "name": "Health Assessment Questionnaire Code",
+    "version": "0.0.1",
+    "domain": "HealthAssessment",
+    "description" : "FHIR code for the questionnaire type",
+    "packageName": "questionnaire",
+    "values" : [
+      { "name": "QUESTIONNAIRE_CODE_ADULT", "value": "ZfwTODyI-T" },
+      { "name": "QUESTIONNAIRE_CODE_PAEDIATRIC","value": "KXH00g_3OJ"},
+      { "name": "QUESTIONNAIRE_CODE_PREGNANT","value": "PNXu6OsHWH" }
+    ],
+    "absentName": "QUESTIONNAIRE_CODE_ABSENT",
+    "allowAbsent": false,
+    "default": "ZfwTODyI-T",
+    "system": "https://bbl.health"
+  },
+  {
+    "id": "QuestionnaireSectionItem",
+    "name": "Questionnaire Section Item",
+    "version": "0.0.1",
+    "domain": "HealthAssessment",
+    "packageName": "questionnaire",
+    "description": "A section (a collection of question items)",
+    "params": {
+      "linkId": {"type": "string", "description": "FHIR linkId - Link for referencing the section"},
+      "text": {"type": "string", "description": "FHIR text - section heading"},
+      "item": {"type": "QuestionnaireItem", "description": "FHIR item - section contents", "optional": true, "repeated": true}
+    },
+    "hydrated": {
+      "linkId": "{{{linkId}}}",
+      "text": "{{{text}}}",
+      "type": "group",
+      "item": [
+        "{{{item}}}"
+      ]
+    }
+  },
+  {
+    "id": "QuestionnaireItem",
+    "name": "Questionnaire Item",
+    "version": "0.0.1",
+    "domain": "HealthAssessment",
+    "packageName": "questionnaire",
+    "description": "Question asked",
+    "params": {
+      "linkId": {"type": "string", "description": "FHIR linkId - healthcheck question id"},
+      "text" : {"type": "string", "description": "FHIR text"},
+      "type": {"type": "QuestionnaireItemType", "description": "FHIR type"},
+      "answerOption": {"type": "string", "description": "FHIR answerOption", "repeated": true}
+    },
+    "hydrated": {
+      "linkId": "{{{linkId}}}",
+      "text": "{{{text}}}",
+      "type": "{{{type}}}",
+      "answerOption": [{"valueString": "{{{answerOption}}}"}]
+    }
+  },
+  {
+    "id": "QuestionnaireItemType",
+    "name": "Questionnaire Item Type",
+    "version": "0.0.1",
+    "domain": "HealthAssessment",
+    "packageName": "questionnaire",
+    "description": "Item type",
+    "values": [
+      { "name": "QUESTIONNAIRE_ITEM_TYPE_STRING", "value": "string" },
+      { "name": "QUESTIONNAIRE_ITEM_TYPE_CHOICE", "value": "choice" }
+    ],
+    "absentName": "QUESTIONNAIRE_ITEM_TYPE_ABSENT",
+    "allowAbsent": false,
+    "default": "string"
+  },
+  {
+    "id": "QuestionnaireResponseStatus",
+    "name": "Health Assessment response status",
+    "version": "0.0.1",
+    "domain": "HealthAssessment",
+    "packageName": "questionnaire",
+    "description": "https://www.hl7.org/fhir/valueset-request-status.html",
+    "values": [
+      { "name": "QUESTIONNAIRE_RESPONSE_STATUS_IN_PROGRESS", "value": "in-progress" },
+      { "name": "QUESTIONNAIRE_RESPONSE_STATUS_COMPLETED", "value": "completed" },
+      { "name": "QUESTIONNAIRE_RESPONSE_STATUS_AMENDED", "value": "amended" },
+      { "name": "QUESTIONNAIRE_RESPONSE_STATUS_ENTERED_IN_ERROR", "value": "entered-in-error" },
+      { "name": "QUESTIONNAIRE_RESPONSE_STATUS_STOPPED", "value": "stopped" }
+    ],
+    "allowAbsent": false,
+    "absentName": "QUESTIONNAIRE_RESPONSE_STATUS_ABSENT",
+    "system": "http://hl7.org/fhir/questionnaire-answers-status",
+    "default": "in-progress"
+  },
+  {
+    "id": "QuestionnaireResponseAuthor",
+    "name": "Questionnaire Response Author",
+    "version": "0.0.1",
+    "domain": "HealthAssessment",
+    "packageName": "questionnaire",
+    "description": "Entity that submits the questionnaire or question answer",
+    "params": {
+      "id": {"type":  "string", "description": "UUID for clinician, string for machine practitioner"},
+      "role": {"type": "QuestionnaireResponseAuthorRole", "description": "FHIR reference resourceType - Role of the author. "}
+    },
+    "hydrated": {
+      "reference": "{{{role}}}/{{{id}}}"
+    }
+  },
+  {
+    "id": "QuestionnaireResponseAuthorRole",
+    "name" : "Questionnaire Response Author Role",
+    "version": "0.0.1",
+    "domain": "HealthAssessment",
+    "packageName": "questionnaire",
+    "description": "Questionnaire Response Author Role",
+    "values": [
+      { "name": "QUESTIONNAIRE_RESPONSE_AUTHOR_ROLE_PATIENT","value": "https://administration.bbl.health/Patient" },
+      { "name": "QUESTIONNAIRE_RESPONSE_AUTHOR_ROLE_MEMBER","value": "https://healthassessment.bbl.health/RelatedPerson" },
+      { "name": "QUESTIONNAIRE_RESPONSE_AUTHOR_ROLE_PRACTITIONER","value": "https://administration.bbl.health/Practitioner" }
+    ],
+    "allowAbsent": false,
+    "default": "https://administration.bbl.health/Patient",
+    "absentName": "QUESTIONNAIRE_RESPONSE_AUTHOR_ROLE_ABSENT"
+  },
+  {
+    "id": "QuestionnaireResponseSource",
+    "name": "Questionnaire Response Source",
+    "version": "0.0.1",
+    "domain": "HealthAssessment",
+    "packageName": "questionnaire",
+    "description": "FHIR questionnaire.source - Source of the information being provided.",
+    "params": {
+      "id": {"type":  "uuid", "description": "FHIR refernce id"},
+      "source": {"type": "QuestionnaireResponseSourceEnum", "description": "FHIR reference resourceType"}
+    },
+    "hydrated": {
+      "reference": "{{{source}}}/{{{id}}}"
+    }
+  },
+  {
+    "id": "QuestionnaireResponseSourceEnum",
+    "name" : "Questionnaire Response Source Role",
+    "version": "0.0.1",
+    "domain": "HealthAssessment",
+    "packageName": "questionnaire",
+    "description": "Questionnaire Response Source Role",
+    "values": [
+      { "name":"QUESTIONNAIRE_RESPONSE_SOURCE_ENUM_PATIENT","value": "https://administration.bbl.health/Patient" },
+      { "name":"QUESTIONNAIRE_RESPONSE_SOURCE_ENUM_RELATED_PERSON","value": "https://healthassessment.bbl.health/RelatedPerson" }
+    ],
+    "absentName": "QUESTIONNAIRE_RESPONSE_SOURCE_ENUM_ABSENT",
+    "allowAbsent": false,
+    "default": "https://administration.bbl.health/Patient"
+  },
+  {
+    "id": "QuestionnaireResponseItem",
+    "name": "Questionnaire Response Item",
+    "version": "0.0.1",
+    "domain": "HealthAssessment",
+    "packageName": "questionnaire",
+    "description": "FHIR item - answer to question",
+    "params": {
+      "linkId": {"type": "string", "description": "FHIR linkId"},
+      "answer": {"type": "QuestionnaireResponseAnswer", "description": "FHIR answer", "repeated": true, "optional": true},
+      "author": {"type": "QuestionnaireResponseAuthor", "description": "FHIR author"},
+      "source": {"type": "QuestionnaireResponseSource", "description": "FHIR source"},
+      "authored": {"type": "dateTime", "description": "FHIR authored", "tags":  {"other_date":  true}},
+      "amended": {"type": "boolean", "description": "Whether or not this was the original answer or if it has been subsequently amended."}
+    },
+    "hydrated": {
+      "linkId": "{{{linkId}}}",
+      "answer": ["{{{answer}}}"],
+      "extension": [
+        {
+          "url": "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionAuthor",
+          "valueReference": "{{{author}}}"
+        },
+        {
+          "url": "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionAuthored",
+          "valueDateTime": "{{{authored}}}"
+        },
+        {
+          "url": "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionSource",
+          "valueReference": "{{{source}}}"
+        },
+        {
+          "url": "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionAmmended",
+          "valueBoolean": "{{{amended}}}"
+        }
+      ]
+    }
+  },
+  {
+    "id": "QuestionnaireResponseAnswer",
+    "name": "Questionnaire Response Answer",
+    "version": "0.0.1",
+    "domain": "HealthAssessment",
+    "packageName": "questionnaire",
+    "description": "FHIR questionnaire response item",
+    "params": {
+      "valueString": {"type": "string", "description": "Answer string", "tags":  {"spii":  true, "redact":  true, "free_text":  true}}
+    },
+    "hydrated": {
+      "valueString": "{{{valueString}}}"
+    }
+  }
+]

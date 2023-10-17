@@ -1,0 +1,85 @@
+{
+  "id" : "TriageCommunication",
+  "name" : "Triage Communication",
+  "domain" : "Triage",
+  "packageName" : "triage",
+  "description" : "Based on https://www.hl7.org/fhir/communication.html",
+  "params" : {
+    "id" : {
+      "type" : "uuid",
+      "description" : "id for Communication resource"
+    },
+    "language" : {
+      "type" : "string",
+      "description" : "Language used in the communication"
+    },
+    "category" : {
+      "type" : "TriageCommunicationCategory",
+      "description" : "Category of the communication (alert, notification, reminder, instruction) "
+    },
+    "payload" : {
+      "type" : "TriageCommunicationPayload",
+      "description" : "Content of the communication (outcome coding)"
+    },
+    "encounter" : {
+      "type" : "uuid",
+      "description" : "Encounter that generated the communication"
+    },
+    "patient" : {
+      "type" : "uuid",
+      "description" : "Focus of the message"
+    },
+    "sent" : {
+      "type" : "dateTime",
+      "description" : "Date and time the communication was sent"
+    },
+    "sender" : {
+      "type" : "string",
+      "description" : "Agent that sent the communication"
+    },
+    "status" : {
+      "type" : "TriageCommunicationStatus",
+      "description" : "Status of the communication (preparation, in progress, not done, on hold, stopped, completed, entered in error, unknown)"
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "Communication",
+    "meta" : {
+      "profile" : [
+        "https://fhir.bbl.health/StructureDefinition/BblTriageCommunication"
+      ]
+    },
+    "id" : "{{{id}}}",
+    "language" : "{{{language}}}",
+    "category" : [
+      "{{{category}}}"
+    ],
+    "encounter" : {
+      "reference" : "Encounter/{{{encounter}}}"
+    },
+    "recipient" : [
+      {
+        "reference" : "Patient/{{{patient}}}"
+      }
+    ],
+    "payload" : [
+      "{{{payload}}}"
+    ],
+    "subject" : {
+      "reference" : "Patient/{{{patient}}}"
+    },
+    "sent" : "{{{sent}}}",
+    "sender" : {
+      "reference" : "Practitioner/{{{sender}}}"
+    },
+    "status" : "{{{status}}}",
+    "topic" : {
+      "coding" : [
+        {
+          "code" : "H6jqVajWeT",
+          "system" : "https://bbl.health"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "AcuityScore",
+  "name": "AcuityScore",
+  "domain": "healthiq",
+  "description": "Level of care a patient needs, derived from risk predictions",
+  "notes": {},
+  "params": {
+    "id": {
+      "type": "uuid",
+      "description": "fhir uuid"
+    },
+    "subject": {
+      "type": "uuid",
+      "description": "patient uuid"
+    },
+    "occurrenceDateTime": {
+      "type": "dateTime",
+      "description": "datetime when this acuity score was calculated"
+    },
+    "score": {
+      "type": "AcuityScoreCoding",
+      "description": "the computed acuity score"
+    },
+    "riskpredictionId": {
+      "type": "uuid",
+      "description": "risk prediction id",
+      "repeated": true
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of acuity score e.g. ALL_DEAL_RISING_COST_12_MONTH"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the acuity score calculation being used"
+    }
+  },
+  "hydrated": {
+    "resourceType": "RiskAssessment",
+    "meta": {
+      "profile": [
+        "https://fhir.bbl.health/StructureDefinition/BblAcuityScore"
+      ]
+    },
+    "id": "{{{id}}}",
+    "subject": {
+      "reference": "https://patient.bbl.health/Patient/{{{subject}}}"
+    },
+    "occurrenceDateTime": "{{{occurrenceDateTime}}}",
+    "basis": [
+      {
+        "reference": "https://healthiq.bbl.health/RiskAssessment/{{{riskpredictionId}}}"
+      }
+    ],
+    "prediction": [
+      {
+        "qualitativeRisk": {
+          "coding": [
+            "{{{score}}}"
+          ]
+        }
+      }
+    ],
+    "extension": [
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblAcuityScoreType",
+        "valueString": "{{{type}}}"
+      },
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblAcuityScoreDescription",
+        "valueString": "{{{description}}}"
+      }
+    ],
+    "status": "final"
+  },
+  "modelUrl": "https://bbl.health/modelling/d3b40d8b-60de-4766-80be-04b9d9be0452"
+}

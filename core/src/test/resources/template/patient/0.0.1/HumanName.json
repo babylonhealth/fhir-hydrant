@@ -1,0 +1,41 @@
+{
+  "id" : "HumanName",
+  "name" : "Human Name",
+  "domain" : "patient",
+  "description" : "The name of the patient",
+  "params" : {
+    "text" : {
+      "type" : "string",
+      "description" : "Text representation of the full name",
+      "tags" : {
+        "pii" : true
+      },
+      "optional" : true
+    },
+    "family" : {
+      "type" : "string",
+      "description" : "Family name (often called 'Surname')",
+      "tags" : {
+        "pii" : true
+      },
+      "optional" : true
+    },
+    "given" : {
+      "type" : "string",
+      "description" : "Given names, including middle names",
+      "tags" : {
+        "pii" : true
+      },
+      "repeated" : true,
+      "optional" : true
+    }
+  },
+  "hydrated" : {
+    "use" : "usual",
+    "text" : "{{{text}}}",
+    "family" : "{{{family}}}",
+    "given" : [
+      "{{{given}}}"
+    ]
+  }
+}

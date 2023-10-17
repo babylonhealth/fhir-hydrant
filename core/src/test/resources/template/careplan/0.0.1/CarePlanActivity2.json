@@ -1,0 +1,32 @@
+{
+  "id" : "CarePlanActivity2",
+  "name" : "Care Plan Activity",
+  "domain" : "CarePlan",
+  "description" : "https://www.hl7.org/fhir/careplan-definitions.html#CarePlan.activity",
+  "params" : {
+    "goals" : {
+      "type" : "uuid",
+      "description" : "https://www.hl7.org/fhir/careplan-definitions.html#CarePlan.activity.detail.goal",
+      "repeated" : true
+    },
+    "description" : {
+      "type" : "string",
+      "description" : "https://www.hl7.org/fhir/careplan-definitions.html#CarePlan.activity.detail.description",
+      "tags" : {
+        "spii" : true,
+        "free_text" : true
+      }
+    }
+  },
+  "hydrated" : {
+    "detail" : {
+      "status" : "in-progress",
+      "description" : "{{{description}}}",
+      "goal" : [
+        {
+          "reference" : "https://careplan.bbl.health/Goal/{{{goals}}}"
+        }
+      ]
+    }
+  }
+}

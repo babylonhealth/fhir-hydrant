@@ -1,0 +1,19 @@
+{
+  "id" : "ObservationStatusEnum",
+  "name" : "Observation Status Enum",
+  "domain" : "testing",
+  "description" : "The status of Observation",
+  "values" : [
+    {
+      "name" : "OBSERVATION_STATUS_ENUM_FINAL",
+      "value" : "final"
+    },
+    {
+      "name" : "OBSERVATION_STATUS_ENUM_AMENDED",
+      "value" : "amended"
+    }
+  ],
+  "system" : "https://bbl.health",
+  "absentName" : "OBSERVATION_STATUS_ENUM_ABSENT",
+  "allowAbsent" : false
+}

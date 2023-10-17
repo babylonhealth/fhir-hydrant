@@ -1,0 +1,1170 @@
+[
+  {
+    "fileName" : "profiles/BblQuestionnaireResponse.StructureDefinition.json",
+    "rsc" : {
+      "resourceType" : "StructureDefinition",
+      "id" : "BblQuestionnaireResponse",
+      "url" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponse",
+      "meta" : {
+        "profile" : [
+          "https://fhir.bbl.health/StructureDefinition/BblStructureDefinition"
+        ]
+      },
+      "name" : "Response",
+      "date" : "2020-04-20",
+      "kind" : "resource",
+      "type" : "QuestionnaireResponse",
+      "title" : "QuestionnaireResponse - Health Assessment",
+      "status" : "active",
+      "abstract" : false,
+      "derivation" : "constraint",
+      "description" : "Based on https://www.hl7.org/fhir/questionnaireresponse.html#QuestionnaireResponse.",
+      "fhirVersion" : "4.0.1",
+      "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse",
+      "differential" : {
+        "element" : [
+          {
+            "id" : "QuestionnaireResponse.id",
+            "min" : 1,
+            "path" : "QuestionnaireResponse.id"
+          },
+          {
+            "id" : "QuestionnaireResponse.questionnaire",
+            "min" : 1,
+            "path" : "QuestionnaireResponse.questionnaire"
+          },
+          {
+            "id" : "QuestionnaireResponse.status",
+            "min" : 1,
+            "path" : "QuestionnaireResponse.status",
+            "binding" : {
+              "strength" : "required",
+              "valueSet" : "https://fhir.bbl.health/ValueSet/BblQuestionnaireResponseStatus"
+            }
+          },
+          {
+            "id" : "QuestionnaireResponse.subject",
+            "min" : 1,
+            "path" : "QuestionnaireResponse.subject",
+            "type" : [
+              {
+                "code": "Reference",
+                "targetProfile": [
+                  "http://hl7.org/fhir/StructureDefinition/Patient"
+                ]
+              }
+            ]
+          },
+          {
+            "id" : "QuestionnaireResponse.subject.reference",
+            "min" : 1,
+            "path" : "QuestionnaireResponse.subject.reference"
+          },
+          {
+            "id" : "QuestionnaireResponse.authored",
+            "min" : 1,
+            "path" : "QuestionnaireResponse.authored"
+          },
+          {
+            "id" : "QuestionnaireResponse.author",
+            "min" : 0,
+            "path" : "QuestionnaireResponse.author",
+            "type" : [
+              {
+                "code": "Reference",
+                "targetProfile" : [
+                  "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+                  "http://hl7.org/fhir/StructureDefinition/Practitioner"
+                ]
+              }
+            ]
+          },
+          {
+            "id" : "QuestionnaireResponse.author.reference",
+            "min" : 1,
+            "path" : "QuestionnaireResponse.author.reference"
+          },
+          {
+            "id" : "QuestionnaireResponse.item",
+            "min" : 0,
+            "path" : "QuestionnaireResponse.item"
+          },
+          {
+            "id" : "QuestionnaireResponse.item.linkId",
+            "min" : 1,
+            "path" : "QuestionnaireResponse.item.linkId"
+          },
+          {
+            "id" : "QuestionnaireResponse.item.answer",
+            "min" : 0,
+            "path" : "QuestionnaireResponse.item.answer"
+          },
+          {
+            "id" : "QuestionnaireResponse.item.answer.value[x]",
+            "path" : "QuestionnaireResponse.item.answer.value[x]",
+            "type" : [
+              {
+                "code" : "string"
+              }
+            ]
+          },
+          {
+            "id" : "QuestionnaireResponse.item.answer.value[x]:valueString",
+            "min" : 1,
+            "path" : "QuestionnaireResponse.item.answer.valueString",
+            "type" : [
+              {
+                "code" : "string"
+              }
+            ]
+          },
+          {
+            "id" : "QuestionnaireResponse.item.extension",
+            "path" : "QuestionnaireResponse.item.extension",
+            "slicing" : {
+              "rules" : "open",
+              "discriminator" : [
+                {
+                  "type" : "value",
+                  "path" : "url"
+                }
+              ]
+            }
+          },
+          {
+            "id" : "QuestionnaireResponse.item.extension:BblQuestionnaireResponseExtensionAuthor",
+            "min" : 1,
+            "max" : "1",
+            "path" : "QuestionnaireResponse.item.extension",
+            "sliceName" : "BblQuestionnaireResponseExtensionAuthor"
+          },
+          {
+            "id" : "QuestionnaireResponse.item.extension:BblQuestionnaireResponseExtensionAuthor.url",
+            "min" : 1,
+            "path" : "QuestionnaireResponse.item.extension.url",
+            "fixedUri" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionAuthor"
+          },
+          {
+            "id" : "QuestionnaireResponse.item.extension:BblQuestionnaireResponseExtensionAuthor.value[x]",
+            "path" : "QuestionnaireResponse.item.extension.value[x]",
+            "type" : [
+              {
+                "code" : "Reference",
+                "targetProfile" : [
+                  "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+                  "http://hl7.org/fhir/StructureDefinition/Practitioner"
+                ]
+              }
+            ]
+          },
+          {
+            "id" : "QuestionnaireResponse.item.extension:BblQuestionnaireResponseExtensionAuthor.value[x]:valueReference",
+            "min" : 1,
+            "path" : "QuestionnaireResponse.item.extension.valueReference",
+            "type" : [
+              {
+                "code" : "Reference",
+                "targetProfile" : [
+                  "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+                  "http://hl7.org/fhir/StructureDefinition/Practitioner"
+                ]
+              }
+            ]
+          },
+          {
+            "id" : "QuestionnaireResponse.item.extension:BblQuestionnaireResponseExtensionAuthor.value[x]:valueReference.reference",
+            "min" : 1,
+            "path" : "QuestionnaireResponse.item.extension.valueReference.reference"
+          },
+          {
+            "id": "QuestionnaireResponse.item.extension:BblQuestionnaireResponseExtensionAuthored",
+            "min": 1,
+            "max": "1",
+            "path": "QuestionnaireResponse.item.extension",
+            "sliceName" : "BblQuestionnaireResponseExtensionAuthored"
+          },
+          {
+            "id" : "QuestionnaireResponse.item.extension:BblQuestionnaireResponseExtensionAuthored.url",
+            "min" : 1,
+            "path" : "QuestionnaireResponse.item.extension.url",
+            "fixedUri" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionAuthored"
+          },
+          {
+            "id" : "QuestionnaireResponse.item.extension:BblQuestionnaireResponseExtensionAuthored.value[x]",
+            "path" : "QuestionnaireResponse.item.extension.value[x]",
+            "type" : [
+              {
+                "code" : "dateTime"
+              }
+            ]
+          },
+          {
+            "id" : "QuestionnaireResponse.item.extension:BblQuestionnaireResponseExtensionAuthored.value[x]:valueDateTime",
+            "min" : 1,
+            "path" : "QuestionnaireResponse.item.extension.valueDateTime",
+            "type" : [
+              {
+                "code" : "dateTime"
+              }
+            ]
+          },
+          {
+            "id" : "QuestionnaireResponse.item.extension:BblQuestionnaireResponseExtensionSource",
+            "min": 1,
+            "max" : "1",
+            "path" : "QuestionnaireResponse.item.extension",
+            "sliceName" : "BblQuestionnaireResponseExtensionSource"
+          },
+          {
+            "id" : "QuestionnaireResponse.item.extension:BblQuestionnaireResponseExtensionSource.url",
+            "min" : 1,
+            "path" : "QuestionnaireResponse.item.extension.url",
+            "fixedUri" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionSource"
+          },
+          {
+            "id" : "QuestionnaireResponse.item.extension:BblQuestionnaireResponseExtensionSource.value[x]",
+            "path" : "QuestionnaireResponse.item.extension.value[x]",
+            "type" : [
+              {
+                "code" : "Reference",
+                "targetProfile" : [
+                  "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
+                ]
+              }
+            ]
+          },
+          {
+            "id" : "QuestionnaireResponse.item.extension:BblQuestionnaireResponseExtensionSource.value[x]:valueReference",
+            "min" : 1,
+            "path" : "QuestionnaireResponse.item.extension.valueReference",
+            "type" : [
+              {
+                "code" : "Reference",
+                "targetProfile" : [
+                  "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
+                ]
+              }
+            ]
+          },
+          {
+            "id" : "QuestionnaireResponse.item.extension:BblQuestionnaireResponseExtensionSource.value[x]:valueReference.reference",
+            "min" : 1,
+            "path" : "QuestionnaireResponse.item.extension.valueReference.reference"
+          },
+          {
+            "id" : "QuestionnaireResponse.item.extension:BblQuestionnaireResponseExtensionAmmended",
+            "min" : 1,
+            "max" : "1",
+            "path" : "QuestionnaireResponse.item.extension",
+            "sliceName" : "BblQuestionnaireResponseExtensionAmmended"
+          },
+          {
+            "id" : "QuestionnaireResponse.item.extension:BblQuestionnaireResponseExtensionAmmended.url",
+            "min" : 1,
+            "path" : "QuestionnaireResponse.item.extension.url",
+            "fixedUri" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionAmmended"
+          },
+          {
+            "id" : "QuestionnaireResponse.item.extension:BblQuestionnaireResponseExtensionAmmended.value[x]",
+            "path" : "QuestionnaireResponse.item.extension.value[x]",
+            "type" : [
+              {
+                "code" : "boolean"
+              }
+            ]
+          },
+          {
+            "id" : "QuestionnaireResponse.item.extension:BblQuestionnaireResponseExtensionAmmended.value[x]:valueBoolean",
+            "min" : 1,
+            "path" : "QuestionnaireResponse.item.extension.valueBoolean",
+            "type" : [
+              {
+                "code" : "boolean"
+              }
+            ]
+          },
+          {
+            "id" : "QuestionnaireResponse.contained",
+            "max" : "0",
+            "path" : "QuestionnaireResponse.contained"
+          },
+          {
+            "id" : "QuestionnaireResponse.text",
+            "max" : "0",
+            "path" : "QuestionnaireResponse.text"
+          },
+          {
+            "id" : "QuestionnaireResponse.source",
+            "max" : "0",
+            "path" : "QuestionnaireResponse.source"
+          },
+          {
+            "id" : "QuestionnaireResponse.partOf",
+            "max" : "0",
+            "path" : "QuestionnaireResponse.partOf"
+          },
+          {
+            "id" : "QuestionnaireResponse.modifierExtension",
+            "max" : "0",
+            "path" : "QuestionnaireResponse.modifierExtension"
+          },
+          {
+            "id" : "QuestionnaireResponse.language",
+            "max" : "0",
+            "path" : "QuestionnaireResponse.language"
+          },
+          {
+            "id" : "QuestionnaireResponse.item.text",
+            "max" : "0",
+            "path" : "QuestionnaireResponse.item.text"
+          },
+          {
+            "id" : "QuestionnaireResponse.item.modifierExtension",
+            "max" : "0",
+            "path" : "QuestionnaireResponse.item.modifierExtension"
+          },
+          {
+            "id" : "QuestionnaireResponse.item.item",
+            "max" : "0",
+            "path" : "QuestionnaireResponse.item.item"
+          },
+          {
+            "id" : "QuestionnaireResponse.item.definition",
+            "max" : "0",
+            "path" : "QuestionnaireResponse.item.definition"
+          },
+          {
+            "id" : "QuestionnaireResponse.item.answer.modifierExtension",
+            "max" : "0",
+            "path" : "QuestionnaireResponse.item.answer.modifierExtension"
+          },
+          {
+            "id" : "QuestionnaireResponse.item.answer.item",
+            "max" : "0",
+            "path" : "QuestionnaireResponse.item.answer.item"
+          },
+          {
+            "id" : "QuestionnaireResponse.item.answer.extension",
+            "max" : "0",
+            "path" : "QuestionnaireResponse.item.answer.extension"
+          },
+          {
+            "id" : "QuestionnaireResponse.implicitRules",
+            "max" : "0",
+            "path" : "QuestionnaireResponse.implicitRules"
+          },
+          {
+            "id" : "QuestionnaireResponse.extension",
+            "max" : "0",
+            "path" : "QuestionnaireResponse.extension"
+          },
+          {
+            "id" : "QuestionnaireResponse.encounter",
+            "max" : "0",
+            "path" : "QuestionnaireResponse.encounter"
+          },
+          {
+            "id" : "QuestionnaireResponse.basedOn",
+            "max" : "0",
+            "path" : "QuestionnaireResponse.basedOn"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName" : "extensions/BblQuestionnaireResponseExtensionAuthor.StructureDefinition.json",
+    "rsc" : {
+      "resourceType" : "StructureDefinition",
+      "id" : "BblQuestionnaireResponseExtensionAuthor",
+      "url" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionAuthor",
+      "meta" : {
+        "profile" : [
+          "https://fhir.bbl.health/StructureDefinition/BblStructureDefinition"
+        ]
+      },
+      "name" : "Author",
+      "date" : "2020-04-20",
+      "kind" : "complex-type",
+      "type" : "Extension",
+      "title" : "BblQuestionnaireResponseExtensionAuthor",
+      "status" : "active",
+      "abstract" : false,
+      "description" : "FHIR author",
+      "fhirVersion" : "4.0.1",
+      "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
+      "context" : [
+        {
+          "type" : "element",
+          "expression" : "QuestionnaireResponse.item"
+        }
+      ],
+      "differential" : {
+        "element" : [
+          {
+            "id" : "Extension",
+            "max" : "1",
+            "path" : "Extension"
+          },
+          {
+            "id" : "Extension.url",
+            "min" : 1,
+            "path" : "Extension.url",
+            "fixedUri" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionAuthor"
+          },
+          {
+            "id" : "Extension.value[x]",
+            "path" : "Extension.value[x]",
+            "type" : [
+              {
+                "code" : "Reference",
+                "targetProfile" : [
+                  "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+                  "http://hl7.org/fhir/StructureDefinition/Practitioner"
+                ]
+              }
+            ]
+          },
+          {
+            "id" : "Extension.value[x]:valueReference",
+            "min" : 1,
+            "path" : "Extension.valueReference",
+            "type" : [
+              {
+                "code" : "Reference",
+                "targetProfile" : [
+                  "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+                  "http://hl7.org/fhir/StructureDefinition/Practitioner"
+                ]
+              }
+            ]
+          },
+          {
+            "id" : "Extension.value[x]:valueReference.reference",
+            "min" : 1,
+            "path" : "Extension.valueReference.reference"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName" : "extensions/BblQuestionnaireResponseExtensionAuthored.StructureDefinition.json",
+    "rsc" : {
+      "resourceType" : "StructureDefinition",
+      "id" : "BblQuestionnaireResponseExtensionAuthored",
+      "url" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionAuthored",
+      "meta" : {
+        "profile" : [
+          "https://fhir.bbl.health/StructureDefinition/BblStructureDefinition"
+        ]
+      },
+      "name" : "Authored",
+      "date" : "2020-04-20",
+      "kind" : "complex-type",
+      "type" : "Extension",
+      "title" : "BblQuestionnaireResponseExtensionAuthored",
+      "status" : "active",
+      "abstract" : false,
+      "description" : "FHIR authored",
+      "fhirVersion" : "4.0.1",
+      "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
+      "context" : [
+        {
+          "type" : "element",
+          "expression" : "QuestionnaireResponse.item"
+        }
+      ],
+      "differential" : {
+        "element" : [
+          {
+            "id" : "Extension",
+            "max" : "1",
+            "path" : "Extension"
+          },
+          {
+            "id" : "Extension.url",
+            "min" : 1,
+            "path" : "Extension.url",
+            "fixedUri" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionAuthored"
+          },
+          {
+            "id" : "Extension.value[x]",
+            "path" : "Extension.value[x]",
+            "type" : [
+              {
+                "code" : "dateTime"
+              }
+            ]
+          },
+          {
+            "id" : "Extension.value[x]:valueDateTime",
+            "min" : 1,
+            "path" : "Extension.valueDateTime",
+            "type" : [
+              {
+                "code" : "dateTime"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName" : "extensions/BblQuestionnaireResponseExtensionSource.StructureDefinition.json",
+    "rsc" : {
+      "resourceType" : "StructureDefinition",
+      "id" : "BblQuestionnaireResponseExtensionSource",
+      "url" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionSource",
+      "meta" : {
+        "profile" : [
+          "https://fhir.bbl.health/StructureDefinition/BblStructureDefinition"
+        ]
+      },
+      "name" : "Source",
+      "date" : "2020-04-20",
+      "kind" : "complex-type",
+      "type" : "Extension",
+      "title" : "BblQuestionnaireResponseExtensionSource",
+      "status" : "active",
+      "abstract" : false,
+      "description" : "FHIR source",
+      "fhirVersion" : "4.0.1",
+      "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
+      "context" : [
+        {
+          "type" : "element",
+          "expression" : "QuestionnaireResponse.item"
+        }
+      ],
+      "differential" : {
+        "element" : [
+          {
+            "id" : "Extension",
+            "max" : "1",
+            "path" : "Extension"
+          },
+          {
+            "id" : "Extension.url",
+            "min" : 1,
+            "path" : "Extension.url",
+            "fixedUri" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionSource"
+          },
+          {
+            "id" : "Extension.value[x]",
+            "path" : "Extension.value[x]",
+            "type" : [
+              {
+                "code" : "Reference",
+                "targetProfile" : [
+                  "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
+                ]
+              }
+            ]
+          },
+          {
+            "id" : "Extension.value[x]:valueReference",
+            "min" : 1,
+            "path" : "Extension.valueReference",
+            "type" : [
+              {
+                "code" : "Reference",
+                "targetProfile" : [
+                  "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
+                ]
+              }
+            ]
+          },
+          {
+            "id" : "Extension.value[x]:valueReference.reference",
+            "min" : 1,
+            "path" : "Extension.valueReference.reference"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName" : "extensions/BblQuestionnaireResponseExtensionAmmended.StructureDefinition.json",
+    "rsc" : {
+      "resourceType" : "StructureDefinition",
+      "id" : "BblQuestionnaireResponseExtensionAmmended",
+      "url" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionAmmended",
+      "meta" : {
+        "profile" : [
+          "https://fhir.bbl.health/StructureDefinition/BblStructureDefinition"
+        ]
+      },
+      "name" : "Amended",
+      "date" : "2020-04-20",
+      "kind" : "complex-type",
+      "type" : "Extension",
+      "title" : "BblQuestionnaireResponseExtensionAmmended",
+      "status" : "active",
+      "abstract" : false,
+      "description" : "Whether or not this was the original answer or if it has been subsequently amended.",
+      "fhirVersion" : "4.0.1",
+      "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
+      "context" : [
+        {
+          "type" : "element",
+          "expression" : "QuestionnaireResponse.item"
+        }
+      ],
+      "differential" : {
+        "element" : [
+          {
+            "id" : "Extension",
+            "max" : "1",
+            "path" : "Extension"
+          },
+          {
+            "id" : "Extension.url",
+            "min" : 1,
+            "path" : "Extension.url",
+            "fixedUri" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionAmmended"
+          },
+          {
+            "id" : "Extension.value[x]",
+            "path" : "Extension.value[x]",
+            "type" : [
+              {
+                "code" : "boolean"
+              }
+            ]
+          },
+          {
+            "id" : "Extension.value[x]:valueBoolean",
+            "min" : 1,
+            "path" : "Extension.valueBoolean",
+            "type" : [
+              {
+                "code" : "boolean"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName" : "valueSets/BblQuestionnaireResponseStatus.ValueSet.json",
+    "rsc" : {
+      "resourceType" : "ValueSet",
+      "id" : "BblQuestionnaireResponseStatus",
+      "url" : "https://fhir.bbl.health/ValueSet/BblQuestionnaireResponseStatus",
+      "name" : "Status",
+      "date" : "2020-04-20",
+      "title" : "Health Assessment response status",
+      "status" : "active",
+      "description" : "https://www.hl7.org/fhir/valueset-request-status.html",
+      "compose" : {
+        "include" : [
+          {
+            "system" : "http://hl7.org/fhir/questionnaire-answers-status",
+            "concept" : [
+              {
+                "code" : "in-progress"
+              },
+              {
+                "code" : "completed"
+              },
+              {
+                "code" : "amended"
+              },
+              {
+                "code" : "entered-in-error"
+              },
+              {
+                "code" : "stopped"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName" : "profiles/BblQuestionnaire.StructureDefinition.json",
+    "rsc" : {
+      "resourceType" : "StructureDefinition",
+      "id" : "BblQuestionnaire",
+      "url" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaire",
+      "meta" : {
+        "profile" : [
+          "https://fhir.bbl.health/StructureDefinition/BblStructureDefinition"
+        ]
+      },
+      "name" : "Questionnaire",
+      "date" : "2020-04-20",
+      "kind" : "resource",
+      "type" : "Questionnaire",
+      "title" : "Health Assessment Questionnaire",
+      "status" : "active",
+      "abstract" : false,
+      "derivation" : "constraint",
+      "description" : "https://www.hl7.org/fhir/questionnaireresponse.html#Questionnaire",
+      "fhirVersion" : "4.0.1",
+      "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Questionnaire",
+      "differential" : {
+        "element" : [
+          {
+            "id" : "Questionnaire.publisher",
+            "min" : 1,
+            "path" : "Questionnaire.publisher",
+            "fixedString" : "Babylon"
+          },
+          {
+            "id" : "Questionnaire.status",
+            "min" : 1,
+            "path" : "Questionnaire.status",
+            "fixedCode" : "active"
+          },
+          {
+            "id" : "Questionnaire.id",
+            "min" : 1,
+            "path" : "Questionnaire.id"
+          },
+          {
+            "id" : "Questionnaire.name",
+            "min" : 1,
+            "path" : "Questionnaire.name"
+          },
+          {
+            "id" : "Questionnaire.title",
+            "min" : 1,
+            "path" : "Questionnaire.title"
+          },
+          {
+            "id" : "Questionnaire.description",
+            "min" : 1,
+            "path" : "Questionnaire.description"
+          },
+          {
+            "id" : "Questionnaire.code",
+            "min" : 1,
+            "path" : "Questionnaire.code",
+            "binding" : {
+              "strength" : "required",
+              "valueSet" : "https://fhir.bbl.health/ValueSet/BblQuestionnaireCode"
+            }
+          },
+          {
+            "id" : "Questionnaire.code.system",
+            "min" : 1,
+            "path" : "Questionnaire.code.system",
+            "fixedUri" : "https://bbl.health"
+          },
+          {
+            "id" : "Questionnaire.code.code",
+            "min" : 1,
+            "path" : "Questionnaire.code.code"
+          },
+          {
+            "id" : "Questionnaire.item",
+            "min" : 0,
+            "path" : "Questionnaire.item"
+          },
+          {
+            "id" : "Questionnaire.item.linkId",
+            "min" : 1,
+            "path" : "Questionnaire.item.linkId"
+          },
+          {
+            "id" : "Questionnaire.item.text",
+            "min" : 1,
+            "path" : "Questionnaire.item.text"
+          },
+          {
+            "id" : "Questionnaire.item.type",
+            "min" : 1,
+            "path" : "Questionnaire.item.type",
+            "fixedCode" : "group"
+          },
+          {
+            "id" : "Questionnaire.item.item",
+            "min" : 0,
+            "path" : "Questionnaire.item.item"
+          },
+          {
+            "id" : "Questionnaire.item.item.linkId",
+            "min" : 1,
+            "path" : "Questionnaire.item.item.linkId"
+          },
+          {
+            "id" : "Questionnaire.item.item.text",
+            "min" : 1,
+            "path" : "Questionnaire.item.item.text"
+          },
+          {
+            "id" : "Questionnaire.item.item.type",
+            "min" : 1,
+            "path" : "Questionnaire.item.item.type"
+          },
+          {
+            "id" : "Questionnaire.item.item.answerOption.valueString",
+            "min" : 0,
+            "path" : "Questionnaire.item.item.answerOption.valueString"
+          },
+          {
+            "id" : "Questionnaire.url",
+            "min" : 1,
+            "path" : "Questionnaire.url"
+          },
+          {
+            "id" : "Questionnaire.contained",
+            "max" : "0",
+            "path" : "Questionnaire.contained"
+          },
+          {
+            "id" : "Questionnaire.version",
+            "max" : "0",
+            "path" : "Questionnaire.version"
+          },
+          {
+            "id" : "Questionnaire.useContext",
+            "max" : "0",
+            "path" : "Questionnaire.useContext"
+          },
+          {
+            "id" : "Questionnaire.text",
+            "max" : "0",
+            "path" : "Questionnaire.text"
+          },
+          {
+            "id" : "Questionnaire.subjectType",
+            "max" : "0",
+            "path" : "Questionnaire.subjectType"
+          },
+          {
+            "id" : "Questionnaire.purpose",
+            "max" : "0",
+            "path" : "Questionnaire.purpose"
+          },
+          {
+            "id" : "Questionnaire.modifierExtension",
+            "max" : "0",
+            "path" : "Questionnaire.modifierExtension"
+          },
+          {
+            "id" : "Questionnaire.lastReviewDate",
+            "max" : "0",
+            "path" : "Questionnaire.lastReviewDate"
+          },
+          {
+            "id" : "Questionnaire.language",
+            "max" : "0",
+            "path" : "Questionnaire.language"
+          },
+          {
+            "id" : "Questionnaire.jurisdiction",
+            "max" : "0",
+            "path" : "Questionnaire.jurisdiction"
+          },
+          {
+            "id" : "Questionnaire.item.required",
+            "max" : "0",
+            "path" : "Questionnaire.item.required"
+          },
+          {
+            "id" : "Questionnaire.item.repeats",
+            "max" : "0",
+            "path" : "Questionnaire.item.repeats"
+          },
+          {
+            "id" : "Questionnaire.item.readOnly",
+            "max" : "0",
+            "path" : "Questionnaire.item.readOnly"
+          },
+          {
+            "id" : "Questionnaire.item.prefix",
+            "max" : "0",
+            "path" : "Questionnaire.item.prefix"
+          },
+          {
+            "id" : "Questionnaire.item.modifierExtension",
+            "max" : "0",
+            "path" : "Questionnaire.item.modifierExtension"
+          },
+          {
+            "id" : "Questionnaire.item.maxLength",
+            "max" : "0",
+            "path" : "Questionnaire.item.maxLength"
+          },
+          {
+            "id" : "Questionnaire.item.initial",
+            "max" : "0",
+            "path" : "Questionnaire.item.initial"
+          },
+          {
+            "id" : "Questionnaire.item.extension",
+            "max" : "0",
+            "path" : "Questionnaire.item.extension"
+          },
+          {
+            "id" : "Questionnaire.item.enableWhen",
+            "max" : "0",
+            "path" : "Questionnaire.item.enableWhen"
+          },
+          {
+            "id" : "Questionnaire.item.enableBehavior",
+            "max" : "0",
+            "path" : "Questionnaire.item.enableBehavior"
+          },
+          {
+            "id" : "Questionnaire.item.definition",
+            "max" : "0",
+            "path" : "Questionnaire.item.definition"
+          },
+          {
+            "id" : "Questionnaire.item.code",
+            "max" : "0",
+            "path" : "Questionnaire.item.code"
+          },
+          {
+            "id" : "Questionnaire.item.answerValueSet",
+            "max" : "0",
+            "path" : "Questionnaire.item.answerValueSet"
+          },
+          {
+            "id" : "Questionnaire.item.answerOption",
+            "max" : "0",
+            "path" : "Questionnaire.item.answerOption"
+          },
+          {
+            "id" : "Questionnaire.implicitRules",
+            "max" : "0",
+            "path" : "Questionnaire.implicitRules"
+          },
+          {
+            "id" : "Questionnaire.extension",
+            "max" : "0",
+            "path" : "Questionnaire.extension"
+          },
+          {
+            "id" : "Questionnaire.experimental",
+            "max" : "0",
+            "path" : "Questionnaire.experimental"
+          },
+          {
+            "id" : "Questionnaire.effectivePeriod",
+            "max" : "0",
+            "path" : "Questionnaire.effectivePeriod"
+          },
+          {
+            "id" : "Questionnaire.derivedFrom",
+            "max" : "0",
+            "path" : "Questionnaire.derivedFrom"
+          },
+          {
+            "id" : "Questionnaire.date",
+            "max" : "0",
+            "path" : "Questionnaire.date"
+          },
+          {
+            "id" : "Questionnaire.copyright",
+            "max" : "0",
+            "path" : "Questionnaire.copyright"
+          },
+          {
+            "id" : "Questionnaire.contact",
+            "max" : "0",
+            "path" : "Questionnaire.contact"
+          },
+          {
+            "id" : "Questionnaire.approvalDate",
+            "max" : "0",
+            "path" : "Questionnaire.approvalDate"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName" : "valueSets/BblQuestionnaireCode.ValueSet.json",
+    "rsc" : {
+      "resourceType" : "ValueSet",
+      "id" : "BblQuestionnaireCode",
+      "url" : "https://fhir.bbl.health/ValueSet/BblQuestionnaireCode",
+      "name" : "Code",
+      "date" : "2020-04-20",
+      "title" : "Health Assessment Questionnaire Code",
+      "status" : "active",
+      "description" : "FHIR code for the questionnaire type",
+      "compose" : {
+        "include" : [
+          {
+            "system" : "https://bbl.health",
+            "concept" : [
+              {
+                "code" : "ZfwTODyI-T"
+              },
+              {
+                "code" : "KXH00g_3OJ"
+              },
+              {
+                "code" : "PNXu6OsHWH"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName" : "profiles/BblQuestionnaireResponseRelatedPerson.StructureDefinition.json",
+    "rsc" : {
+      "resourceType" : "StructureDefinition",
+      "id" : "BblQuestionnaireResponseRelatedPerson",
+      "url" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseRelatedPerson",
+      "meta" : {
+        "profile" : [
+          "https://fhir.bbl.health/StructureDefinition/BblStructureDefinition"
+        ]
+      },
+      "name" : "Related",
+      "date" : "2020-04-20",
+      "kind" : "resource",
+      "type" : "RelatedPerson",
+      "title" : "Questionnaire Response Related Person",
+      "status" : "active",
+      "abstract" : false,
+      "derivation" : "constraint",
+      "description" : "Based on https://www.hl7.org/fhir/relatedperson.html.",
+      "fhirVersion" : "4.0.1",
+      "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+      "differential" : {
+        "element" : [
+          {
+            "id" : "RelatedPerson.id",
+            "min" : 1,
+            "path" : "RelatedPerson.id"
+          },
+          {
+            "id" : "RelatedPerson.name",
+            "min" : 1,
+            "path" : "RelatedPerson.name"
+          },
+          {
+            "id" : "RelatedPerson.name.family",
+            "min" : 1,
+            "path" : "RelatedPerson.name.family"
+          },
+          {
+            "id" : "RelatedPerson.name.given",
+            "min" : 1,
+            "path" : "RelatedPerson.name.given"
+          },
+          {
+            "id" : "RelatedPerson.relationship",
+            "min" : 1,
+            "path" : "RelatedPerson.relationship"
+          },
+          {
+            "id" : "RelatedPerson.relationship.text",
+            "min" : 1,
+            "path" : "RelatedPerson.relationship.text"
+          },
+          {
+            "id" : "RelatedPerson.patient",
+            "min" : 1,
+            "path" : "RelatedPerson.patient",
+            "type" : [
+              {
+                "code" : "Reference",
+                "targetProfile" : [
+                  "http://hl7.org/fhir/StructureDefinition/Patient"
+                ]
+              }
+            ]
+          },
+          {
+            "id" : "RelatedPerson.patient.reference",
+            "min" : 1,
+            "path" : "RelatedPerson.patient.reference"
+          },
+          {
+            "id" : "RelatedPerson.contained",
+            "max" : "0",
+            "path" : "RelatedPerson.contained"
+          },
+          {
+            "id" : "RelatedPerson.text",
+            "max" : "0",
+            "path" : "RelatedPerson.text"
+          },
+          {
+            "id" : "RelatedPerson.telecom",
+            "max" : "0",
+            "path" : "RelatedPerson.telecom"
+          },
+          {
+            "id" : "RelatedPerson.photo",
+            "max" : "0",
+            "path" : "RelatedPerson.photo"
+          },
+          {
+            "id" : "RelatedPerson.period",
+            "max" : "0",
+            "path" : "RelatedPerson.period"
+          },
+          {
+            "id" : "RelatedPerson.modifierExtension",
+            "max" : "0",
+            "path" : "RelatedPerson.modifierExtension"
+          },
+          {
+            "id" : "RelatedPerson.language",
+            "max" : "0",
+            "path" : "RelatedPerson.language"
+          },
+          {
+            "id" : "RelatedPerson.implicitRules",
+            "max" : "0",
+            "path" : "RelatedPerson.implicitRules"
+          },
+          {
+            "id" : "RelatedPerson.gender",
+            "max" : "0",
+            "path" : "RelatedPerson.gender"
+          },
+          {
+            "id" : "RelatedPerson.extension",
+            "max" : "0",
+            "path" : "RelatedPerson.extension"
+          },
+          {
+            "id" : "RelatedPerson.communication",
+            "max" : "0",
+            "path" : "RelatedPerson.communication"
+          },
+          {
+            "id" : "RelatedPerson.birthDate",
+            "max" : "0",
+            "path" : "RelatedPerson.birthDate"
+          },
+          {
+            "id" : "RelatedPerson.address",
+            "max" : "0",
+            "path" : "RelatedPerson.address"
+          },
+          {
+            "id" : "RelatedPerson.active",
+            "max" : "0",
+            "path" : "RelatedPerson.active"
+          }
+        ]
+      }
+    }
+  }
+]

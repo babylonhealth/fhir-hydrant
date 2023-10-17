@@ -1,0 +1,32 @@
+[
+  {
+    "id": "QuestionnaireResponseRelatedPerson",
+    "name": "Questionnaire Response Related Person",
+    "version": "0.0.1",
+    "domain": "HealthAssessment",
+    "packageName": "questionnaire",
+    "description": "Based on https://www.hl7.org/fhir/relatedperson.html.",
+    "params": {
+      "id": {"type":  "uuid","description": "FHIR id - uuid of related person, could be multiple id's for the same person as they may not registered with Babylon"},
+      "lastName": {"type": "string", "description": "FHIR name - last name"},
+      "firstName": {"type": "string", "description": "FHIR name - first name"},
+      "relation": {"type": "string", "description": "FHIR relation"},
+      "patient": {"type": "uuid","description": "FHIR patient reference"}
+    },
+    "hydrated": {
+      "resourceType": "RelatedPerson",
+      "meta": {"profile": ["https://fhir.bbl.health/StructureDefinition/BblHealthAssessmentQuestionnaireResponseRelatedPerson"]},
+      "id": "{{{id}}}",
+      "name": [
+        {
+          "family": "{{{lastName}}}",
+          "given": ["{{{firstName}}}"]
+        }
+      ],
+      "relationship": [ {"text": "{{{relation}}}"} ],
+      "patient": {
+        "reference": "https://administration.bbl.health/Patient/{{{patient}}}"
+      }
+    }
+  }
+]

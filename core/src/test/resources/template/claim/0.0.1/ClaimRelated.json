@@ -1,0 +1,26 @@
+{
+  "id": "ClaimRelated",
+  "name": "Claims related to this claim",
+  "domain": "claim",
+  "description": "Prior or corollary claims",
+  "notes": {},
+  "params": {
+    "claim" : {
+      "type": "string",
+      "description": "The ID of the referenced claim",
+      "optional": true,
+      "tags": {
+        "other_id": true
+      }
+    },
+    "reference": {
+      "type": "ClaimRelatedIdentifier",
+      "description": "A code to convey how the claims are related",
+      "optional": true
+    }
+  },
+  "hydrated": {
+    "claim": {"reference": "https://claim.bbl.health/Claim/{{{claim}}}"},
+    "reference" : "{{{reference}}}"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "MedicationEvent",
+  "name": "MedicationEvent",
+  "description": "MedicationEvent",
+  "domain": "summary",
+  "params": {
+    "status": {
+      "type": "MedicationStatementStatus",
+      "description": "The status of the medication"
+    },
+    "medication": {
+      "type": "SummaryExtensionMedicationCoding",
+      "description": "The medicine information stored within Coding object(s)",
+      "repeated": true
+    },
+    "startDate": {
+      "type": "dateTime",
+      "description": "The start date the subject should take the medication",
+      "optional": true
+    },
+    "endDate": {
+      "type": "dateTime",
+      "description": "The end date the subject should take the medication till",
+      "optional": true
+    },
+    "dateAsserted": {
+      "type": "dateTime",
+      "description": "The date when the medication statement was asserted by the information source",
+      "optional": true
+    },
+    "dosage": {
+      "type": "MedicationStatementDosage",
+      "description": "The dosage information of the medication taken by the subject"
+    },
+    "id": {
+      "type": "uuid",
+      "description": "The id of the specific prescription. Marked as optional for backwards compatibility, but should always be present",
+      "optional": true
+    }
+  },
+  "hydrated": {
+    "id": "{{{id}}}",
+    "extension": [
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionMedicationStatus",
+        "valueCode": "{{{status}}}"
+      },
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionMedicationAssertionTimestamp",
+        "valueDateTime": "{{{dateAsserted}}}"
+      },
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionMedicationDosage",
+        "valueDosage": "{{{dosage}}}"
+      },
+      "{{{medication}}}"
+    ],
+    "code": [
+      {
+        "coding": [
+          {
+            "system": "https://summary.bbl.health/EventType",
+            "code": "medication"
+          }
+        ]
+      }
+    ],
+    "period": {
+      "start": "{{{startDate}}}",
+      "end": "{{{endDate}}}"
+    }
+  }
+}

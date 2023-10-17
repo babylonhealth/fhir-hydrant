@@ -1,0 +1,21 @@
+{
+  "id" : "TriageReason",
+  "name" : "Triage Reason",
+  "domain" : "Triage",
+  "packageName" : "triage",
+  "description" : "Coded reason the triage flow was started",
+  "params" : {
+    "code" : {
+      "type" : "TriageReasonCode",
+      "description" : "Code of the coded concept that triggered a triage flow"
+    }
+  },
+  "hydrated" : {
+    "coding" : [
+      {
+        "system" : "https://bbl.health",
+        "code" : "{{{code}}}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id" : "TriageCondition",
+  "name" : "Triage Condition",
+  "domain" : "Triage",
+  "packageName" : "triage",
+  "description" : "Based on https://www.hl7.org/fhir/condition.html",
+  "params" : {
+    "id" : {
+      "type" : "uuid",
+      "description" : "FHIR id"
+    },
+    "asserter" : {
+      "type" : "string",
+      "description" : "Person who asserts this condition"
+    },
+    "code" : {
+      "type" : "TriageConditionCode",
+      "description" : "Identification of the condition, problem or diagnosis"
+    },
+    "encounter" : {
+      "type" : "uuid",
+      "description" : "Encounter that generated the creation of this Condition"
+    },
+    "recorder" : {
+      "type" : "string",
+      "description" : "Entity that recorder the Condition"
+    },
+    "recordedDate" : {
+      "type" : "dateTime",
+      "description" : "Date record was first recorded"
+    },
+    "subject" : {
+      "type" : "uuid",
+      "description" : "Who has the condition"
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "Condition",
+    "meta" : {
+      "profile" : [
+        "https://fhir.bbl.health/StructureDefinition/BblTriageCondition"
+      ]
+    },
+    "id" : "{{{id}}}",
+    "asserter" : {
+      "reference" : "Practitioner/{{{asserter}}}"
+    },
+    "code" : {
+      "coding" : [
+        {
+          "code" : "{{{code}}}",
+          "system" : "https://bbl.health"
+        }
+      ]
+    },
+    "encounter" : {
+      "reference" : "Encounter/{{{encounter}}}"
+    },
+    "recorder" : {
+      "reference" : "Practitioner/{{{recorder}}}"
+    },
+    "recordedDate" : "{{{recordedDate}}}",
+    "subject" : {
+      "reference" : "Patient/{{{subject}}}"
+    }
+  }
+}

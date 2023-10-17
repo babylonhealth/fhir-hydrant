@@ -1,0 +1,41 @@
+{
+  "id" : "CarePlanStatus2",
+  "name" : "Care Plan Status",
+  "domain" : "CarePlan",
+  "description" : "https://www.hl7.org/fhir/careplan-definitions.html#CarePlan.status",
+  "values" : [
+    {
+      "name" : "CARE_PLAN_STATUS_DRAFT",
+      "value" : "draft"
+    },
+    {
+      "name" : "CARE_PLAN_STATUS_ACTIVE",
+      "value" : "active"
+    },
+    {
+      "name" : "CARE_PLAN_STATUS_ON_HOLD",
+      "value" : "on-hold"
+    },
+    {
+      "name" : "CARE_PLAN_STATUS_REVOKED",
+      "value" : "revoked"
+    },
+    {
+      "name" : "CARE_PLAN_STATUS_COMPLETED",
+      "value" : "completed"
+    },
+    {
+      "name" : "CARE_PLAN_STATUS_ENTERED_IN_ERROR",
+      "value" : "entered-in-error"
+    },
+    {
+      "name" : "CARE_PLAN_STATUS_UNKNOWN",
+      "value" : "unknown"
+    }
+  ],
+  "system" : "http://hl7.org/fhir/request-status",
+  "absentName" : "CARE_PLAN_STATUS_ABSENT",
+  "url" : "https://fhir.bbl.health/ValueSets/CarePlanStatus",
+  "default" : "unknown",
+  "allowAbsent" : false
+}

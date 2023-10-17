@@ -1,0 +1,53 @@
+{
+  "id": "ConditionEvent",
+  "name": "ConditionEvent",
+  "description": "ConditionEvent",
+  "domain": "summary",
+  "params": {
+    "timestamp": {
+      "type": "dateTime",
+      "description": "The dateTime at which the condition was recorded",
+      "optional": true,
+      "tags": {
+        "other_date": true
+      }
+    },
+    "code": {
+      "type": "code",
+      "description": "A babylon IRI that represents a medical condition."
+    },
+    "id": {
+      "type": "uuid",
+      "description": "The id of the specific condition. Marked as optional for backwards compatibility, but should always be present",
+      "optional": true
+    },
+    "negation": {
+      "type": "ReportedConditionNegation",
+      "description": "Whether the reported condition is negated",
+      "optional": true
+    }
+  },
+  "hydrated": {
+    "id": "{{{id}}}",
+    "extension": [
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionConditionEventCode",
+        "valueCode": "{{{code}}}"
+      },
+      "{{{negation}}}"
+    ],
+    "code": [
+      {
+        "coding": [
+          {
+            "system": "https://summary.bbl.health/EventType",
+            "code": "condition"
+          }
+        ]
+      }
+    ],
+    "period": {
+      "start": "{{{timestamp}}}"
+    }
+  }
+}

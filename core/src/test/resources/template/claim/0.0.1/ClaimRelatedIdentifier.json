@@ -1,0 +1,17 @@
+{
+  "id": "ClaimRelatedIdentifier",
+  "name": "Related Claim Identifier",
+  "description": "File or case reference of the related Claim",
+  "domain": "claim",
+  "params": {
+    "value": {
+      "type": "string",
+      "description": "Identifier value",
+      "optional": false
+    }
+  },
+  "hydrated": {
+    "system": "http://terminology.hl7.org/NamingSystem/CCN",
+    "value": "{{{value}}}"
+  }
+}

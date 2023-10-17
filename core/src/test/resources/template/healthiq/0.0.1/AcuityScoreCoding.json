@@ -1,0 +1,41 @@
+{
+  "id": "AcuityScoreCoding",
+  "name": "Acuity Score Coding",
+  "domain": "healthiq",
+  "description": "the computed acuity score",
+  "notes": {},
+  "values": [
+    {
+      "value": {
+        "display": "High",
+        "code": "HIGH",
+        "system": "https://fhir.bbl.health/CodeSystem/AcuityScoreHML"
+      },
+      "name": "HEALTHIQ_ACUITY_SCORE_CODING_ACUITY_SCORE_HML_HIGH"
+    },
+    {
+      "value": {
+        "display": "Medium",
+        "code": "MEDIUM",
+        "system": "https://fhir.bbl.health/CodeSystem/AcuityScoreHML"
+      },
+      "name": "HEALTHIQ_ACUITY_SCORE_CODING_ACUITY_SCORE_HML_MEDIUM"
+    },
+    {
+      "value": {
+        "display": "Low",
+        "code": "LOW",
+        "system": "https://fhir.bbl.health/CodeSystem/AcuityScoreHML"
+      },
+      "name": "HEALTHIQ_ACUITY_SCORE_CODING_ACUITY_SCORE_HML_LOW"
+    }
+  ],
+  "hydrated": {
+    "coding": [
+      {
+        "system": "{{{system}}}",
+        "code": "{{{code}}}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "Claim",
+  "name": "Claim",
+  "domain": "claim",
+  "description": "Claims data",
+  "params": {
+    "id": {
+      "type": "uuid",
+      "description": "Unique id for the claim"
+    },
+    "patient": {
+      "type": "uuid",
+      "description": "patient id for who made the claim"
+    },
+    "created": {
+      "type": "dateTime",
+      "description": "When the claim was created"
+    },
+    "related" : {
+      "type" : "ClaimRelated",
+      "description" : "Claims related to this Claim",
+      "repeated": true
+    }
+  },
+  "hydrated": {
+    "resourceType": "Claim",
+    "id": "{{{id}}}",
+    "status": "final",
+    "use": "claim",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "vision"
+        }
+      ]
+    },
+    "patient": {
+      "reference": "https://patient.bbl.health/Patient/{{{patient}}}"
+    },
+    "created": "{{{created}}}",
+    "provider": {"reference":  "https://external.bbl.health/Organization/someone"},
+    "related": ["{{{related}}}"],
+    "priority": {
+      "coding": [
+        {
+          "display": "Normal",
+          "code": "normal",
+          "system": "http://hl7.org/fhir/ValueSet/process-priority"
+        }
+      ]
+    },
+    "insurance": [
+      {
+        "sequence": 1,
+        "focal": true,
+        "coverage": {"reference":  "https://external.bbl.health/Coverage/something"},
+        "identifier": {
+          "system": "https://claim.bbl.health/CodeSystem/claimNumber",
+          "value": "1"
+        }
+      }
+    ]
+  }
+}

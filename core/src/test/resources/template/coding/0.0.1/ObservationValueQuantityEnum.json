@@ -1,0 +1,27 @@
+{
+  "id" : "ObservationValueQuantityEnum",
+  "name" : "Observation ValueQuantity Enum",
+  "domain" : "testing",
+  "description" : "The value of Observation as a quantity",
+  "values" : [
+    {
+      "name" : "OBSERVATION_VALUE_QUANTITY_HIGH",
+      "value" : {
+        "value" : 10,
+        "code" : "kg",
+        "system" : "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "name" : "OBSERVATION_VALUE_QUANTITY_LOW",
+      "value" : {
+        "value" : 2,
+        "code" : "kg",
+        "system" : "http://unitsofmeasure.org"
+      }
+    }
+  ],
+  "default" : "OBSERVATION_VALUE_QUANTITY_LOW",
+  "absentName" : "OBSERVATION_VALUE_QUANTITY_ABSENT",
+  "allowAbsent" : false
+}

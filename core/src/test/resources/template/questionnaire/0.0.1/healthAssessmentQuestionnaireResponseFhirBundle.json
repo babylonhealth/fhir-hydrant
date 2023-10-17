@@ -1,0 +1,18 @@
+[
+  {
+    "id": "QuestionnaireResponseFhirBundle",
+    "name": "QuestionnaireResponse - Risk Assessment FHIR Bundle",
+    "version": "0.0.1",
+    "domain": "HealthAssessment",
+    "packageName": "questionnaire",
+    "description": "Based on https://www.hl7.org/fhir/questionnaireresponse.html#QuestionnaireResponse.",
+    "params": {
+      "response": { "type":"QuestionnaireResponse","description": "FHIR QuestionnaireResponse", "flatten": true},
+      "related": { "type": "QuestionnaireResponseRelatedPerson","description": "Related persons that have been involved as sources in the assessment", "repeated": true, "tags": {"pii": true}}
+    },
+    "hydrated": [
+      "{{{response}}}",
+      "{{{related}}}"
+    ]
+  }
+]

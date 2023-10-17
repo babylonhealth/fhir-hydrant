@@ -1,0 +1,19 @@
+{
+  "id" : "QuestionnaireResponseSource",
+  "name" : "Questionnaire Response Source",
+  "domain" : "HealthAssessment",
+  "description" : "FHIR questionnaire.source - Source of the information being provided.",
+  "params" : {
+    "id" : {
+      "type" : "uuid",
+      "description" : "FHIR refernce id"
+    },
+    "source" : {
+      "type" : "QuestionnaireResponseSourceEnum",
+      "description" : "FHIR reference resourceType"
+    }
+  },
+  "hydrated" : {
+    "reference" : "{{{source}}}/{{{id}}}"
+  }
+}

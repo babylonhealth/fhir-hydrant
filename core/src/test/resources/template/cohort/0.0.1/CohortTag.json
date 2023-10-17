@@ -1,0 +1,17 @@
+{
+  "id": "CohortTag",
+  "name": "Cohort Tag",
+  "domain": "cohort",
+  "description": "Tag for organising the cohorts",
+  "params": {
+    "tag": {
+      "type": "code",
+      "description": "Tag for organising the cohorts"
+    }
+  },
+  "hydrated": {
+      "system": "https://cohort.bbl.health/CodeSystem/tags",
+      "code": "{{{tag}}}"
+  },
+  "modelUrl": "https://bbl.health/modelling/14514074-fb5a-4ab2-beec-9ee043a5a273/submit"
+}

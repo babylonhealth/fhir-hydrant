@@ -1,0 +1,486 @@
+[
+  {
+    "fileName": "profiles/BblVitalSignsBloodPressure.StructureDefinition.json",
+    "rsc": {
+  "resourceType" : "StructureDefinition",
+  "id" : "BblVitalSignsBloodPressure",
+  "url" : "https://fhir.bbl.health/StructureDefinition/BblVitalSignsBloodPressure",
+  "meta" : {
+    "profile" : [
+      "https://fhir.bbl.health/StructureDefinition/BblStructureDefinition"
+    ]
+  },
+  "name" : "BloodPressure",
+  "date" : "2020-04-20",
+  "kind" : "resource",
+  "type" : "Observation",
+  "title" : "Blood Pressure",
+  "status" : "active",
+  "abstract" : false,
+  "derivation" : "constraint",
+  "description" : "Blood pressure observation (https://www.hl7.org/fhir/observation.html)",
+  "fhirVersion" : "4.0.1",
+  "baseDefinition" : "https://fhir.bbl.health/StructureDefinition/BblObservation",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "Observation.id",
+        "min" : 1,
+        "path" : "Observation.id"
+      },
+      {
+        "id" : "Observation.status",
+        "min" : 1,
+        "path" : "Observation.status",
+        "fixedCode" : "final"
+      },
+      {
+        "id" : "Observation.encounter",
+        "min" : 0,
+        "path" : "Observation.encounter",
+        "type" : [
+          {
+            "code": "Reference",
+            "targetProfile" : [
+              "http://hl7.org/fhir/StructureDefinition/Encounter"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Observation.encounter.reference",
+        "min" : 1,
+        "path" : "Observation.encounter.reference"
+      },
+      {
+        "id" : "Observation.subject",
+        "min" : 1,
+        "path" : "Observation.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile" : [
+              "http://hl7.org/fhir/StructureDefinition/Patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Observation.subject.reference",
+        "min" : 1,
+        "path" : "Observation.subject.reference"
+      },
+      {
+        "id" : "Observation.effective[x]",
+        "path" : "Observation.effective[x]",
+        "type" : [
+          {
+            "code" : "dateTime"
+          }
+        ]
+      },
+      {
+        "id" : "Observation.effective[x]:effectiveDateTime",
+        "min" : 1,
+        "path" : "Observation.effectiveDateTime",
+        "type" : [
+          {
+            "code" : "dateTime"
+          }
+        ]
+      },
+      {
+        "id" : "Observation.code",
+        "min" : 1,
+        "path" : "Observation.code",
+        "patternCodeableConcept" : {
+          "coding" : [
+            {
+              "code" : "DcuIExT7O8",
+              "system" : "https://bbl.health",
+              "display" : "Blood pressure"
+            }
+          ]
+        }
+      },
+      {
+        "id" : "Observation.component",
+        "min" : 1,
+        "max" : "2",
+        "path" : "Observation.component",
+        "slicing" : {
+          "rules" : "open",
+          "discriminator" : [
+            {
+              "type" : "pattern",
+              "path" : "code"
+            }
+          ]
+        }
+      },
+      {
+        "id" : "Observation.component.dataAbsentReason",
+        "max" : "0",
+        "path" : "Observation.component.dataAbsentReason"
+      },
+      {
+        "id" : "Observation.component.code",
+        "min" : 1,
+        "path" : "Observation.component.code"
+      },
+      {
+        "id" : "Observation.component.value[x]:valueQuantity.code",
+        "min" : 1,
+        "path" : "Observation.component.valueQuantity.code",
+        "fixedCode" : "mm[Hg]"
+      },
+      {
+        "id" : "Observation.component.value[x]:valueQuantity.unit",
+        "min" : 1,
+        "path" : "Observation.component.valueQuantity.unit",
+        "fixedString" : "mmHg"
+      },
+      {
+        "id" : "Observation.component.value[x]:valueQuantity.system",
+        "min" : 1,
+        "path" : "Observation.component.valueQuantity.system",
+        "fixedUri" : "http://unitsofmeasure.org"
+      },
+      {
+        "id" : "Observation.component.modifierExtension",
+        "max" : "0",
+        "path" : "Observation.component.modifierExtension"
+      },
+      {
+        "id" : "Observation.component.interpretation",
+        "max" : "0",
+        "path" : "Observation.component.interpretation"
+      },
+      {
+        "id" : "Observation.component.value[x]",
+        "path" : "Observation.component.value[x]",
+        "type" : [
+          {
+            "code" : "Quantity"
+          }
+        ]
+      },
+      {
+        "id" : "Observation.component.value[x]:valueQuantity",
+        "min" : 1,
+        "path" : "Observation.component.valueQuantity",
+        "type" : [
+          {
+            "code" : "Quantity"
+          }
+        ]
+      },
+      {
+        "id" : "Observation.component.value[x]:valueQuantity.value",
+        "min" : 1,
+        "path" : "Observation.component.valueQuantity.value"
+      },
+      {
+        "id" : "Observation.component.referenceRange",
+        "max" : "0",
+        "path" : "Observation.component.referenceRange"
+      },
+      {
+        "id" : "Observation.component.extension",
+        "max" : "0",
+        "path" : "Observation.component.extension"
+      },
+      {
+        "id" : "Observation.component:SystolicArterialPressure",
+        "min" : 1,
+        "max" : "1",
+        "path" : "Observation.component",
+        "sliceName" : "SystolicArterialPressure"
+      },
+      {
+        "id" : "Observation.component:SystolicArterialPressure.code",
+        "min" : 1,
+        "path" : "Observation.component.code",
+        "patternCodeableConcept" : {
+          "coding" : [
+            {
+              "code" : "yP1EGhN9d8",
+              "system" : "https://bbl.health",
+              "display" : "Systolic arterial pressure"
+            }
+          ]
+        }
+      },
+      {
+        "id" : "Observation.component:SystolicArterialPressure.value[x]",
+        "path" : "Observation.component.value[x]",
+        "type" : [
+          {
+            "code" : "Quantity"
+          }
+        ]
+      },
+      {
+        "id" : "Observation.component:SystolicArterialPressure.value[x]:valueQuantity",
+        "min" : 1,
+        "path" : "Observation.component.valueQuantity",
+        "type" : [
+          {
+            "code" : "Quantity"
+          }
+        ]
+      },
+      {
+        "id" : "Observation.component:SystolicArterialPressure.value[x]:valueQuantity.code",
+        "min" : 1,
+        "path" : "Observation.component.valueQuantity.code",
+        "fixedCode" : "mm[Hg]"
+      },
+      {
+        "id" : "Observation.component:SystolicArterialPressure.value[x]:valueQuantity.system",
+        "min" : 1,
+        "path" : "Observation.component.valueQuantity.system",
+        "fixedUri" : "http://unitsofmeasure.org"
+      },
+      {
+        "id" : "Observation.component:SystolicArterialPressure.value[x]:valueQuantity.unit",
+        "min" : 1,
+        "path" : "Observation.component.valueQuantity.unit",
+        "fixedString" : "mmHg"
+      },
+      {
+        "id" : "Observation.component:SystolicArterialPressure.value[x]:valueQuantity.value",
+        "min" : 1,
+        "path" : "Observation.component.valueQuantity.value"
+      },
+      {
+        "id" : "Observation.component:SystolicArterialPressure.referenceRange",
+        "max" : "0",
+        "path" : "Observation.component.referenceRange"
+      },
+      {
+        "id" : "Observation.component:SystolicArterialPressure.modifierExtension",
+        "max" : "0",
+        "path" : "Observation.component.modifierExtension"
+      },
+      {
+        "id" : "Observation.component:SystolicArterialPressure.interpretation",
+        "max" : "0",
+        "path" : "Observation.component.interpretation"
+      },
+      {
+        "id" : "Observation.component:SystolicArterialPressure.extension",
+        "max" : "0",
+        "path" : "Observation.component.extension"
+      },
+      {
+        "id" : "Observation.component:SystolicArterialPressure.dataAbsentReason",
+        "max" : "0",
+        "path" : "Observation.component.dataAbsentReason"
+      },
+      {
+        "id" : "Observation.component:DiastolicBloodPressure",
+        "min" : 1,
+        "max" : "1",
+        "path" : "Observation.component",
+        "sliceName" : "DiastolicBloodPressure"
+      },
+      {
+        "id" : "Observation.component:DiastolicBloodPressure.code",
+        "min" : 1,
+        "path" : "Observation.component.code",
+        "patternCodeableConcept" : {
+          "coding" : [
+            {
+              "code" : "kETZtQ0TFK",
+              "system" : "https://bbl.health",
+              "display" : "Diastolic blood pressure"
+            }
+          ]
+        }
+      },
+      {
+        "id" : "Observation.component:DiastolicBloodPressure.value[x]",
+        "path" : "Observation.component.value[x]",
+        "type" : [
+          {
+            "code" : "Quantity"
+          }
+        ]
+      },
+      {
+        "id" : "Observation.component:DiastolicBloodPressure.value[x]:valueQuantity",
+        "min" : 1,
+        "path" : "Observation.component.valueQuantity",
+        "type" : [
+          {
+            "code" : "Quantity"
+          }
+        ]
+      },
+      {
+        "id" : "Observation.component:DiastolicBloodPressure.value[x]:valueQuantity.code",
+        "min" : 1,
+        "path" : "Observation.component.valueQuantity.code",
+        "fixedCode" : "mm[Hg]"
+      },
+      {
+        "id" : "Observation.component:DiastolicBloodPressure.value[x]:valueQuantity.system",
+        "min" : 1,
+        "path" : "Observation.component.valueQuantity.system",
+        "fixedUri" : "http://unitsofmeasure.org"
+      },
+      {
+        "id" : "Observation.component:DiastolicBloodPressure.value[x]:valueQuantity.unit",
+        "min" : 1,
+        "path" : "Observation.component.valueQuantity.unit",
+        "fixedString" : "mmHg"
+      },
+      {
+        "id" : "Observation.component:DiastolicBloodPressure.value[x]:valueQuantity.value",
+        "min" : 1,
+        "path" : "Observation.component.valueQuantity.value"
+      },
+      {
+        "id" : "Observation.component:DiastolicBloodPressure.referenceRange",
+        "max" : "0",
+        "path" : "Observation.component.referenceRange"
+      },
+      {
+        "id" : "Observation.component:DiastolicBloodPressure.modifierExtension",
+        "max" : "0",
+        "path" : "Observation.component.modifierExtension"
+      },
+      {
+        "id" : "Observation.component:DiastolicBloodPressure.interpretation",
+        "max" : "0",
+        "path" : "Observation.component.interpretation"
+      },
+      {
+        "id" : "Observation.component:DiastolicBloodPressure.extension",
+        "max" : "0",
+        "path" : "Observation.component.extension"
+      },
+      {
+        "id" : "Observation.component:DiastolicBloodPressure.dataAbsentReason",
+        "max" : "0",
+        "path" : "Observation.component.dataAbsentReason"
+      },
+      {
+        "id": "Observation.contained",
+        "max": "0",
+        "path": "Observation.contained"
+      },
+      {
+        "id" : "Observation.value[x]",
+        "max" : "0",
+        "path" : "Observation.value[x]"
+      },
+      {
+        "id" : "Observation.text",
+        "max" : "0",
+        "path" : "Observation.text"
+      },
+      {
+        "id" : "Observation.specimen",
+        "max" : "0",
+        "path" : "Observation.specimen"
+      },
+      {
+        "id" : "Observation.referenceRange",
+        "max" : "0",
+        "path" : "Observation.referenceRange"
+      },
+      {
+        "id" : "Observation.performer",
+        "max" : "0",
+        "path" : "Observation.performer"
+      },
+      {
+        "id" : "Observation.partOf",
+        "max" : "0",
+        "path" : "Observation.partOf"
+      },
+      {
+        "id" : "Observation.note",
+        "max" : "0",
+        "path" : "Observation.note"
+      },
+      {
+        "id" : "Observation.modifierExtension",
+        "max" : "0",
+        "path" : "Observation.modifierExtension"
+      },
+      {
+        "id" : "Observation.method",
+        "max" : "0",
+        "path" : "Observation.method"
+      },
+      {
+        "id" : "Observation.language",
+        "max" : "0",
+        "path" : "Observation.language"
+      },
+      {
+        "id" : "Observation.issued",
+        "max" : "0",
+        "path" : "Observation.issued"
+      },
+      {
+        "id" : "Observation.interpretation",
+        "max" : "0",
+        "path" : "Observation.interpretation"
+      },
+      {
+        "id" : "Observation.implicitRules",
+        "max" : "0",
+        "path" : "Observation.implicitRules"
+      },
+      {
+        "id" : "Observation.hasMember",
+        "max" : "0",
+        "path" : "Observation.hasMember"
+      },
+      {
+        "id" : "Observation.focus",
+        "max" : "0",
+        "path" : "Observation.focus"
+      },
+      {
+        "id" : "Observation.extension",
+        "max" : "0",
+        "path" : "Observation.extension"
+      },
+      {
+        "id" : "Observation.device",
+        "max" : "0",
+        "path" : "Observation.device"
+      },
+      {
+        "id" : "Observation.derivedFrom",
+        "max" : "0",
+        "path" : "Observation.derivedFrom"
+      },
+      {
+        "id" : "Observation.dataAbsentReason",
+        "max" : "0",
+        "path" : "Observation.dataAbsentReason"
+      },
+      {
+        "id" : "Observation.category",
+        "max" : "0",
+        "path" : "Observation.category"
+      },
+      {
+        "id" : "Observation.bodySite",
+        "max" : "0",
+        "path" : "Observation.bodySite"
+      },
+      {
+        "id" : "Observation.basedOn",
+        "max" : "0",
+        "path" : "Observation.basedOn"
+      }
+    ]
+  }
+} }]

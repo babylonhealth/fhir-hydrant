@@ -1,0 +1,22 @@
+{
+  "id" : "PatientIdentifier",
+  "name" : "Patient Identifier",
+  "description" : "Patient's identifier in other external or internal system",
+  "domain" : "patient",
+  "params" : {
+    "system" : {
+      "type" : "PatientIdentifierSystem",
+      "description" : "The namespace for the identifier value",
+      "optional" : false
+    },
+    "value" : {
+      "type" : "string",
+      "description" : "Identifier value",
+      "optional" : true
+    }
+  },
+  "hydrated" : {
+    "system" : "{{{system}}}",
+    "value" : "{{{value}}}"
+  }
+}

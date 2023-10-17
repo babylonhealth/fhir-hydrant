@@ -1,0 +1,136 @@
+{
+  "id": "LabsServiceRequest",
+  "name": "LabsServiceRequest",
+  "domain": "labs",
+  "description": "A request for diagnostic reports for a patient. Each ServiceRequest contains information about what is being requested, by whom, for whom and why the request has been put in. There may be multiple ServiceRequest's in each message.",
+  "params": {
+    "id": {
+      "type": "uuid",
+      "description": "Unique identifier for the resource."
+    },
+    "status": {
+      "type": "LabsServiceRequestStatus",
+      "description": "status"
+    },
+    "subject": {
+      "type": "uuid",
+      "description": "Patient who is the subject of the request.",
+      "tags": {
+        "patient_id": true
+      }
+    },
+    "priority": {
+      "type": "LabsServiceRequestPriority",
+      "description": "Request priority.",
+      "optional": true
+    },
+    "code": {
+      "type": "code",
+      "description": "A babylon IRI. The IRI must be in the BblLabsServiceRequestCode value set (procedures or observable entities).",
+      "tags": {
+        "phi": true
+      },
+      "optional": true
+    },
+    "encounter": {
+      "type": "uuid",
+      "description": "ID of the consultation associated with the request."
+    },
+    "authoredOn": {
+      "type": "dateTime",
+      "description": "Date request signed."
+    },
+    "requester": {
+      "type": "uuid",
+      "description": "The logged-in clinician making the request (usually clinician).",
+      "optional": true
+    },
+    "note": {
+      "type": "LabsServiceRequestNote",
+      "description": "For all additional information related to the request.",
+      "repeated": true
+    },
+    "supportingInfo": {
+      "type": "LabsServiceRequestSupportingInfo",
+      "description": "URL pointing to pdf of supporting information for request.",
+      "repeated": true
+    },
+    "category": {
+      "type": "LabsServiceRequestCategory",
+      "description": "Type of procedure requested.",
+      "repeated": true
+    },
+    "occurrenceDateTime": {
+      "type": "dateTime",
+      "description": "When service should occur",
+      "optional": true
+    },
+    "codeText": {
+      "type": "string",
+      "description": "The text that was selected to choose the type of service request",
+      "tags": {
+        "phi": true
+      },
+      "optional": true
+    },
+    "additionalCodings": {
+      "type": "LabsServiceRequestAdditionalCode",
+      "description": "Non-bbl codes (e.g. loinc)",
+      "repeated": true
+    },
+    "facilityId": {
+      "type": "string",
+      "description": "Athena facility id",
+      "optional": true
+    }
+  },
+  "hydrated": {
+    "resourceType": "ServiceRequest",
+    "meta": {
+      "profile": [
+        "https://fhir.bbl.health/StructureDefinition/BblLabsServiceRequest"
+      ]
+    },
+    "status": "{{{status}}}",
+    "intent": "order",
+    "subject": {
+      "reference": "https://patient.bbl.health/Patient/{{{subject}}}"
+    },
+    "id": "{{{id}}}",
+    "category": [
+      "{{{category}}}"
+    ],
+    "priority": "{{{priority}}}",
+    "code": {
+      "text": "{{{codeText}}}",
+      "coding": [
+        {
+          "system": "https://bbl.health",
+          "code": "{{{code}}}"
+        },
+        "{{{additionalCodings}}}"
+      ]
+    },
+    "encounter": {
+      "reference": "https://consultation.bbl.health/Encounter/{{{encounter}}}"
+    },
+    "occurrenceDateTime": "{{{occurrenceDateTime}}}",
+    "authoredOn": "{{{authoredOn}}}",
+    "requester": {
+      "reference": "https://clinician.bbl.health/Practitioner/{{{requester}}}"
+    },
+    "supportingInfo": [
+      "{{{supportingInfo}}}"
+    ],
+    "note": [
+      "{{{note}}}"
+    ],
+    "extension": [
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblAthenaFacilityId",
+        "valueString": "{{{facilityId}}}"
+      }
+    ]
+  },
+  "modelUrl": "https://bbl.health/modelling/a539649e-d291-4460-bc13-427e0aa5ada8/submit"
+}

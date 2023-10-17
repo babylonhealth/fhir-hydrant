@@ -1,0 +1,19 @@
+{
+  "id" : "Email",
+  "name" : "Email",
+  "description" : "Email address",
+  "domain" : "patient",
+  "params" : {
+    "email" : {
+      "type" : "string",
+      "description" : "The email address",
+      "tags" : {
+        "pii" : true
+      }
+    }
+  },
+  "hydrated" : {
+    "system" : "email",
+    "value" : "{{{email}}}"
+  }
+}

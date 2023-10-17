@@ -1,0 +1,55 @@
+{
+  "id" : "FlatQuestionnaireResponseItem",
+  "name" : "flat Questionnaire Response Item",
+  "domain" : "testing",
+  "description" : "FHIR item - answer to question",
+  "params" : {
+    "linkId" : {
+      "type" : "string",
+      "description" : "FHIR linkId"
+    },
+    "answer" : {
+      "type" : "FlatQuestionnaireResponseAnswer",
+      "description" : "FHIR answer",
+      "repeated" : true,
+      "optional" : true
+    },
+    "author" : {
+      "type" : "FlatQuestionnaireResponseAuthor",
+      "description" : "FHIR author"
+    },
+    "source" : {
+      "type" : "FlatQuestionnaireResponseSource",
+      "description" : "FHIR source"
+    },
+    "authored" : {
+      "type" : "dateTime",
+      "description" : "FHIR authored"
+    },
+    "amended" : {
+      "type" : "FlatQuestionnaireResponseExtensionAmmended",
+      "description" : "Whether or not this was the original answer or if it has been subsequently amended."
+    }
+  },
+  "hydrated" : {
+    "linkId" : "{{{linkId}}}",
+    "answer" : [
+      "{{{answer}}}"
+    ],
+    "extension" : [
+      {
+        "url" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionAuthor",
+        "valueReference" : "{{{author}}}"
+      },
+      {
+        "url" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionAuthored",
+        "valueDateTime" : "{{{authored}}}"
+      },
+      {
+        "url" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionSource",
+        "valueReference" : "{{{source}}}"
+      },
+      "{{{amended}}}"
+    ]
+  }
+}

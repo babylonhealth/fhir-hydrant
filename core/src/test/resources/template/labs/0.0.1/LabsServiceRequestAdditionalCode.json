@@ -1,0 +1,28 @@
+{
+    "id": "LabsServiceRequestAdditionalCode",
+    "name": "LabsServiceRequestAdditionalCode",
+    "domain": "labs",
+    "description": "A code for a labs service request.",
+    "params": {
+        "code": {
+            "type": "code",
+            "description": "Code in the specified system.",
+            "tags": { "phi": true }
+        },
+        "system" : {
+            "type" : "LabsServiceRequestAdditionalCodeSystem",
+            "description" : "Coding system used for ServiceRequest code - can be LOINC or some internal value when the system is unknown"
+        },
+        "display" : {
+            "type" : "string",
+            "description" : "Code display value",
+            "optional": true,
+            "tags": { "phi": true }
+        }
+    },
+    "hydrated": {
+        "display" : "{{{display}}}",
+        "system" : "{{{system}}}",
+        "code" : "{{{code}}}"
+    }
+}

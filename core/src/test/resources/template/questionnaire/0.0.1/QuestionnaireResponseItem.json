@@ -1,0 +1,71 @@
+{
+  "id" : "QuestionnaireResponseItem",
+  "name" : "Questionnaire Response Item",
+  "domain" : "HealthAssessment",
+  "description" : "FHIR item - answer to question",
+  "params" : {
+    "linkId" : {
+      "type" : "string",
+      "description" : "FHIR linkId"
+    },
+    "answer" : {
+      "type" : "QuestionnaireResponseAnswer",
+      "description" : "FHIR answer",
+      "repeated" : true,
+      "optional" : true
+    },
+    "author" : {
+      "type" : "QuestionnaireResponseAuthor",
+      "description" : "FHIR author"
+    },
+    "source" : {
+      "type" : "QuestionnaireResponseSource",
+      "description" : "FHIR source"
+    },
+    "authored" : {
+      "type" : "dateTime",
+      "description" : "FHIR authored",
+      "tags" : {
+        "other_date" : true
+      }
+    },
+    "amended" : {
+      "type" : "boolean",
+      "description" : "Whether or not this was the original answer or if it has been subsequently amended."
+    }
+  },
+  "hydrated" : {
+    "linkId" : "{{{linkId}}}",
+    "answer" : [
+      "{{{answer}}}"
+    ],
+    "extension" : [
+      {
+        "url" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionAuthor",
+        "valueReference" : "{{{author}}}"
+      },
+      {
+        "url" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionAuthored",
+        "valueDateTime" : "{{{authored}}}"
+      },
+      {
+        "url" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionSource",
+        "valueReference" : "{{{source}}}"
+      },
+      {
+        "url" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionAmmended",
+        "valueBoolean" : "{{{amended}}}",
+        "extension": [
+          {
+            "url": "extensionsCanContainExtensions",
+            "valueString": "and they don't need to be 'urls'!"
+          },
+          {
+            "url": "iDontKnowWhy",
+            "valueString": "sorry"
+          }
+        ]
+      }
+    ]
+  }
+}

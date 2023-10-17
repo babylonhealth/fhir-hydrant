@@ -1,0 +1,33 @@
+{
+  "id" : "PropagateOptional",
+  "name" : "Propagate Optional",
+  "domain" : "testing",
+  "description" : "Send an optional parameter to children without having to specify on each one",
+  "params" : {
+    "propagate" : {
+      "type" : "PropagateHereOptional",
+      "description" : "thing that timestamp gets propagated to",
+      "repeated" : true
+    },
+    "timestamp" : {
+      "type" : "dateTime",
+      "description" : "time stamp for some reason",
+      "optional" : true
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "DiagnosticReport",
+    "id" : "1234567890",
+    "status" : "final",
+    "code" : {
+      "coding" : [
+        {
+          "system" : "https://bbl.health",
+          "code" : "ykWNn2DwyB"
+        }
+      ]
+    },
+    "effectiveDateTime" : "{{{timestamp}}}",
+    "result" : ["{{{propagate}}}"]
+  }
+}

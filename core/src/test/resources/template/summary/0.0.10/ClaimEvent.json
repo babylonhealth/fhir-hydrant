@@ -1,0 +1,68 @@
+{
+  "id": "ClaimEvent",
+  "name": "ClaimEvent",
+  "description": "ClaimEvent",
+  "domain": "summary",
+  "params": {
+    "billableStart": {
+      "type": "date",
+      "description": "The start of the period for which charges are being submitted",
+      "tags": {
+        "other_date": true
+      }
+    },
+    "billableEnd": {
+      "type": "date",
+      "description": "The end of the period for which charges are being submitted",
+      "tags": {
+        "other_date": true
+      }
+    },
+    "cost": {
+      "type": "ClaimPaid",
+      "optional": true,
+      "description": "Total cost for the claim"
+    },
+    "status": {
+      "type": "ClaimStatus",
+      "description": "The status of the claim: active, cancelled, draft or entered-in-error"
+    },
+    "id": {
+      "type": "uuid",
+      "description": "The id of the specific claim. Marked as optional for backwards compatibility, but should always be present",
+      "optional": true
+    }
+  },
+  "hydrated": {
+    "id": "{{{id}}}",
+    "extension": [
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionClaimEventCost",
+        "valueMoney": "{{{cost}}}"
+      },
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionClaimEventStatus",
+        "valueCode": "{{{status}}}"
+      }
+    ],
+    "code": [
+      {
+        "coding": [
+          {
+            "system": "https://summary.bbl.health/EventType",
+            "code": "claim"
+          }
+        ]
+      }
+    ],
+    "period": {
+      "start": "{{{billableStart}}}",
+      "end": "{{{billableEnd}}}"
+    },
+    "detail": [
+      {
+        "display": "High level summary of a claim"
+      }
+    ]
+  }
+}

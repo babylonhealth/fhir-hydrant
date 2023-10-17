@@ -1,0 +1,69 @@
+{
+    "id": "LabsServiceRequestCategory",
+    "name": "Labs Service Request Category",
+    "domain": "labs",
+    "description": "Type of procedure requested.",
+    "values": [
+        {
+            "value": {
+                "coding": [
+                    {
+                        "display": "Laboratory procedure (procedure)",
+                        "code": "XjM40hb6i8",
+                        "system": "https://bbl.health"
+                    }
+                ]
+            },
+            "name": "LABS_SERVICE_REQUEST_CATEGORY_LABORATORY_PROCEDURE"
+        },
+        {
+            "value": {
+                "coding": [
+                    {
+                        "display": "Surgical procedure (procedure)",
+                        "code": "HrWfO4fGnx",
+                        "system": "https://bbl.health"
+                    }
+                ]
+            },
+            "name": "LABS_SERVICE_REQUEST_CATEGORY_SURGICAL_PROCEDURE"
+        },
+        {
+            "value": {
+                "coding": [
+                    {
+                        "display": "Education (procedure)",
+                        "code": "qHlTlYm7vU",
+                        "system": "https://bbl.health"
+                    }
+                ]
+            },
+            "name": "LABS_SERVICE_REQUEST_CATEGORY_EDUCATION"
+        },
+        {
+            "value": {
+                "coding": [
+                    {
+                        "display": "Counselling (procedure)",
+                        "code": "ktV8F41aGr",
+                        "system": "https://bbl.health"
+                    }
+                ]
+            },
+            "name": "LABS_SERVICE_REQUEST_CATEGORY_COUNSELLING"
+        },
+        {
+            "value": {
+                "coding": [
+                    {
+                        "display": "Imaging (procedure)",
+                        "code": "07I2u4dQhX",
+                        "system": "https://bbl.health"
+                    }
+                ]
+            },
+            "name": "LABS_SERVICE_REQUEST_CATEGORY_IMAGING"
+        }
+    ],
+    "allowAbsent": false
+}

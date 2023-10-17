@@ -1,0 +1,161 @@
+{
+  "InlineResourceWithNamespace" : [
+  ],
+  "PatientMetricsBodyMeasureWeightInKG" : [
+  ],
+  "QuestionnaireResponseRelatedPerson" : [
+  ],
+  "Goal" : [
+  ],
+  "PatientInt64" : [
+  ],
+  "PropagateHereList" : [
+  ],
+  "LabsServiceRequest" : [
+    "supportingInfo",
+    "additionalCodings"
+  ],
+  "TriageCondition" : [
+  ],
+  "QuestionnaireResponseTest" : [
+  ],
+  "BodyWeight" : [
+  ],
+  "PatientMetricsBodyMeasureBloodGlucose" : [
+  ],
+  "RemapMulti" : [
+  ],
+  "ReferralServiceRequest" : [
+    "reasonCode"
+  ],
+  "PatientSummary" : [
+    "claims",
+    "admissions",
+    "conditions",
+    "cohorts",
+    "activeCohorts",
+    "inactiveCohorts",
+    "healthIQ",
+    "medication",
+    "patient.name",
+    "patient.address",
+    "patient.identifier",
+    "medication.dosage.doseAndRate",
+    "medication.dosage.route"
+  ],
+  "CohortDefinition" : [
+  ],
+  "Questionnaire" : [
+    "sectionItem",
+    "sectionItem.item"
+  ],
+  "Claim" : [
+    "related"
+  ],
+  "Goal2" : [
+  ],
+  "PropagateHereOptional" : [
+  ],
+  "CarePlan" : [
+    "goals",
+    "activities"
+  ],
+  "LabsServiceRequestSupportingInfo" : [
+  ],
+  "TriageQuestionnaire" : [
+    "item"
+  ],
+  "LegacyEncounter" : [
+  ],
+  "ReportedCondition" : [
+    "altCode"
+  ],
+  "AcuityScore" : [
+  ],
+  "Remap" : [
+  ],
+  "TriageEncounter" : [
+    "participant"
+  ],
+  "VitalSignsBloodPressure2" : [
+  ],
+  "PartnerOrganization" : [
+    "identifier"
+  ],
+  "MedicationStatement" : [
+    "medication",
+    "dosage.doseAndRate",
+    "dosage.route"
+  ],
+  "PatientProfile" : [
+    "name",
+    "address",
+    "identifier"
+  ],
+  "OptionalCode" : [
+    "altCode"
+  ],
+  "VitalSignsBloodPressure" : [
+  ],
+  "TriageCommunication" : [
+  ],
+  "CarePlan2" : [
+    "goals",
+    "activities"
+  ],
+  "Propagate" : [
+  ],
+  "Container" : [
+    "children"
+  ],
+  "CodingJson" : [
+  ],
+  "FlatQuestionnaireResponse" : [
+    "item",
+    "questionnaire.sectionItem",
+    "questionnaire.sectionItem.item"
+  ],
+  "PatientMetricsBodyMeasureBloodOxygenSaturation" : [
+  ],
+  "RiskPrediction" : [
+  ],
+  "QuestionnaireResponse" : [
+    "item",
+    "questionnaire.sectionItem",
+    "questionnaire.sectionItem.item"
+  ],
+  "FlatQuestionnaire" : [
+    "sectionItem",
+    "sectionItem.item"
+  ],
+  "FlatQuestionnaireResponseRelatedPerson" : [
+  ],
+  "PropagateOptional" : [
+    "propagate"
+  ],
+  "PatientMetricsBodyMeasure" : [
+    "referenceRanges"
+  ],
+  "RequiredEnum" : [
+  ],
+  "TriageQuestionnaireResponse" : [
+    "items",
+    "questionnaire.item"
+  ],
+  "ObservationEnumWithClashingDefault" : [
+  ],
+  "NestedConcept" : [
+    "coding"
+  ],
+  "ResourceWithNamespace" : [
+    "observations"
+  ],
+  "TemplateWithReferenceParent" : [
+  ],
+  "CodingJsonECL" : [
+  ],
+  "PatientMetricsBodyMeasureHeightInM" : [
+  ],
+  "OptionalEnum" : [
+  ]
+}

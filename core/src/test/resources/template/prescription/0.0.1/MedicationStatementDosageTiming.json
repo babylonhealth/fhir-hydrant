@@ -1,0 +1,29 @@
+{
+  "id": "MedicationStatementDosageTiming",
+  "name": "Medication Statement Dosage Timing",
+  "domain": "prescription",
+  "description": "",
+  "notes": {},
+  "params": {
+    "frequency": {
+      "type": "positiveInt",
+      "description": "The frequency the dosage should be taken by the subject"
+    },
+    "period": {
+      "type": "decimal",
+      "description": "The period the dosage should be taken by the subject"
+    },
+    "periodUnit": {
+      "type": "MedicationStatementPeriodUnit",
+      "description": "The period the dosage should be taken by the subject. Should actually always be present, despite being optional, however some bad data reached prod...",
+      "optional": true
+    }
+  },
+  "hydrated": {
+    "repeat": {
+      "frequency": "{{{frequency}}}",
+      "period": "{{{period}}}",
+      "periodUnit": "{{{periodUnit}}}"
+    }
+  }
+}

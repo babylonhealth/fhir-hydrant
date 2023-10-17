@@ -1,0 +1,34 @@
+{
+  "id" : "OptionalCode",
+  "name" : "Optional Code",
+  "version" : "0.0.1",
+  "domain" : "coding",
+  "description" : "",
+  "params" : {
+    "subject" : {
+      "type" : "uuid",
+      "description" : "Babylon patient UUID for the patient the Condition is about",
+      "tags": {
+        "patient_id": true
+      }
+    },
+    "code" : {
+      "type" : "code",
+      "description" : "A babylon IRI that represents a medical condition.",
+      "optional" : true
+    },
+    "altCode" : {
+      "type" : "Coding",
+      "description" : "",
+      "repeated" : true,
+      "optional" : true
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "Condition",
+    "subject" : {
+      "reference" : "https://patient.bbl.health/Patient/{{{subject}}}"
+    },
+    "code" : { "coding": [ {"system":"https://bbl.health", "code":"{{{code}}}"}, "{{{altCode}}}"] }
+  }
+}

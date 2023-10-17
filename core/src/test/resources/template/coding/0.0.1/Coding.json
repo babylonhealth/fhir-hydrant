@@ -1,0 +1,21 @@
+{
+  "id" : "Coding",
+  "name" : "Coding",
+  "domain" : "testing",
+  "description" : "one of three codes",
+  "params" : {
+    "system" : {
+      "type" : "string",
+      "description" : "coding system"
+    },
+    "code" : {
+      "type" : "CodingCodeValues",
+      "description" : "code value"
+    }
+  },
+  "hydrated" : {
+    "system" : "{{{system}}}",
+    "code" : "{{{code}}}",
+    "display" : "lol"
+  }
+}

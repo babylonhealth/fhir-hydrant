@@ -1,0 +1,19 @@
+{
+  "id" : "FlatQuestionnaireResponseAuthor",
+  "name" : "flat Questionnaire Response Author",
+  "domain" : "testing",
+  "description" : "Entity that submits the questionnaire or question answer",
+  "params" : {
+    "id" : {
+      "type" : "string",
+      "description" : "UUID for clinician, string for machine practitioner"
+    },
+    "role" : {
+      "type" : "FlatQuestionnaireResponseAuthorRole",
+      "description" : "FHIR reference resourceType - Role of the author. "
+    }
+  },
+  "hydrated" : {
+    "reference" : "{{{role}}}/{{{id}}}"
+  }
+}

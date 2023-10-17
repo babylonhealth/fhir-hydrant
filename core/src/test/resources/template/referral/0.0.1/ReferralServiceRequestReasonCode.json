@@ -1,0 +1,23 @@
+{
+  "id": "ReferralServiceRequestReasonCode",
+  "name": "Referral Service Request Reason Code",
+  "domain": "referral",
+  "description": "The reason for the referral",
+  "params": {
+    "icd": {
+      "type": "ReferralServiceRequestReasonIcdCode",
+      "description": "ICD-10 code for the reason for the referral"
+    },
+    "bbl": {
+      "type": "ReferralServiceRequestReasonBblCode",
+      "description": "Babylon code for the reason for the referral",
+      "optional": true
+    }
+  },
+  "hydrated": {
+    "coding": [
+      "{{{icd}}}",
+      "{{{bbl}}}"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+    "id": "MedicationStatementMedication",
+    "name": "Medication Statement Medication",
+    "domain": "prescription",
+    "description": "",
+    "notes": {},
+    "params" : {
+        "system" : {
+            "type" : "string",
+            "description" : "The terminology system OID defining the medication"
+        },
+        "code" : {
+            "type" : "code",
+            "description" : "A valid value within the terminology system representing the medication"
+        },
+        "display" : {
+            "type" : "string",
+            "description" : "A textual representation of the code",
+            "optional": true
+        }
+    },
+    "hydrated" : {
+        "system": "{{{system}}}",
+        "code": "{{{code}}}",
+        "display": "{{{display}}}"
+    }
+}

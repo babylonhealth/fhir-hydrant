@@ -1,0 +1,44 @@
+{
+  "id" : "Address",
+  "name" : "Address",
+  "description" : "Address",
+  "domain" : "patient",
+  "params" : {
+    "line" : {
+      "type" : "string",
+      "description" : "One of the lines of the address",
+      "repeated" : true,
+      "tags" : {
+        "pii" : true,
+        "other_address" : true
+      }
+    },
+    "postalCode" : {
+      "type" : "string",
+      "description" : "The postal code of the area",
+      "optional" : true,
+      "tags" : {
+        "pii" : true,
+        "post_code" : true
+      }
+    },
+    "city" : {
+      "type" : "string",
+      "description" : "City",
+      "optional" : true,
+      "tags" : {
+        "pii" : true,
+        "other_address" : true
+      }
+    }
+  },
+  "hydrated" : {
+    "use" : "home",
+    "type" : "both",
+    "line" : [
+      "{{{line}}}"
+    ],
+    "postalCode" : "{{{postalCode}}}",
+    "city"       : "{{{city}}}"
+  }
+}

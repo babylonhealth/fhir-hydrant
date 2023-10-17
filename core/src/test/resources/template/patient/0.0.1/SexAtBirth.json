@@ -1,0 +1,28 @@
+{
+  "id" : "SexAtBirth",
+  "name" : "Sex At Birth",
+  "description" : "Sex assigned at birth",
+  "version" : "0.0.1",
+  "domain" : "patient",
+  "packageName" : "patient",
+  "system" : "https://bbl.health",
+  "allowAbsent" : true,
+  "values" : [
+    {
+      "name" : "PATIENT_SEX_AT_BIRTH_MALE",
+      "value" : {
+        "code" : "Wv8a787W8u",
+        "system" : "https://bbl.health",
+        "display" : "Male"
+      }
+    },
+    {
+      "name" : "PATIENT_SEX_AT_BIRTH_FEMALE",
+      "value" : {
+        "code" : "JVmqxlC1dc",
+        "system" : "https://bbl.health",
+        "display" : "Female"
+      }
+    }
+  ]
+}

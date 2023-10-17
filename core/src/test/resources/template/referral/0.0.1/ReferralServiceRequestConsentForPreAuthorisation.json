@@ -1,0 +1,16 @@
+{
+    "id": "ReferralServiceRequestConsentForPreAuthorisation",
+    "name": "Referral Service Request ConsentForPreAuthorisation",
+    "domain": "referral",
+    "description": "Patient Consent for Pre-Authorisation",
+    "params": {
+        "valueBoolean": {
+            "type": "boolean",
+            "description": "Does the patient consent"
+        }
+    },
+    "hydrated": {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblReferralServiceRequestConsentForPreAuthorisation",
+        "valueBoolean": "{{{valueBoolean}}}"
+    }
+}

@@ -1,0 +1,27 @@
+{
+  "id" : "LegacyEncounter",
+  "name" : "Encounter legacy",
+  "domain" : "legacy",
+  "version" : "0.0.1",
+  "packageName" : "deprecated",
+  "description" : "Legacy Encounter",
+  "params" : {
+    "id" : {
+      "type" : "uuid",
+      "description" : "FHIR id"
+    },
+    "status" : {
+      "type" : "LegacyStatusEnum",
+      "description" : "FHIR id"
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "Encounter",
+    "id" : "{{{id}}}",
+    "status" : "{{{status}}}",
+    "class" : {
+      "system" : "https://bbl.health",
+      "code" : "some-value"
+    }
+  }
+}

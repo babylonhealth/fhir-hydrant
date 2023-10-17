@@ -1,0 +1,37 @@
+{
+  "id" : "TriageQuestionnaireItem",
+  "name" : "Triage Questionnaire Item",
+  "domain" : "Triage",
+  "packageName" : "triage",
+  "description" : "Question asked",
+  "params" : {
+    "linkId" : {
+      "type" : "string",
+      "description" : "Unique id for item in questionnaire"
+    },
+    "text" : {
+      "type" : "string",
+      "description" : "Primary text for the question"
+    },
+    "type" : {
+      "type" : "TriageQuestionnaireItemType",
+      "description" : "Type of the question"
+    },
+    "answerOption" : {
+      "type" : "string",
+      "description" : "Permitted answers (multiple choice question)",
+      "optional" : true,
+      "repeated" : true
+    }
+  },
+  "hydrated" : {
+    "linkId" : "{{{linkId}}}",
+    "text" : "{{{text}}}",
+    "type" : "{{{type}}}",
+    "answerOption" : [
+      {
+        "valueString" : "{{{answerOption}}}"
+      }
+    ]
+  }
+}

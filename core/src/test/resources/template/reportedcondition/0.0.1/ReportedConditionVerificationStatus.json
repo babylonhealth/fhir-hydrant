@@ -1,0 +1,36 @@
+{
+  "id" : "ReportedConditionVerificationStatus",
+  "name" : "Reported Condition Verification Status",
+  "version" : "0.0.1",
+  "domain" : "reportedcondition",
+  "description" : "Specifies if the Condition being asserted is verified. This field should be understood by all consumers as it changes the meaning of the Condition",
+  "values" : [
+    {
+      "name" : "REPORTED_CONDITION_VERIFICATION_STATUS_CONFIRMED",
+      "value" : {
+        "display" : "Confirmed",
+        "code" : "confirmed",
+        "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status"
+      }
+    },
+    {
+      "name" : "REPORTED_CONDITION_VERIFICATION_STATUS_UNCONFIRMED",
+      "value" : {
+        "display" : "Unconfirmed",
+        "code" : "unconfirmed",
+        "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status"
+      }
+    },
+    {
+      "name" : "REPORTED_CONDITION_VERIFICATION_STATUS_ENTERED_IN_ERROR",
+      "value" : {
+        "display" : "Entered in Error",
+        "code" : "entered-in-error",
+        "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status"
+      }
+    }
+  ],
+  "allowAbsent" : false,
+  "absentName" : "REPORTED_CONDITION_VERIFICATION_STATUS_ABSENT",
+  "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status"
+}

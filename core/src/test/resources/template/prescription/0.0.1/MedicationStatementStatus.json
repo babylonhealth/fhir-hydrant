@@ -1,0 +1,35 @@
+{
+    "id": "MedicationStatementStatus",
+    "name": "Medication Statement Status",
+    "domain": "prescription",
+    "description": "The status of the medication",
+    "values": [
+        {
+            "value": "active"
+        },
+        {
+            "value": "completed"
+        },
+        {
+            "value": "entered-in-error"
+        },
+        {
+            "value": "intended"
+        },
+        {
+            "value": "stopped"
+        },
+        {
+            "value": "on-hold"
+        },
+        {
+            "value": "unknown"
+        },
+        {
+            "value": "not-taken"
+        }
+    ],
+    "allowAbsent": false,
+    "default": "unknown",
+    "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status"
+}

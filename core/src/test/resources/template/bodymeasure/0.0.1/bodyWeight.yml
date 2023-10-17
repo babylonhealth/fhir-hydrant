@@ -1,0 +1,49 @@
+id: BodyWeight
+name: Body weight
+domain: testing
+description: Weight innit
+packageName: bodymeasure
+params:
+  patientId:
+    type: uuid
+    description: patient id
+    optional: true
+    tags:
+      pii: true
+  clinicianId:
+    type: uuid
+    description: clinician id
+    optional: true
+    repeated: true
+  value:
+    type: integer
+    description: |-
+      body weight
+      in lbs
+    tags:
+      spii: true
+      other_numbers: true
+    optional: true
+  timestamp:
+    type: dateTime
+    description: time the measurement was taken
+    tags:
+      redact_as_date: label=.*fail.*
+hydrated:
+  id: 123-123-123
+  resourceType: Observation
+  status: final
+  code:
+    coding:
+      - system: https://bbl.health
+        code: ykWNn2DwyB
+  subject:
+    reference: https://administration.bbl.health/Patient/{{{patientId}}}
+  performer:
+    - reference: https://administration.bbl.health/Practitioner/{{{clinicianId}}}
+  effectiveDateTime: "{{{timestamp}}}"
+  valueQuantity:
+    value: "{{{value}}}"
+    unit: lbs
+    system: http://unitsofmeasure.org
+    code: "[lb_av]"

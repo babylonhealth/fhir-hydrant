@@ -1,0 +1,92 @@
+{
+  "id" : "PatientMetricsBodyMeasure",
+  "name" : "Body Measure",
+  "domain" : "testing",
+  "description" : "body measurement",
+  "childTypeFieldNumber": 1,
+  "params" : {
+    "value" : {
+      "type" : "integer",
+      "description" : "value"
+    },
+    "code" : {
+      "type" : "string",
+      "description" : "Babylon IRI identifying this measurement type",
+      "abstract" : true
+    },
+    "display" : {
+      "type" : "string",
+      "abstract" : true,
+      "description" : "Human readable string identifying this measurement type"
+    },
+    "valueCode" : {
+      "type" : "string",
+      "description" : "code",
+      "abstract" : true
+    },
+    "interpretation": {
+      "type": "code",
+      "abstract": true,
+      "optional" : true,
+      "description": "Interpretation of the given value."
+    },
+    "interpretationDisplay": {
+      "type": "string",
+      "abstract": true,
+      "optional" : true,
+      "description": "Text of interpretation of the given value."
+    },
+    "unit" : {
+      "type" : "string",
+      "description" : "unit",
+      "abstract" : true
+    },
+    "category" : {
+      "type" : "PatientMetricsBodyMeasureCategory",
+      "description": "category",
+      "abstract" : true,
+      "optional" : true,
+      "repeated": true
+    },
+    "referenceRanges": {
+      "type": "PatientMetricsReferenceRange",
+      "description": "referenceRanges",
+      "abstract": true,
+      "optional": true,
+      "repeated": true
+    }
+  },
+  "hydrated" : {
+    "id" : "1",
+    "resourceType" : "Observation",
+    "status" : "final",
+    "code" : {
+      "coding" : [
+        {
+          "system" : "https://bbl.health",
+          "code" : "{{{code}}}",
+          "display" : "{{{display}}}"
+        }
+      ]
+    },
+    "valueQuantity" : {
+      "value" : "{{{value}}}",
+      "unit" : "{{{unit}}}",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "{{{valueCode}}}"
+    },
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "code": "{{{interpretation}}}",
+            "display": "{{{interpretationDisplay}}}",
+            "system": "https://bbl.health"
+          }
+        ]
+      }
+    ],
+    "category": ["{{{category}}}"],
+    "referenceRange": ["{{{referenceRanges}}}"]
+  }
+}

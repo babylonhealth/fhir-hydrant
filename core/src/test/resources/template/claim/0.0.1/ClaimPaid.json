@@ -1,0 +1,20 @@
+{
+  "id": "ClaimPaid",
+  "name": "Claim Paid",
+  "domain": "claim",
+  "description": "Amount paid for a claim",
+  "params": {
+    "value": {
+      "type": "decimal",
+      "description": "Cost in the currency for the claim"
+    },
+    "currency": {
+      "type": "ClaimCurrency",
+      "description": "The currency the claim was paid in"
+    }
+  },
+  "hydrated": {
+    "value": "{{{value}}}",
+    "currency": "{{{currency}}}"
+  }
+}

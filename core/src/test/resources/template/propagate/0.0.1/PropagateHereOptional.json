@@ -1,0 +1,32 @@
+{
+  "id" : "PropagateHereOptional",
+  "name" : "PropagateHere Optional",
+  "domain" : "testing",
+  "description" : "shouldnt have to specify the patient id here because its the same as the parent",
+  "params" : {
+    "code" : {
+      "type" : "code",
+      "description" : "a random code"
+    },
+    "timestamp" : {
+      "type" : "dateTime",
+      "description" : "time stamp provided but optional",
+      "provided" : true,
+      "optional" : true
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "Observation",
+    "id" : "1234567890",
+    "status" : "final",
+    "code" : {
+      "coding" : [
+        {
+          "system" : "https://bbl.health",
+          "code" : "{{{code}}}"
+        }
+      ]
+    },
+    "effectiveDateTime" : "{{{timestamp}}}"
+  }
+}

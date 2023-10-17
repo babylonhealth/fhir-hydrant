@@ -1,0 +1,15 @@
+{
+  "id" : "FlatQuestionnaireResponseAnswer",
+  "name" : "flat Questionnaire Response Answer",
+  "domain" : "testing",
+  "description" : "FHIR questionnaire response item",
+  "params" : {
+    "valueString" : {
+      "type" : "string",
+      "description" : "Answer string"
+    }
+  },
+  "hydrated" : {
+    "valueString" : "{{{valueString}}}"
+  }
+}

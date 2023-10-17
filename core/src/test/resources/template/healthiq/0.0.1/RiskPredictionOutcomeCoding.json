@@ -1,0 +1,33 @@
+{
+    "id": "RiskPredictionOutcomeCoding",
+    "name": "Risk Prediction Outcome Coding",
+    "domain": "healthiq",
+    "description": "type of risk prediction",
+    "notes": {},
+    "values": [
+        {
+            "value": {
+                "display": "Hospital admission",
+                "code": "lEGnyN5Rm5",
+                "system": "https://bbl.health"
+            },
+            "name": "HEALTHIQ_RISK_PREDICTION_OUTCOME_CODING_HOSPITAL_ADMISSION"
+        },
+        {
+            "value": {
+                "display": "Hospital re-admission",
+                "code": "8gPSmuF71F",
+                "system": "https://bbl.health"
+            },
+            "name": "HEALTHIQ_RISK_PREDICTION_OUTCOME_CODING_HOSPITAL_READMISSION"
+        },
+        {
+            "value": {
+                "display": "Rising costs observable",
+                "code": "5mqIgxm4HY",
+                "system": "https://bbl.health"
+            },
+            "name": "HEALTHIQ_RISK_PREDICTION_OUTCOME_CODING_RISING_COSTS"
+        }
+    ]
+}

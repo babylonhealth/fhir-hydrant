@@ -1,0 +1,22 @@
+{
+  "id" : "ReportedConditionRecorder",
+  "name" : "Reported Condition Recorder",
+  "domain" : "reportedcondition",
+  "description" : "Who recorded the Condition. For use in FHIR Condition.recorder field",
+  "params" : {
+    "recorderType" : {
+      "type" : "ReportedConditionRecorderType",
+      "description" : "The domain and resource type of the recorder"
+    },
+    "recorder" : {
+      "type" : "string",
+      "description" : "The uuid of the clinician or the string of the machine practitioner name",
+      "tags" : {
+        "other_id" : true
+      }
+    }
+  },
+  "hydrated" : {
+    "reference" : "{{{recorderType}}}/{{{recorder}}}"
+  }
+}

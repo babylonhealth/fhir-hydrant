@@ -1,0 +1,32 @@
+{
+  "id" : "QuestionnaireResponseStatus",
+  "name" : "Health Assessment response status",
+  "domain" : "HealthAssessment",
+  "description" : "https://www.hl7.org/fhir/valueset-request-status.html",
+  "values" : [
+    {
+      "name" : "QUESTIONNAIRE_RESPONSE_STATUS_IN_PROGRESS",
+      "value" : "in-progress"
+    },
+    {
+      "name" : "QUESTIONNAIRE_RESPONSE_STATUS_COMPLETED",
+      "value" : "completed"
+    },
+    {
+      "name" : "QUESTIONNAIRE_RESPONSE_STATUS_AMENDED",
+      "value" : "amended"
+    },
+    {
+      "name" : "QUESTIONNAIRE_RESPONSE_STATUS_ENTERED_IN_ERROR",
+      "value" : "entered-in-error"
+    },
+    {
+      "name" : "QUESTIONNAIRE_RESPONSE_STATUS_STOPPED",
+      "value" : "stopped"
+    }
+  ],
+  "allowAbsent" : false,
+  "absentName" : "QUESTIONNAIRE_RESPONSE_STATUS_ABSENT",
+  "system" : "http://hl7.org/fhir/questionnaire-answers-status",
+  "default" : "in-progress"
+}

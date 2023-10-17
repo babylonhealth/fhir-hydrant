@@ -1,0 +1,56 @@
+{
+  "id": "AdmissionEvent",
+  "name": "AdmissionEvent",
+  "description": "AdmissionEvent",
+  "domain": "summary",
+  "params": {
+    "periodStart": {
+      "type": "dateTime",
+      "description": "The dateTime at which the patient was admitted",
+      "optional": true,
+      "tags": {
+        "other_date": true
+      }
+    },
+    "periodEnd": {
+      "type": "dateTime",
+      "description": "The dateTime at which the patient was discharged",
+      "optional": true,
+      "tags": {
+        "other_date": true
+      }
+    },
+    "encounterClass": {
+      "type": "AdmissionEncounterClass",
+      "description": "The type of encounter, e.g. emergency, inpatient, virtual"
+    },
+    "id": {
+      "type": "uuid",
+      "description": "The id of the specific admission. Marked as optional for backwards compatibility, but should always be present",
+      "optional": true
+    }
+  },
+  "hydrated": {
+    "id": "{{{id}}}",
+    "extension": [
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionAdmissionEventClass",
+        "valueCoding": "{{{encounterClass}}}"
+      }
+    ],
+    "code": [
+      {
+        "coding": [
+          {
+            "system": "https://summary.bbl.health/EventType",
+            "code": "admission"
+          }
+        ]
+      }
+    ],
+    "period": {
+      "start": "{{{periodStart}}}",
+      "end": "{{{periodEnd}}}"
+    }
+  }
+}

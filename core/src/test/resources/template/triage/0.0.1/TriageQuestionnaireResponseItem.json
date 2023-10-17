@@ -1,0 +1,44 @@
+{
+  "id" : "TriageQuestionnaireResponseItem",
+  "name" : " Triage Questionnaire Response Item",
+  "domain" : "Triage",
+  "packageName" : "triage",
+  "description" : "Response to the question",
+  "params" : {
+    "linkId" : {
+      "type" : "string",
+      "description" : "Pointer to specific item from Questionnaire"
+    },
+    "answer" : {
+      "type" : "string",
+      "description" : "The response(s) to the question",
+      "repeated" : true
+    },
+    "answerDateTime" : {
+      "type" : "dateTime",
+      "description" : "DateTime the question was answered"
+    },
+    "questionDateTime" : {
+      "type" : "dateTime",
+      "description" : "DateTime the question was asked"
+    }
+  },
+  "hydrated" : {
+    "linkId" : "{{{linkId}}}",
+    "answer" : [
+      {
+        "valueString" : "{{{answer}}}"
+      }
+    ],
+    "extension" : [
+      {
+        "url" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionAuthored",
+        "valueDateTime" : "{{{answerDateTime}}}"
+      },
+      {
+        "url" : "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionAsked",
+        "valueString" : "{{{questionDateTime}}}"
+      }
+    ]
+  }
+}

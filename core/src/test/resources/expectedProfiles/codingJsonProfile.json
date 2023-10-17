@@ -1,0 +1,303 @@
+[
+  {
+    "fileName" : "valueSets/BblObservationBodySiteEnum.ValueSet.json",
+    "rsc" : {
+      "resourceType" : "ValueSet",
+      "id" : "BblObservationBodySiteEnum",
+      "url" : "https://fhir.bbl.health/ValueSet/BblObservationBodySiteEnum",
+      "name" : "BodySite",
+      "date" : "2020-04-20",
+      "title" : "Observation BodySite Enum",
+      "status" : "active",
+      "description" : "The body site of the Observation",
+      "compose" : {
+        "include" : [
+          {
+            "system" : "https://bbl.health",
+            "concept" : [
+              {
+                "code" : "vN2BhNIPwg"
+              }
+            ]
+          },
+          {
+            "system" : "http://snomed.info/sct",
+            "concept" : [
+              {
+                "code" : "774007"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName" : "valueSets/BblObservationStatusEnum.ValueSet.json",
+    "rsc" : {
+      "resourceType" : "ValueSet",
+      "id" : "BblObservationStatusEnum",
+      "url" : "https://fhir.bbl.health/ValueSet/BblObservationStatusEnum",
+      "name" : "Status",
+      "date" : "2020-04-20",
+      "title" : "Observation Status Enum",
+      "status" : "active",
+      "description" : "The status of Observation",
+      "compose" : {
+        "include" : [
+          {
+            "system" : "https://bbl.health",
+            "concept" : [
+              {
+                "code" : "final"
+              },
+              {
+                "code" : "amended"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName" : "valueSets/BblObservationCodeJsonEnum.ValueSet.json",
+    "rsc" : {
+      "resourceType" : "ValueSet",
+      "id" : "BblObservationCodeJsonEnum",
+      "url" : "https://fhir.bbl.health/ValueSet/BblObservationCodeJsonEnum",
+      "name" : "Code",
+      "date" : "2020-04-20",
+      "title" : "Observation Code Json Enum",
+      "status" : "active",
+      "description" : "Observations code as Jsons",
+      "compose" : {
+        "include" : [
+          {
+            "system" : "https://bbl.health",
+            "concept" : [
+              {
+                "code" : "420420",
+                "display" : "blaze"
+              },
+              {
+                "code" : "696969",
+                "display" : "cheeky"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName" : "profiles/BblCodingJson.StructureDefinition.json",
+    "rsc" : {
+      "resourceType" : "StructureDefinition",
+      "id" : "BblCodingJson",
+      "url" : "https://fhir.bbl.health/StructureDefinition/BblCodingJson",
+      "meta" : {
+        "profile" : [
+          "https://fhir.bbl.health/StructureDefinition/BblStructureDefinition"
+        ]
+      },
+      "name" : "CodingJson",
+      "date" : "2020-04-20",
+      "kind" : "resource",
+      "type" : "Observation",
+      "title" : "CodingJson",
+      "status" : "active",
+      "abstract" : false,
+      "derivation" : "constraint",
+      "description" : "one of three codes",
+      "fhirVersion" : "4.0.1",
+      "baseDefinition" : "https://fhir.bbl.health/StructureDefinition/BblObservation",
+      "differential" : {
+        "element" : [
+          {
+            "id" : "Observation.id",
+            "min" : 1,
+            "path" : "Observation.id",
+            "fixedString" : "1"
+          },
+          {
+            "id" : "Observation.status",
+            "min" : 1,
+            "path" : "Observation.status",
+            "binding" : {
+              "strength" : "required",
+              "valueSet" : "https://fhir.bbl.health/ValueSet/BblObservationStatusEnum"
+            }
+          },
+          {
+            "id" : "Observation.code",
+            "min" : 1,
+            "path" : "Observation.code",
+            "binding" : {
+              "strength" : "required",
+              "valueSet" : "https://fhir.bbl.health/ValueSet/BblObservationCodeJsonEnum"
+            }
+          },
+          {
+            "id" : "Observation.value[x]",
+            "path" : "Observation.value[x]",
+            "type" : [
+              {
+                "code" : "Quantity"
+              }
+            ]
+          },
+          {
+            "id" : "Observation.value[x]:valueQuantity",
+            "min" : 1,
+            "path" : "Observation.valueQuantity",
+            "type" : [
+              {
+                "code" : "Quantity"
+              }
+            ]
+          },
+          {
+            "id" : "Observation.bodySite",
+            "min" : 1,
+            "path" : "Observation.bodySite",
+            "binding" : {
+              "strength" : "required",
+              "valueSet" : "https://fhir.bbl.health/ValueSet/BblObservationBodySiteEnum"
+            }
+          },
+          {
+            "id" : "Observation.bodySite.coding",
+            "min" : 1,
+            "path" : "Observation.bodySite.coding"
+          },
+          {
+            "id" : "Observation.contained",
+            "max" : "0",
+            "path" : "Observation.contained"
+          },
+          {
+            "id" : "Observation.text",
+            "max" : "0",
+            "path" : "Observation.text"
+          },
+          {
+            "id" : "Observation.subject",
+            "max" : "0",
+            "path" : "Observation.subject"
+          },
+          {
+            "id" : "Observation.specimen",
+            "max" : "0",
+            "path" : "Observation.specimen"
+          },
+          {
+            "id" : "Observation.referenceRange",
+            "max" : "0",
+            "path" : "Observation.referenceRange"
+          },
+          {
+            "id" : "Observation.performer",
+            "max" : "0",
+            "path" : "Observation.performer"
+          },
+          {
+            "id" : "Observation.partOf",
+            "max" : "0",
+            "path" : "Observation.partOf"
+          },
+          {
+            "id" : "Observation.note",
+            "max" : "0",
+            "path" : "Observation.note"
+          },
+          {
+            "id" : "Observation.modifierExtension",
+            "max" : "0",
+            "path" : "Observation.modifierExtension"
+          },
+          {
+            "id" : "Observation.method",
+            "max" : "0",
+            "path" : "Observation.method"
+          },
+          {
+            "id" : "Observation.language",
+            "max" : "0",
+            "path" : "Observation.language"
+          },
+          {
+            "id" : "Observation.issued",
+            "max" : "0",
+            "path" : "Observation.issued"
+          },
+          {
+            "id" : "Observation.interpretation",
+            "max" : "0",
+            "path" : "Observation.interpretation"
+          },
+          {
+            "id" : "Observation.implicitRules",
+            "max" : "0",
+            "path" : "Observation.implicitRules"
+          },
+          {
+            "id" : "Observation.hasMember",
+            "max" : "0",
+            "path" : "Observation.hasMember"
+          },
+          {
+            "id" : "Observation.focus",
+            "max" : "0",
+            "path" : "Observation.focus"
+          },
+          {
+            "id" : "Observation.extension",
+            "max" : "0",
+            "path" : "Observation.extension"
+          },
+          {
+            "id" : "Observation.encounter",
+            "max" : "0",
+            "path" : "Observation.encounter"
+          },
+          {
+            "id" : "Observation.effective[x]",
+            "max" : "0",
+            "path" : "Observation.effective[x]"
+          },
+          {
+            "id" : "Observation.device",
+            "max" : "0",
+            "path" : "Observation.device"
+          },
+          {
+            "id" : "Observation.derivedFrom",
+            "max" : "0",
+            "path" : "Observation.derivedFrom"
+          },
+          {
+            "id" : "Observation.dataAbsentReason",
+            "max" : "0",
+            "path" : "Observation.dataAbsentReason"
+          },
+          {
+            "id" : "Observation.component",
+            "max" : "0",
+            "path" : "Observation.component"
+          },
+          {
+            "id" : "Observation.category",
+            "max" : "0",
+            "path" : "Observation.category"
+          },
+          {
+            "id" : "Observation.basedOn",
+            "max" : "0",
+            "path" : "Observation.basedOn"
+          }
+        ]
+      }
+    }
+  }
+]

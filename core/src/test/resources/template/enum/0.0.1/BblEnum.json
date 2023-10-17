@@ -1,0 +1,20 @@
+{
+  "id" : "BblEnum",
+  "name" : "Enum",
+  "domain" : "enum",
+  "description" : "Some enum",
+  "values" : [
+    {
+      "value" : "a-thing"
+    },
+    {
+      "value" : "b thang"
+    },
+    {
+      "value" : "C wat"
+    }
+  ],
+  "allowAbsent" : false,
+  "system" : "https://bbl.health",
+  "default" : "a-thing"
+}

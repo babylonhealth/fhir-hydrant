@@ -1,0 +1,59 @@
+{
+  "id" : "NestedConcept",
+  "name" : "Nesting test",
+  "domain" : "testing",
+  "description" : "references a coding which is defined in another template",
+  "baseDefinition" : "https://fhir.bbl.health/StructureDefinition/BblObservation",
+  "params" : {
+    "patientId" : {
+      "type" : "uuid",
+      "description" : "patient id",
+      "optional" : true
+    },
+    "clinicianId" : {
+      "type" : "uuid",
+      "description" : "clinician id",
+      "optional" : true,
+      "repeated" : true
+    },
+    "value" : {
+      "type" : "integer",
+      "description" : "amount of lbs",
+      "optional" : true
+    },
+    "timestamp" : {
+      "type" : "dateTime",
+      "description" : "time"
+    },
+    "coding" : {
+      "type" : "Coding",
+      "description" : "coding",
+      "repeated" : true
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "Observation",
+    "id" : "12345",
+    "status" : "final",
+    "code" : {
+      "coding" : [
+        "{{{coding}}}"
+      ]
+    },
+    "subject" : {
+      "reference" : "https://administration.bbl.health/Patient/{{{patientId}}}"
+    },
+    "performer" : [
+      {
+        "reference" : "https://administration.bbl.health/Practitioner/{{{clinicianId}}}"
+      }
+    ],
+    "effectiveDateTime" : "{{{timestamp}}}",
+    "valueQuantity" : {
+      "value" : "{{{value}}}",
+      "unit" : "lbs",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "[lb_av]"
+    }
+  }
+}

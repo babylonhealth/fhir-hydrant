@@ -1,0 +1,17 @@
+{
+  "id": "ReportedConditionNegation",
+  "name": "Reported Condition Negation",
+  "version": "0.1.0",
+  "domain": "reportedcondition",
+  "description": "Modifier extension indicating that a condition is NOT asserted as true, and coding describing why.",
+  "params": {
+    "negationType": {
+      "type": "ReportedConditionNegationType",
+      "description": "Reason why the condition is not asserted as true."
+    }
+  },
+  "hydrated": {
+    "url": "https://fhir.bbl.health/StructureDefinition/BblConditionNegation",
+    "valueCoding": "{{{negationType}}}"
+  }
+}

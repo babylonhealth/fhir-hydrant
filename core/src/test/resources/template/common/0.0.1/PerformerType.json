@@ -1,0 +1,18 @@
+{
+  "id" : "PerformerType",
+  "name" : "Performer Type (includes domain and resource type)",
+  "domain" : "common",
+  "packageName" : "common",
+  "description" : "https://www.hl7.org/fhir/observation-definitions.html#Observation.performer",
+  "values" : [
+    {
+      "name" : "COMMON_PERFORMER_TYPE_PRACTITIONER",
+      "value" : "https://clinician.bbl.health/Practitioner"
+    },
+    {
+      "name" : "COMMON_PERFORMER_TYPE_PATIENT",
+      "value" : "https://patient.bbl.health/Patient"
+    }
+  ],
+  "allowAbsent" : false
+}

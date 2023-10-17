@@ -1,0 +1,53 @@
+{
+  "id" : "FlatQuestionnaire",
+  "name" : "flat Health Assessment Questionnaire",
+  "domain" : "testing",
+  "description" : "https://www.hl7.org/fhir/questionnaireresponse.html#Questionnaire",
+  "params" : {
+    "id" : {
+      "type" : "uuid",
+      "description" : "FHIR id (NOT identifier)"
+    },
+    "name" : {
+      "type" : "string",
+      "description" : "FHIR name - computer readable"
+    },
+    "title" : {
+      "type" : "string",
+      "description" : "FHIR title - human readable"
+    },
+    "description" : {
+      "type" : "string",
+      "description" : "FHIR description"
+    },
+    "code" : {
+      "type" : "FlatQuestionnaireCode",
+      "description" : "FHIR code"
+    },
+    "sectionItem" : {
+      "type" : "FlatQuestionnaireSectionItem",
+      "description" : "item - used for sections",
+      "optional" : true,
+      "repeated" : true
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "Questionnaire",
+    "publisher" : "Babylon",
+    "status" : "active",
+    "id" : "{{{id}}}",
+    "name" : "{{{name}}}",
+    "title" : "{{{title}}}",
+    "description" : "{{{description}}}",
+    "code" : [
+      {
+        "system" : "https://bbl.health",
+        "code" : "{{{code}}}"
+      }
+    ],
+    "item" : [
+      "{{{sectionItem}}}"
+    ],
+    "url" : "https://fhir.bbl.health/Questionnaire/{{{id}}}"
+  }
+}

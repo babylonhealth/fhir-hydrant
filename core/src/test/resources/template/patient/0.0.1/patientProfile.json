@@ -1,0 +1,98 @@
+{
+  "id" : "PatientProfile",
+  "name" : "Patient Profile",
+  "domain" : "patient",
+  "description" : "The profile of a patient",
+  "params" : {
+    "uuid" : {
+      "type" : "uuid",
+      "description" : "Babylon patient UUID"
+    },
+    "name" : {
+      "type" : "HumanName",
+      "description" : "The name of the patient",
+      "optional" : true,
+      "repeated" : true
+    },
+    "gender" : {
+      "type" : "AdministrativeGender",
+      "description" : "The administrative gender of the patient",
+      "optional" : true
+    },
+    "birthDate" : {
+      "type" : "date",
+      "description" : "The birth date",
+      "optional" : true,
+      "tags" : {
+        "pii" : true,
+        "date_of_birth" : true
+      }
+    },
+    "email" : {
+      "type" : "Email",
+      "description" : "The email of the patient",
+      "repeated" : true,
+      "optional" : true
+    },
+    "phoneNumber" : {
+      "type" : "PhoneNumber",
+      "description" : "The phone number of the patient",
+      "repeated" : true
+    },
+    "address" : {
+      "type" : "Address",
+      "description" : "The address of the patient",
+      "repeated" : true
+    },
+    "active" : {
+      "type" : "boolean",
+      "description" : "Whether this patient's record is in active use"
+    },
+    "sexAtBirth" : {
+      "type" : "SexAtBirth",
+      "description" : "Sex assigned at birth",
+      "optional" : true
+    },
+    "identifier" : {
+      "type" : "PatientIdentifier",
+      "description" : "Patient's identifier in other external or internal system",
+      "optional" : true,
+      "repeated" : true
+    }
+  },
+  "hydrated" : {
+    "meta" : {
+      "profile" : [
+        "https://fhir.bbl.health/StructureDefinition/BblPatientProfile"
+      ]
+    },
+    "resourceType" : "Patient",
+    "id" : "{{{uuid}}}",
+    "active" : "{{{active}}}",
+    "name" : [
+      "{{{name}}}"
+    ],
+    "telecom" : [
+      "{{{email}}}",
+      "{{{phoneNumber}}}"
+    ],
+    "gender" : "{{{gender}}}",
+    "birthDate" : "{{{birthDate}}}",
+    "address" : [
+      "{{{address}}}"
+    ],
+    "identifier" : [
+      {
+        "system" : "https://patient.bbl.health/Patient",
+        "value" : "{{{uuid}}}"
+      },
+      "{{{identifier}}}"
+    ],
+    "extension" : [
+      {
+        "url" : "https://fhir.bbl.health/StructureDefinition/BblPatientExtensionSexAtBirth",
+        "valueCoding" : "{{{sexAtBirth}}}"
+      }
+    ]
+  }
+}

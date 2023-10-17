@@ -1,0 +1,25 @@
+{
+  "id" : "ObservationCodeJsonEnum",
+  "name" : "Observation Code Json Enum",
+  "domain" : "testing",
+  "description" : "Observations code as Jsons",
+  "values" : [
+    {
+      "name" : "CODING_1",
+      "value" : {
+        "code" : "420420",
+        "display" : "blaze"
+      }
+    },
+    {
+      "name" : "CODING_2",
+      "value" : {
+        "code" : "696969",
+        "display" : "cheeky"
+      }
+    }
+  ],
+  "system" : "https://bbl.health",
+  "absentName" : "CODING_ABSENT",
+  "allowAbsent" : false
+}

@@ -1,0 +1,20 @@
+{
+    "id": "ReferralServiceRequestIntent",
+    "name": "Referral Service Request Intent",
+    "domain": "referral",
+    "description": "Intent for the referral",
+    "allowAbsent": false,
+    "system": "http://hl7.org/fhir/request-intent",
+    "values": [
+        {
+            "value": "proposal"
+        },
+        {
+            "value": "plan"
+        },
+        {
+            "value": "order"
+        }
+    ],
+    "default": "plan"
+}

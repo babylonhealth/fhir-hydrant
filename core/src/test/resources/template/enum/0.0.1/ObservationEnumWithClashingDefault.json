@@ -1,0 +1,23 @@
+{
+  "id" : "ObservationEnumWithClashingDefault",
+  "name" : "ObservationEnumWithClashingDefault",
+  "domain" : "enum",
+  "description" : "Weight innit",
+  "params" : {
+    "unit" : {
+      "type" : "EnumWithClashingDefault",
+      "description" : "enum with clashing default"
+    }
+  },
+  "hydrated" : {
+    "id" : "123-123-123",
+    "resourceType" : "Observation",
+    "status" : "final",
+    "valueQuantity" : {
+      "value" : 1,
+      "unit" : "{{{unit}}}",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "[lb_av]"
+    }
+  }
+}

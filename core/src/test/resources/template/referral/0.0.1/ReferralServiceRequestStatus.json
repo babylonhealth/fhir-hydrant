@@ -1,0 +1,32 @@
+{
+    "id": "ReferralServiceRequestStatus",
+    "name": "Referral Service Request Status",
+    "domain": "referral",
+    "description": "Status of the referral",
+    "allowAbsent": false,
+    "url": "http://hl7.org/fhir/ValueSet/request-status",
+    "default": "active",
+    "values": [
+        {
+            "value": "draft"
+        },
+        {
+            "value": "active"
+        },
+        {
+            "value": "on-hold"
+        },
+        {
+            "value": "revoked"
+        },
+        {
+            "value": "completed"
+        },
+        {
+            "value": "entered-in-error"
+        },
+        {
+            "value": "unknown"
+        }
+    ]
+}

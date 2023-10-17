@@ -1,0 +1,40 @@
+{
+  "id" : "CodingJsonECL",
+  "name" : "CodingJsonECL",
+  "domain" : "coding",
+  "description" : "CodingJson",
+  "params" : {
+    "status" : {
+      "type" : "ObservationStatusEnum",
+      "description" : "Observation status",
+      "required" : true
+    },
+    "code" : {
+      "type" : "ObservationCodeJsonEnum",
+      "description" : "Observation code",
+      "required" : true
+    },
+    "valueQuantity" : {
+      "type" : "ObservationValueQuantityEnum",
+      "description" : "Observation value quantity",
+      "required" : true
+    },
+    "bodySite" : {
+      "type" : "ECLEnum",
+      "description" : "Observation body site",
+      "required" : true
+    }
+  },
+  "hydrated" : {
+    "id" : "1",
+    "resourceType" : "Observation",
+    "status" : "{{{status}}}",
+    "code" : "{{{code}}}",
+    "valueQuantity" : "{{{valueQuantity}}}",
+    "bodySite" : {
+      "coding" : [
+        "{{{bodySite}}}"
+      ]
+    }
+  }
+}

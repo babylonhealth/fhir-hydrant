@@ -1,0 +1,30 @@
+{
+  "id": "Container",
+  "name": "Container",
+  "domain": "contained",
+  "description": "",
+  "params": {
+    "id": {
+      "type": "string",
+      "optional": true,
+      "description": ""
+    },
+    "name": {
+      "type": "string",
+      "optional": true,
+      "description": ""
+    },
+    "children": {
+      "type": "Container",
+      "contained": true,
+      "repeated": true,
+      "description": ""
+    }
+  },
+  "hydrated": {
+    "resourceType": "Organization",
+    "id": "{{{id}}}",
+    "name": "{{{name}}}",
+    "partOf": ["{{{children}}}"]
+  }
+}

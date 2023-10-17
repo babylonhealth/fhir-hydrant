@@ -1,0 +1,16 @@
+{
+  "id" : "AllowedAbsentEnum",
+  "name" : "Enum",
+  "domain" : "enum",
+  "description" : "Some enum",
+  "values" : [
+    {
+      "value" : "lbs"
+    },
+    {
+      "value" : "kg"
+    }
+  ],
+  "allowAbsent" : true,
+  "default" : "a-thing"
+}

@@ -1,0 +1,19 @@
+{
+  "id" : "FlatQuestionnaireResponseSource",
+  "name" : "flat Questionnaire Response Source",
+  "domain" : "testing",
+  "description" : "FHIR questionnaire.source - Source of the information being provided.",
+  "params" : {
+    "id" : {
+      "type" : "uuid",
+      "description" : "FHIR reference id"
+    },
+    "source" : {
+      "type" : "FlatQuestionnaireResponseSourceRole",
+      "description" : "FHIR reference resourceType"
+    }
+  },
+  "hydrated" : {
+    "reference" : "{{{source}}}/{{{id}}}"
+  }
+}

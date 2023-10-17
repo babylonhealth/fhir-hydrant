@@ -1,0 +1,62 @@
+{
+  "id" : "FlatQuestionnaireResponse",
+  "name" : "flat QuestionnaireResponse - Health Assessment",
+  "domain" : "testing",
+  "description" : "Based on https://www.hl7.org/fhir/questionnaireresponse.html#QuestionnaireResponse.",
+  "params" : {
+    "id" : {
+      "type" : "uuid",
+      "description" : "id (NOT identifier)"
+    },
+    "questionnaire" : {
+      "type" : "FlatQuestionnaire",
+      "description" : "FHIR Questionnaire"
+    },
+    "status" : {
+      "type" : "FlatQuestionnaireResponseStatus",
+      "description" : "FHIR Status. Note that STOPPED here currently means 'early exit for safeguarding reasons'."
+    },
+    "subject" : {
+      "type" : "uuid",
+      "description" : "FHIR subject - always a babylon patient uuid"
+    },
+    "authored" : {
+      "type" : "dateTime",
+      "description" : "FHIR authored - when the full set of responses are validated/submitted by the author"
+    },
+    "author" : {
+      "type" : "FlatQuestionnaireResponseAuthor",
+      "description" : "FHIR author - the entity that validates/submits the questionnaire responses in full",
+      "optional" : true,
+      "deprecated": true
+    },
+    "item" : {
+      "type" : "FlatQuestionnaireResponseItem",
+      "description" : "FHIR item",
+      "optional" : true,
+      "repeated" : true,
+      "tags" : {
+        "spii" : true
+      }
+    }
+  },
+  "hydrated" : {
+    "meta" : {
+      "profile" : [
+        "https://fhir.bbl.health/StructureDefinition/BblHealthAssessmentQuestionnaireResponse"
+      ]
+    },
+    "resourceType" : "QuestionnaireResponse",
+    "id" : "{{{id}}}",
+    "questionnaire" : "{{{questionnaire}}}",
+    "status" : "{{{status}}}",
+    "subject" : {
+      "reference" : "https://administration.bbl.health/Patient/{{{subject}}}"
+    },
+    "authored" : "{{{authored}}}",
+    "author" : "{{{author}}}",
+    "item" : [
+      "{{{item}}}"
+    ]
+  }
+}

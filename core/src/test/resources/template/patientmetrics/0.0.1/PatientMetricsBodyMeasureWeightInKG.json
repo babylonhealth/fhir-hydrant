@@ -1,0 +1,16 @@
+{
+  "id" : "PatientMetricsBodyMeasureWeightInKG",
+  "name" : "Body Measure Weight In kg",
+  "domain" : "testing",
+  "description" : "body measurement weight",
+  "extends" : "PatientMetricsBodyMeasure",
+  "default" : true,
+  "implement" : {
+    "code" : "ykWNn2DwyB",
+    "display" : "Body weight",
+    "valueCode" : "kg",
+    "unit" : "kg",
+    "interpretation": "9rTncufFB3",
+    "interpretationDisplay": "Exercise physically impossible"
+  }
+}

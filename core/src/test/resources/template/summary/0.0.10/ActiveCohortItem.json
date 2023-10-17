@@ -1,0 +1,86 @@
+{
+  "id": "ActiveCohortItem",
+  "name": "ActiveCohortItem",
+  "description": "Active CohortItem",
+  "domain": "summary",
+  "params": {
+    "created": {
+      "type": "date",
+      "description": "The time at which the cohort was created"
+    },
+    "expires": {
+      "type": "date",
+      "description": "The time at which the cohort definition expires",
+      "optional": true
+    },
+    "definitionId": {
+      "type": "uuid",
+      "description": "The id of the cohort definition"
+    },
+    "cohort": {
+      "type": "uuid",
+      "description": "Ids of cohort group to which this patient belongs"
+    },
+    "name": {
+      "type": "string",
+      "description": "String label for the cohort"
+    },
+    "cohortHistory": {
+      "type": "SummaryExtensionCohortItemHistoryId",
+      "description": "Cohorts for this definition containing this patient",
+      "repeated": true
+    },
+    "tags": {
+      "type": "SummaryExtensionCohortItemTag",
+      "description": "Tags for this definition containing this patient",
+      "repeated": true
+    },
+    "id": {
+      "type": "uuid",
+      "description": "The id of the specific cohort membership. Marked as optional for backwards compatibility, but should always be present",
+      "optional": true
+    }
+  },
+  "hydrated": {
+    "id": "{{{id}}}",
+    "extension": [
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionCohortItemCohortId",
+        "valueUuid": "{{{cohort}}}"
+      },
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionCohortItemDefinitionId",
+        "valueUuid": "{{{definitionId}}}"
+      },
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionCohortItemActive",
+        "valueBoolean": true
+      },
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionCohortItemName",
+        "valueString": "{{{name}}}"
+      },
+      "{{{cohortHistory}}}",
+      "{{{tags}}}"
+    ],
+    "code": [
+      {
+        "coding": [
+          {
+            "system": "https://summary.bbl.health/EventType",
+            "code": "cohort-membership"
+          }
+        ]
+      }
+    ],
+    "period": {
+      "start": "{{{created}}}",
+      "end": "{{{expires}}}"
+    },
+    "detail": [
+      {
+        "display": "An active cohort assignation for the patient"
+      }
+    ]
+  }
+}

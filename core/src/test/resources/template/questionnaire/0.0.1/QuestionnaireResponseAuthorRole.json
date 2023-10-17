@@ -1,0 +1,27 @@
+{
+  "id" : "QuestionnaireResponseAuthorRole",
+  "name" : "Questionnaire Response Author Role",
+  "domain" : "HealthAssessment",
+  "description" : "Questionnaire Response Author Role",
+  "values" : [
+    {
+      "name" : "QUESTIONNAIRE_RESPONSE_AUTHOR_ROLE_PATIENT",
+      "value" : "https://administration.bbl.health/Patient"
+    },
+    {
+      "name" : "QUESTIONNAIRE_RESPONSE_AUTHOR_ROLE_MEMBER",
+      "value" : "https://healthassessment.bbl.health/RelatedPerson"
+    },
+    {
+      "name" : "QUESTIONNAIRE_RESPONSE_AUTHOR_ROLE_PRACTITIONER",
+      "value" : "https://administration.bbl.health/Practitioner"
+    },
+    {
+      "name" : "QUESTIONNAIRE_RESPONSE_AUTHOR_ROLE_MACHINE_PRACTITIONER",
+      "value" : "https://machine.bbl.health/Practitioner"
+    }
+  ],
+  "allowAbsent" : false,
+  "default" : "https://administration.bbl.health/Patient",
+  "absentName" : "QUESTIONNAIRE_RESPONSE_AUTHOR_ROLE_ABSENT"
+}

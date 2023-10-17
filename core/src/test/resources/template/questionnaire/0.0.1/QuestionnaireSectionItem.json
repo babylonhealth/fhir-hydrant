@@ -1,0 +1,30 @@
+{
+  "id" : "QuestionnaireSectionItem",
+  "name" : "Questionnaire Section Item",
+  "domain" : "HealthAssessment",
+  "description" : "A section (a collection of question items)",
+  "params" : {
+    "linkId" : {
+      "type" : "string",
+      "description" : "FHIR linkId - Link for referencing the section"
+    },
+    "text" : {
+      "type" : "string",
+      "description" : "FHIR text - section heading"
+    },
+    "item" : {
+      "type" : "QuestionnaireItem",
+      "description" : "FHIR item - section contents",
+      "optional" : true,
+      "repeated" : true
+    }
+  },
+  "hydrated" : {
+    "linkId" : "{{{linkId}}}",
+    "text" : "{{{text}}}",
+    "type" : "group",
+    "item" : [
+      "{{{item}}}"
+    ]
+  }
+}

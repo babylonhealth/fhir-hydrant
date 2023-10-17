@@ -1,0 +1,93 @@
+{
+    "id": "RiskPrediction",
+    "name": "RiskPrediction",
+    "domain": "healthiq",
+    "description": "Health IQ Risk Predictions for e.g. 12 Month Hospital Admission",
+    "notes": {},
+    "params": {
+        "subject": {
+            "type": "uuid",
+            "description": "patient id"
+        },
+        "id": {
+            "type": "uuid",
+            "description": "fhir id"
+        },
+        "whenPeriod": {
+            "type": "RiskPredictionWhenPeriod",
+            "description": "for what period is this prediction valid"
+        },
+        "outcomeCoding": {
+            "type": "RiskPredictionOutcomeCoding",
+            "description": "type of risk prediction"
+        },
+        "probabilityDecimal": {
+            "type": "decimal",
+            "description": "a decimal value between 0 & 1"
+        },
+        "occurrenceDateTime": {
+            "type": "dateTime",
+            "description": "datetime when this prediction was calculated"
+        },
+        "modelID": {
+            "type": "string",
+            "description": "model ID e.g. new_admissions, readmissions"
+        },
+        "modelVersion": {
+            "type": "string",
+            "description": "model version e.g. \"v1.2\""
+        },
+        "modelDescription": {
+            "type": "string",
+            "description": "model description e.g. New hospital admissions in 12 months"
+        },
+        "dpuVersion": {
+            "type": "string",
+            "description": "DPU version used by the model e.g. \"1.2.0\""
+        }
+    },
+    "hydrated": {
+        "resourceType": "RiskAssessment",
+        "meta": {
+            "profile": [
+                "https://fhir.bbl.health/StructureDefinition/BblRiskPrediction"
+            ]
+        },
+        "status": "final",
+        "subject": {
+            "reference": "https://patient.bbl.health/Patient/{{{subject}}}"
+        },
+        "id": "{{{id}}}",
+        "occurrenceDateTime": "{{{occurrenceDateTime}}}",
+        "prediction": [
+            {
+                "outcome": {
+                    "coding": [
+                        "{{{outcomeCoding}}}"
+                    ]
+                },
+                "probabilityDecimal": "{{{probabilityDecimal}}}",
+                "whenPeriod": "{{{whenPeriod}}}"
+            }
+        ],
+        "extension": [
+            {
+                "url": "https://fhir.bbl.health/StructureDefinition/BblRiskPredictionExtensionModelID",
+                "valueString": "{{{modelID}}}"
+            },
+            {
+                "url": "https://fhir.bbl.health/StructureDefinition/BblRiskPredictionExtensionModelVersion",
+                "valueString": "{{{modelVersion}}}"
+            },
+            {
+                "url": "https://fhir.bbl.health/StructureDefinition/BblRiskPredictionExtensionModelDescription",
+                "valueString": "{{{modelDescription}}}"
+            },
+            {
+                "url": "https://fhir.bbl.health/StructureDefinition/BblRiskPredictionExtensionModelDPUVersion",
+                "valueString": "{{{dpuVersion}}}"
+            }
+        ]
+    },
+    "modelUrl": "https://bbl.health/modelling/9efbb386-01db-4e71-a3e2-b597eebe5998/submit"
+}

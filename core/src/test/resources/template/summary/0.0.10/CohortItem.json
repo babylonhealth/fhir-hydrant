@@ -1,0 +1,56 @@
+{
+  "id": "CohortItem",
+  "name": "CohortItem",
+  "description": "deprecated CohortItem",
+  "domain": "summary",
+  "params": {
+    "created": {
+      "type": "date",
+      "description": "The time at which the cohort was created"
+    },
+    "expires": {
+      "type": "date",
+      "description": "The time at which the cohort definition expires",
+      "optional": true
+    },
+    "definitionId": {
+      "type": "uuid",
+      "description": "The id of the cohort definition"
+    },
+    "cohort": {
+      "type": "uuid",
+      "description": "Ids of cohort group to which this patient belongs"
+    }
+  },
+  "hydrated": {
+    "extension": [
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionCohortItemCohortId",
+        "valueUuid": "{{{cohort}}}"
+      },
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionCohortItemDefinitionId",
+        "valueUuid": "{{{definitionId}}}"
+      }
+    ],
+    "code": [
+      {
+        "coding": [
+          {
+            "system": "https://summary.bbl.health/EventType",
+            "code": "cohort-membership"
+          }
+        ]
+      }
+    ],
+    "period": {
+      "start": "{{{created}}}",
+      "end": "{{{expires}}}"
+    },
+    "detail": [
+      {
+        "display": "A cohort assignation for the patient"
+      }
+    ]
+  }
+}

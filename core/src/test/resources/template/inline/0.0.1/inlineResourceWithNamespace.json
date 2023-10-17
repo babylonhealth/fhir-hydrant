@@ -1,0 +1,28 @@
+{
+  "id" : "InlineResourceWithNamespace",
+  "name" : "InlineResourceWithNamespace",
+  "domain" : "Inline",
+  "packageName" : "inline",
+  "description" : "This is to test that inline resources that have custom identifiers can be hydrated",
+  "params" : {
+    "id" : {
+      "type" : "string",
+      "description" : ""
+    },
+    "namespace" : {
+      "type" : "string",
+      "description" : "",
+      "provided" : true
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "Observation",
+    "id" : "{{{id}}}",
+    "identifier" : [
+      {
+        "system" : "https://{{{namespace}}}.nested.bbl.health/Observation",
+        "value" : "{{{id}}}"
+      }
+    ]
+  }
+}

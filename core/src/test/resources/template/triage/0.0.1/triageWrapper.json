@@ -1,0 +1,32 @@
+{
+  "id" : "TriageWrapper",
+  "name" : "Triage Flow - Wrapper",
+  "domain" : "Triage",
+  "packageName" : "triage",
+  "description" : "Wrapper containing the resources created during a triage flow",
+  "params" : {
+    "questionnaireResponse" : {
+      "type" : "TriageQuestionnaireResponse",
+      "description" : "FHIR QuestionnaireResponse"
+    },
+    "triageEncounter" : {
+      "type" : "TriageEncounter",
+      "description" : "Triage Encounter"
+    },
+    "communication" : {
+      "type" : "TriageCommunication",
+      "description" : "Triage flow outcome"
+    },
+    "condition" : {
+      "type" : "TriageCondition",
+      "description" : "Condition diagnosed at the end of a triage flow",
+      "optional" : true
+    }
+  },
+  "hydrated" : [
+    "{{{questionnaireResponse}}}",
+    "{{{triageEncounter}}}",
+    "{{{communication}}}",
+    "{{{condition}}}"
+  ]
+}

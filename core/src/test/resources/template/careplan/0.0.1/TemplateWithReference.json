@@ -1,0 +1,15 @@
+{
+  "id" : "TemplateWithReference",
+  "name" : "TemplateWithReference",
+  "domain" : "careplan",
+  "description" : "For testing of profilegen, when creating a profile for a repeated Complex Type containing a reference field",
+  "params" : {
+    "clinician" : {
+      "type" : "uuid",
+      "description" : "The field being tested"
+    }
+  },
+  "hydrated" : {
+    "reference" : "https://clinician.bbl.health/Practitioner/{{{clinician}}}"
+  }
+}

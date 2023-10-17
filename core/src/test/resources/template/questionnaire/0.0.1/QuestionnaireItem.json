@@ -1,0 +1,35 @@
+{
+  "id" : "QuestionnaireItem",
+  "name" : "Questionnaire Item",
+  "domain" : "HealthAssessment",
+  "description" : "Question asked",
+  "params" : {
+    "linkId" : {
+      "type" : "string",
+      "description" : "FHIR linkId - healthcheck question id"
+    },
+    "text" : {
+      "type" : "string",
+      "description" : "FHIR text"
+    },
+    "type" : {
+      "type" : "QuestionnaireItemType",
+      "description" : "FHIR type"
+    },
+    "answerOption" : {
+      "type" : "string",
+      "description" : "FHIR answerOption",
+      "repeated" : true
+    }
+  },
+  "hydrated" : {
+    "linkId" : "{{{linkId}}}",
+    "text" : "{{{text}}}",
+    "type" : "{{{type}}}",
+    "answerOption" : [
+      {
+        "valueString" : "{{{answerOption}}}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id" : "TriageEncounterParticipantRole",
+  "name" : "Triage Encounter Participant Role",
+  "domain" : "Triage",
+  "packageName" : "triage",
+  "description" : "Role of the participant (patient, related person or practitioner)",
+  "values" : [
+    {
+      "name" : "TRIAGE_ENCOUNTER_PARTICIPANT_ROLE_PATIENT",
+      "value" : "Patient"
+    },
+    {
+      "name" : "TRIAGE_ENCOUNTER_PARTICIPANT_ROLE_MEMBER",
+      "value" : "RelatedPerson"
+    },
+    {
+      "name" : "TRIAGE_ENCOUNTER_PARTICIPANT_ROLE_PRACTITIONER",
+      "value" : "Practitioner"
+    }
+  ],
+  "url" : "http://hl7.org/fhir/ValueSet/encounter-participant-role",
+  "absentName" : "TRIAGE_ENCOUNTER_PARTICIPANT_ROLE_ABSENT",
+  "allowAbsent" : false,
+  "default" : "Patient"
+}

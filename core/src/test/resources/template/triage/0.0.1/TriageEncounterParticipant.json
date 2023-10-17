@@ -1,0 +1,32 @@
+{
+  "id" : "TriageEncounterParticipant",
+  "name" : "TriageEncounter Participant",
+  "domain" : "Triage",
+  "packageName" : "triage",
+  "description" : "Participant of the encounter",
+  "params" : {
+    "id" : {
+      "type" : "string",
+      "description" : "Id of the participant"
+    },
+    "role" : {
+      "type" : "TriageEncounterParticipantRole",
+      "description" : "Role of the participant"
+    }
+  },
+  "hydrated" : {
+    "individual" : {
+      "reference" : "{{{role}}}/{{{id}}}"
+    },
+    "type" : [
+      {
+        "coding" : [
+          {
+            "code" : "PPRF",
+            "system" : "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"
+          }
+        ]
+      }
+    ]
+  }
+}

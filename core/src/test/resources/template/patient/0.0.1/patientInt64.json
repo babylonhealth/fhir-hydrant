@@ -1,0 +1,24 @@
+{
+  "id" : "PatientInt64",
+  "name" : "Patient Int64",
+  "domain" : "patient",
+  "packageName" : "patient",
+  "description" : "The profile of a patient with int 64",
+  "params" : {
+    "idInt64" : {
+      "type" : "int64",
+      "description" : "An int64 value"
+    },
+    "nameInt64" : {
+      "type" : "int64",
+      "description" : "An int64 value"
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "Patient",
+    "id" : "{{{idInt64}}}",
+    "name" : [{
+      "text": "testing{{{nameInt64}}}"
+    }]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id" : "TriageEncounter",
+  "name" : "Triage Encounter",
+  "domain" : "Triage",
+  "packageName" : "triage",
+  "description" : "Based on http://hl7.org/fhir/encounter-definitions.html",
+  "params" : {
+    "id" : {
+      "type" : "uuid",
+      "description" : "Triage encounter uuid"
+    },
+    "language" : {
+      "type" : "string",
+      "description" : "Language of the resource content"
+    },
+    "participant" : {
+      "type" : "TriageEncounterParticipant",
+      "description" : "List of participants involved in this encounter",
+      "repeated" : true
+    },
+    "subject" : {
+      "type" : "uuid",
+      "description" : "The patient the checkbase flow is about"
+    },
+    "status" : {
+      "type" : "TriageEncounterStatus",
+      "description" : "Status of the encounter (planned, arrived, triaged, in progress, on leave, finished, cancelled"
+    },
+    "chatbotEncounterId" : {
+      "type" : "uuid",
+      "description" : "Linked chatbot encounter"
+    },
+    "start" : {
+      "type" : "dateTime",
+      "description" : "Start time of the triage conversation"
+    },
+    "end" : {
+      "type" : "dateTime",
+      "description" : "End time of the triage conversation"
+    },
+    "reasonCode" : {
+      "type" : "TriageReason",
+      "description" : "Coded reason the triage flow was started for",
+      "optional" : true
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "Encounter",
+    "meta" : {
+      "profile" : [
+        "https://fhir.bbl.health/StructureDefinition/BblTriageEncounter"
+      ]
+    },
+    "id" : "checkbase.{{{id}}}",
+    "language" : "{{{language}}}",
+    "participant" : [
+      "{{{participant}}}"
+    ],
+    "subject" : {
+      "reference" : "Patient/{{{subject}}}"
+    },
+    "class" : {
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code" : "VR",
+      "display" : "virtual"
+    },
+    "partOf" : {
+      "reference" : "Encounter/{{{chatbotEncounterId}}}"
+    },
+    "period" : {
+      "start" : "{{{start}}}",
+      "end" : "{{{end}}}"
+    },
+    "status" : "{{{status}}}",
+    "reasonCode" : [
+      "{{{reasonCode}}}"
+    ],
+    "type" : [
+      {
+        "coding" : [
+          {
+            "code" : "n0RsISVgKY",
+            "system" : "https://bbl.health"
+          }
+        ]
+      }
+    ]
+  }
+}

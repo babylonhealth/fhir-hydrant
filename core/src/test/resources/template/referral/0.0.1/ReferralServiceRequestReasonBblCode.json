@@ -1,0 +1,21 @@
+{
+  "id": "ReferralServiceRequestReasonBblCode",
+  "name": "Referral Service Request Reason Babylon Iri Code",
+  "domain": "referral",
+  "description": "The reason for the referral coded with a babylon iri https://bbl.health",
+  "params": {
+    "code": {
+      "type": "code",
+      "description": "bbl code for the reason for the referral"
+    },
+    "display": {
+      "type": "string",
+      "description": "Text description for the reason code"
+    }
+  },
+  "hydrated": {
+    "code": "{{{code}}}",
+    "display": "{{{display}}}",
+    "system": "https://bbl.health"
+  }
+}

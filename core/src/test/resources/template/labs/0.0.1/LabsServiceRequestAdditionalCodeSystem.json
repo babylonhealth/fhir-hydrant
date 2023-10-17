@@ -1,0 +1,18 @@
+{
+    "id": "LabsServiceRequestAdditionalCodeSystem",
+    "name": "Labs Service Request Additional Code System",
+    "domain": "labs",
+    "description": "Code system for labs service request codes",
+    "values": [
+        {
+            "value": "http://loinc.org",
+            "name": "LABS_SERVICE_REQUEST_ADDITIONAL_CODE_SYSTEM_LOINC"
+        },
+        {
+            "value": "http://fhir.bbl.health/CodeSystem/AthenaServiceRequest",
+            "name": "LABS_SERVICE_REQUEST_ADDITIONAL_CODE_SYSTEM_ATHENA_UNKNOWN",
+            "description": "When no code system is provided from Athena (use instead of ABSENT)"
+        }
+    ],
+    "allowAbsent": false
+}

@@ -1,0 +1,19 @@
+{
+  "id" : "EncounterReference",
+  "name" : "Encounter reference",
+  "domain" : "common",
+  "description" : "Reference to an Encounter",
+  "params" : {
+    "encounterId" : {
+      "type" : "uuid",
+      "description" : "FHIR id"
+    },
+    "encounterType" : {
+      "type" : "EncounterType",
+      "description" : "Type of Encounter"
+    }
+  },
+  "hydrated" : {
+    "reference" : "{{{encounterType}}}/{{{encounterId}}}"
+  }
+}

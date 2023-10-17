@@ -1,0 +1,31 @@
+{
+  "id" : "ObservationCodeJsonEnumAbsent",
+  "name" : "Observation Code Json Enum Absent",
+  "domain" : "testing",
+  "description" : "Observations code as Jsons also absent value",
+  "values" : [
+    {
+      "name" : "CODING_1",
+      "value" : {
+        "code" : "420420",
+        "display" : "blaze",
+        "system" : "http://snomed.info/sct"
+      }
+    },
+    {
+      "name" : "CODING_2",
+      "value" : {
+        "code" : "696969",
+        "display" : "cheeky",
+        "system" : "http://snomed.info/sct"
+      }
+    }
+  ],
+  "default" : {
+    "display": "drug culture reference",
+    "code": "🌲",
+    "system": "https://bbl.health"
+  },
+  "absentName" : "CODING_ABSENT",
+  "allowAbsent" : true
+}

@@ -1,0 +1,16 @@
+{
+    "id": "LabsServiceRequestPriority",
+    "name": "Labs Service Request Priority",
+    "domain": "labs",
+    "description": "Request priority.",
+    "values": [
+        {
+            "value": "routine"
+        },
+        {
+            "value": "urgent"
+        }
+    ],
+    "allowAbsent": true,
+    "system": "http://hl7.org/fhir/request-priority"
+}

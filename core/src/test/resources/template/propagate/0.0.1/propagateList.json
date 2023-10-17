@@ -1,0 +1,27 @@
+{
+  "id" : "PropagateList",
+  "name" : "PropagateList",
+  "domain" : "testing",
+  "description" : "Test that provided works for list templates",
+  "params" : {
+    "id" : {
+      "type" : "uuid",
+      "description" : "Conversation uuid, used as the id for the triage resources"
+    },
+    "subject" : {
+      "type" : "uuid",
+      "description" : "Uuid of the patient the flow is about"
+    },
+    "practitioner" : {
+      "type" : "string",
+      "description" : "Practitioner id"
+    },
+    "propagate" : {
+      "type" : "PropagateHereList",
+      "description" : "Encounter"
+    }
+  },
+  "hydrated" : [
+    "{{{propagate}}}"
+  ]
+}

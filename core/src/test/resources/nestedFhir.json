@@ -1,0 +1,141 @@
+{
+  "PatientMetricsBodyMeasureWeightInKG" : [
+    "code.coding",
+    "interpretation.coding"
+  ],
+  "Goal" : [
+    "description.coding"
+  ],
+  "Propagate" : [
+    "code.coding"
+  ],
+  "PropagateHereList" : [
+    "participant.type.coding"
+  ],
+  "LabsServiceRequest" : [
+    "extension",
+    "code.coding"
+  ],
+  "TriageCondition" : [
+    "code.coding"
+  ],
+  "TriageQuestionnaireResponse" : [
+    "item.extension"
+  ],
+  "NestedConcept" : [
+    "code.coding"
+  ],
+  "PatientMetricsBodyMeasureHeightInM" : [
+    "code.coding",
+    "interpretation.coding"
+  ],
+  "BodyWeight" : [
+    "code.coding"
+  ],
+  "PatientMetricsBodyMeasureBloodGlucose" : [
+    "code.coding"
+  ],
+  "RemapMulti" : [
+    "code.coding"
+  ],
+  "ReferralServiceRequest" : [
+    "extension",
+    "code.coding",
+    "performerType.coding",
+    "reasonCode.coding"
+  ],
+  "PatientSummary" : [
+    "event.code.coding",
+    "event.extension",
+    "event.extension.valueDosage.route.coding",
+    "type.coding",
+    "extension"
+  ],
+  "CohortDefinition" : [
+    "extension"
+  ],
+  "Claim" : [
+    "type.coding",
+    "priority.coding"
+  ],
+  "Goal2" : [
+    "description.coding"
+  ],
+  "PropagateHereOptional" : [
+    "code.coding"
+  ],
+  "CarePlan" : [
+    "description.coding"
+  ],
+  "ReportedCondition" : [
+    "extension",
+    "verificationStatus.coding",
+    "code.coding"
+  ],
+  "AcuityScore" : [
+    "extension",
+    "prediction.qualitativeRisk.coding"
+  ],
+  "Remap" : [
+    "code.coding"
+  ],
+  "TriageEncounter" : [
+    "type.coding",
+    "reasonCode.coding",
+    "participant.type.coding"
+  ],
+  "VitalSignsBloodPressure2" : [
+    "code.coding",
+    "component.code.coding"
+  ],
+  "PartnerOrganization" : [
+    "extension"
+  ],
+  "MedicationStatement" : [
+    "medicationCodeableConcept.coding",
+    "dosage.route.coding"
+  ],
+  "PatientProfile" : [
+    "extension"
+  ],
+  "OptionalCode" : [
+    "code.coding"
+  ],
+  "VitalSignsBloodPressure" : [
+    "code.coding",
+    "component.code.coding"
+  ],
+  "TriageCommunication" : [
+    "topic.coding",
+    "payload.extension",
+    "payload.extension.valueCodeableConcept.coding"
+  ],
+  "CarePlan2" : [
+    "description.coding"
+  ],
+  "CodingJson" : [
+    "bodySite.coding"
+  ],
+  "FlatQuestionnaireResponse" : [
+    "item.extension",
+    "item.extension.extension"
+  ],
+  "PatientMetricsBodyMeasureBloodOxygenSaturation" : [
+    "code.coding",
+    "category.coding"
+  ],
+  "RiskPrediction" : [
+    "extension",
+    "prediction.outcome.coding"
+  ],
+  "QuestionnaireResponse" : [
+    "item.extension"
+  ],
+  "PropagateOptional" : [
+    "code.coding"
+  ],
+  "PatientMetricsBodyMeasure" : [
+    "code.coding",
+    "interpretation.coding"
+  ]
+}

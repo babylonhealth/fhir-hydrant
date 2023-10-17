@@ -1,0 +1,34 @@
+{
+  "id" : "ReportedConditionConvertedCode",
+  "name" : "Reported Condition Converted Code",
+  "version" : "0.0.1",
+  "domain" : "reportedcondition",
+  "description" : "The original code given when the condition was recorded.",
+  "params" : {
+    "system" : {
+      "type" : "string",
+      "description" : "Identity of the terminology system"
+    },
+    "code" : {
+      "type" : "string",
+      "description" : "A valid value within the terminology system"
+    },
+    "display" : {
+      "type" : "string",
+      "description" : "A textual representation of the code",
+      "optional": true,
+      "tags": {
+        "phi": true,
+        "redact": true
+      }
+    }
+  },
+  "hydrated" : {
+    "url": "https://fhir.bbl.health/StructureDefinition/BblReportedConditionConvertedCode",
+    "valueCoding": {
+      "system": "{{{system}}}",
+      "code": "{{{code}}}",
+      "display": "{{{display}}}"
+    }
+  }
+}

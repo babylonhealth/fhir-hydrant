@@ -1,0 +1,115 @@
+{
+  "id" : "TriageCommunicationPayloadCode",
+  "name" : "Triage Communication Payload Code",
+  "domain" : "Triage",
+  "packageName" : "triage",
+  "description" : "Triage Outcomes",
+  "values" : [
+    {
+      "name" : "TRIAGE_COMMUNICATION_PAYLOAD_CODE_ATTEND_EYE_EMERGENCY_DEPARTMENT",
+      "value" : {
+        "code" : "1raAV2mFYG",
+        "display" : "Advised to attend eye emergency department"
+      }
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_PAYLOAD_CODE_CONTACT_GENITOURINARY_MEDICINE_CLINIC",
+      "value" : {
+        "code" : "1tYOuZ8lPO",
+        "display" : "Advised to contact genitourinary medicine clinic"
+      }
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_PAYLOAD_CODE_ATTEND_ACCIDENT_AND_EMERGENCY_DEPARTMENT",
+      "value" : {
+        "code" : "2CVl-wBgrG",
+        "display" : "Advised to attend accident and emergency department"
+      }
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_PAYLOAD_CODE_CONTACT_GENERAL_PRACTITIONER_WITHIN_FORTY_EIGHT_HOURS",
+      "value" : {
+        "code" : "5xQ1rh6u2U",
+        "display" : "Advised to contact general practitioner within 48 hours"
+      }
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_PAYLOAD_CODE_CONTACT_OPTICIAN",
+      "value" : {
+        "code" : "_XZGzc8BAb",
+        "display" : "Advised to contact optician"
+      }
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_PAYLOAD_CODE_SELF_CARE",
+      "value" : {
+        "code" : "AdATMWZjAW",
+        "display" : "Advised to self care"
+      }
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_PAYLOAD_CODE_CONTACT_EMERGENCY_AMBULANCE_SERVICE_ASAP",
+      "value" : {
+        "code" : "BlD63Z3gtY",
+        "display" : "Patient advised to contact emergency ambulance service as soon as possible"
+      }
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_PAYLOAD_CODE_CONTACT_GENERAL_PRACTITIONER",
+      "value" : {
+        "code" : "hLjaZ4Hx7K",
+        "display" : "Advised to contact general practitioner"
+      }
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_PAYLOAD_CODE_SAFEGUARDING_ISSUE",
+      "value" : {
+        "code" : "ixU8QNOPrD",
+        "display" : "Safeguarding issues"
+      }
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_PAYLOAD_CODE_ADVISED_TO_ATTEND_MINOR_INJURIES_UNIT",
+      "value" : {
+        "code" : "jUMQWRK6v8",
+        "display" : "Advised to attend minor injuries unit"
+      }
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_PAYLOAD_CODE_PATIENT_NOT_GIVEN_ADVICE",
+      "value" : {
+        "code" : "lRKkQ_Bq0f",
+        "display" : "Patient not given advice"
+      }
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_PAYLOAD_CODE_CONTACT_GENERAL_PRACTITIONER_ASAP",
+      "value" : {
+        "code" : "MAVmdEhfRA",
+        "display" : "Advised to contact general practitioner as soon as possible"
+      }
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_PAYLOAD_CODE_CONTACT_PHARMACIST",
+      "value" : {
+        "code" : "pKsNnROCfr",
+        "display" : "Advised to contact pharmacist"
+      }
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_PAYLOAD_CODE_SEE_DENTIST",
+      "value" : {
+        "code" : "pYTLu-wNZz",
+        "display" : "Advised to see dentist"
+      }
+    }
+  ],
+  "absentName" : "TRIAGE_COMMUNICATION_PAYLOAD_CODE_ABSENT",
+  "url" : "https://fhir.bbl.health/ValueSet/BblTriageOutcomes",
+  "default" : {
+    "code" : "lRKkQ_Bq0f",
+    "display" : "Patient not given advice"
+  },
+  "allowAbsent" : false,
+  "system" : "https://bbl.health"
+}

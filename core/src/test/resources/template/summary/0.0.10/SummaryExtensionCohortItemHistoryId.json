@@ -1,0 +1,17 @@
+{
+  "id": "SummaryExtensionCohortItemHistoryId",
+  "name": "Summary Extension Cohort Item History Id",
+  "domain": "summary",
+  "description": "Id of a cohort for this cohort definition which contains this patient",
+  "notes": {},
+  "params": {
+    "uuid": {
+      "type": "uuid",
+      "description": "Id of a cohort for this cohort definition which contains this patient"
+    }
+  },
+  "hydrated": {
+    "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionCohortItemHistoryId",
+    "valueUuid": "{{{uuid}}}"
+  }
+}

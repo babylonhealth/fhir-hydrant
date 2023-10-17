@@ -1,0 +1,19 @@
+{
+    "id": "ReferralServiceRequestReasonStartDate",
+    "name": "Referral Service Request ReasonStartDate",
+    "domain": "referral",
+    "description": "Start date of the condition being referred to",
+    "notes": {
+        "Extension.value[x]": "= Symptom start date"
+    },
+    "params": {
+        "valueDateTime": {
+            "type": "dateTime",
+            "description": "Symptom start date"
+        }
+    },
+    "hydrated": {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblReferralServiceRequestReasonStartDate",
+        "valueDateTime": "{{{valueDateTime}}}"
+    }
+}

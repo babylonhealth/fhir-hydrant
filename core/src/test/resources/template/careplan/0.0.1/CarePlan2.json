@@ -1,0 +1,73 @@
+{
+  "id" : "CarePlan2",
+  "name" : "Care Plan 2",
+  "domain" : "CarePlan",
+  "description" : "Based on https://www.hl7.org/fhir/careplan.html",
+  "params" : {
+    "id" : {
+      "type" : "uuid",
+      "description" : "id for CarePlan resource"
+    },
+    "patient" : {
+      "type" : "uuid",
+      "description" : "https://www.hl7.org/fhir/careplan-definitions.html#CarePlan.subject"
+    },
+    "created" : {
+      "type" : "dateTime",
+      "description" : "https://www.hl7.org/fhir/careplan-definitions.html#CarePlan.created"
+    },
+    "status" : {
+      "type" : "CarePlanStatus2",
+      "description" : "https://www.hl7.org/fhir/careplan-definitions.html#CarePlan.status"
+    },
+    "contributors" : {
+      "type" : "uuid",
+      "description" : "https://www.hl7.org/fhir/careplan-definitions.html#CarePlan.contributor",
+      "repeated" : true
+    },
+    "encounter" : {
+      "type" : "uuid",
+      "description" : "https://www.hl7.org/fhir/careplan-definitions.html#CarePlan.encounter"
+    },
+    "goals" : {
+      "type" : "Goal2",
+      "description" : "https://www.hl7.org/fhir/careplan-definitions.html#CarePlan.goal",
+      "optional" : true,
+      "repeated" : true
+    },
+    "activities" : {
+      "type" : "CarePlanActivity2",
+      "description" : "https://www.hl7.org/fhir/careplan-definitions.html#CarePlan.activity",
+      "repeated" : true
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "CarePlan",
+    "meta" : {
+      "profile" : [
+        "https://fhir.bbl.health/StructureDefinition/BblCarePlan"
+      ]
+    },
+    "id" : "{{{id}}}",
+    "goal" : [
+      "{{{goals}}}"
+    ],
+    "status" : "{{{status}}}",
+    "intent" : "plan",
+    "encounter" : {
+      "reference" : "https://consultation.bbl.health/Encounter/{{{encounter}}}"
+    },
+    "subject" : {
+      "reference" : "https://administration.bbl.health/Patient/{{{patient}}}"
+    },
+    "created" : "{{{created}}}",
+    "activity" : [
+      "{{{activities}}}"
+    ],
+    "contributor" : [
+      {
+        "reference" : "https://administration.bbl.health/Practitioner/{{{contributors}}}"
+      }
+    ]
+  }
+}

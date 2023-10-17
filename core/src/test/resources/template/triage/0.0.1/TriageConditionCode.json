@@ -1,0 +1,30 @@
+{
+  "id" : "TriageConditionCode",
+  "name" : "Triage Condition Code",
+  "domain" : "Triage",
+  "packageName" : "triage",
+  "description" : "Valid codes to be used on Conditions that have been assessed as part of a Triage",
+  "values" : [
+    {
+      "name" : "TRIAGE_CONDITION_CODE_SUSPECTED_COVID_INFECTION",
+      "value" : "5pXXRaWHRU"
+    },
+    {
+      "name" : "TRIAGE_CONDITION_CODE_SUSPECTED_COVID_INFECTION_WITH_SEVERE_SYMPTOMS",
+      "value" : "Mwby0bFDHS"
+    },
+    {
+      "name" : "TRIAGE_CONDITION_CODE_DENIES_COMMON_SYMPTOMS_OF_COVID_INFECTION",
+      "value" : "qcACOZmnWq"
+    },
+    {
+      "name" : "TRIAGE_CONDITION_CODE_SUSPECTED_COVID_INFECTION_WITH_SEPSIS_SYMPTOMS",
+      "value" : "ZDRtNbsYdA"
+    }
+  ],
+  "system" : "https://bbl.health",
+  "url" : "https://fhir.bbl.health/ValueSets/BblTriageConditionCode",
+  "absentName" : "TRIAGE_CONDITION_CODE_ABSENT",
+  "default" : "5pXXRaWHRU",
+  "allowAbsent" : false
+}

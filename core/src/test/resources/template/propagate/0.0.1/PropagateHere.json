@@ -1,0 +1,29 @@
+{
+  "id" : "PropagateHere",
+  "name" : "PropagateHere",
+  "domain" : "testing",
+  "description" : "shouldnt have to specify the patient id here because its the same as the parent",
+  "params" : {
+    "patientId" : {
+      "type" : "uuid",
+      "description" : "patient id that gets sent from parent object, this field shouldnt appear in the generated proto",
+      "provided" : true,
+      "tags" : {
+        "pii" : true
+      }
+    },
+    "system" : {
+      "type" : "string",
+      "description" : "code system"
+    },
+    "code" : {
+      "type" : "string",
+      "description" : "code value"
+    }
+  },
+  "hydrated" : {
+    "system" : "{{{system}}}",
+    "code" : "{{{code}}}",
+    "display" : "{{{patientId}}}"
+  }
+}

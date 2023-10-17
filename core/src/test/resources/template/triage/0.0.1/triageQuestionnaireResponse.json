@@ -1,0 +1,71 @@
+{
+  "id" : "TriageQuestionnaireResponse",
+  "name" : "Triage Questionnaire Response",
+  "domain" : "Triage",
+  "packageName" : "triage",
+  "description" : "Based on https://www.hl7.org/fhir/questionnairesponse.html",
+  "params" : {
+    "id" : {
+      "type" : "uuid",
+      "description" : "id for QuestionnaireResponse resource"
+    },
+    "language" : {
+      "type" : "string",
+      "description" : "Language of the triage questionnaire"
+    },
+    "questionnaire" : {
+      "type" : "TriageQuestionnaire",
+      "description" : "FHIR Questionnaire"
+    },
+    "status" : {
+      "type" : "TriageQuestionnaireResponseStatus",
+      "description" : "FHIR status"
+    },
+    "subject" : {
+      "type" : "uuid",
+      "description" : "Patient that the questionnaire is referring to"
+    },
+    "source" : {
+      "type" : "uuid",
+      "description" : "The person who answered the questions"
+    },
+    "authored" : {
+      "type" : "dateTime",
+      "description" : "Date the answer were gathered"
+    },
+    "encounter" : {
+      "type" : "uuid",
+      "description" : "Encounter created as part of"
+    },
+    "items" : {
+      "type" : "TriageQuestionnaireResponseItem",
+      "description" : "Group of responses",
+      "repeated" : true
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "QuestionnaireResponse",
+    "meta" : {
+      "profile" : [
+        "https://fhir.bbl.health/StructureDefinition/BblTriageQuestionnaireResponse"
+      ]
+    },
+    "id" : "{{{id}}}",
+    "language" : "{{{language}}}",
+    "questionnaire" : "{{{questionnaire}}}",
+    "status" : "{{{status}}}",
+    "subject" : {
+      "reference" : "Patient/{{{subject}}}"
+    },
+    "source" : {
+      "reference" : "Patient/{{{source}}}"
+    },
+    "authored" : "{{{authored}}}",
+    "encounter" : {
+      "reference" : "Encounter/{{{encounter}}}"
+    },
+    "item" : [
+      "{{{items}}}"
+    ]
+  }
+}

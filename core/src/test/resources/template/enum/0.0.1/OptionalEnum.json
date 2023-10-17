@@ -1,0 +1,25 @@
+{
+  "id" : "OptionalEnum",
+  "name" : "Body weight",
+  "domain" : "testing",
+  "description" : "Weight innit",
+  "packageName" : "bodymeasure",
+  "params" : {
+    "unit" : {
+      "type" : "AllowedAbsentEnum",
+      "description" : "optional enum",
+      "optional" : true
+    }
+  },
+  "hydrated" : {
+    "id" : "123-123-123",
+    "resourceType" : "Observation",
+    "status" : "final",
+    "valueQuantity" : {
+      "value" : 1,
+      "unit" : "{{{unit}}}",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "[lb_av]"
+    }
+  }
+}

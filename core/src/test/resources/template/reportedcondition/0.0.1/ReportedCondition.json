@@ -1,0 +1,104 @@
+{
+  "id" : "ReportedCondition",
+  "name" : "Reported Condition",
+  "version" : "0.1.0",
+  "domain" : "reportedcondition",
+  "description" : "A point in time recording of a condition that is either a diagnosis or a problem. A diagnosis is the identification of an illness e.g malaria, whereas a problem is anything that is not an illness that is of clinical concern e.g Ingestion of corrosive chemical.",
+  "params" : {
+    "id" : {
+      "type" : "uuid",
+      "description" : "A unique id for the condition resource as a uuid",
+      "tags" : {
+        "other_id" : true
+      }
+    },
+    "subject" : {
+      "type" : "uuid",
+      "description" : "Babylon patient UUID for the patient the Condition is about",
+      "tags": {
+        "patient_id": true
+      }
+    },
+    "verificationStatus" : {
+      "type" : "ReportedConditionVerificationStatus",
+      "description" : "Specifies if the Condition being asserted is verified. This field should be understood by all consumers as it changes the meaning of the Condition"
+    },
+    "encounter" : {
+      "type" : "EncounterReference",
+      "description" : "The Encounter the Condition was diagnosed during",
+      "optional" : true
+    },
+    "recordedDate" : {
+      "type" : "dateTime",
+      "description" : "When the Condition was recorded",
+      "optional" : true,
+      "tags" : {
+        "other_date" : true
+      }
+    },
+    "recorder" : {
+      "type" : "ReportedConditionRecorder",
+      "description" : "The Practitioner that recorded the Condition"
+    },
+    "asserter" : {
+      "type" : "ReportedConditionAsserter",
+      "description" : "The Individual that asserted the Condition. Can be a Patient, Practitioner or RelatedPerson"
+    },
+    "code" : {
+      "type" : "code",
+      "description" : "A babylon IRI that represents a medical condition.",
+      "optional" : true
+    },
+    "convertedCode" : {
+      "type" : "ReportedConditionConvertedCode",
+      "description" : "The original IRI code given when the condition was recorded if it is not a current valid babylon IRI.",
+      "optional" : true
+    },
+    "negation": {
+      "type" : "ReportedConditionNegation",
+      "description" : "Assertion that this condition is NOT present, or unknown. Consumers MUST be aware of this field.",
+      "optional": true
+    },
+    "altCode" : {
+      "type" : "ReportedConditionAltCode",
+      "description" : "Codes representing a medical condition taken from any coding system other than https://bbl.health. All given codes must have same meaning other than differences in granularity between code systems.",
+      "repeated" : true
+    },
+    "codeText": {
+      "type" : "string",
+      "description" : "A human language representation of the condition concept, provided when there is no code or altCode.",
+      "optional" : true
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "Condition",
+    "meta" : {
+      "profile" : [
+        "https://fhir.bbl.health/StructureDefinition/BblReportedCondition"
+      ]
+    },
+    "modifierExtension" : ["{{{negation}}}"],
+    "id" : "{{{id}}}",
+    "subject" : {
+      "reference" : "https://patient.bbl.health/Patient/{{{subject}}}"
+    },
+    "verificationStatus" : {
+      "coding" : [
+        "{{{verificationStatus}}}"
+      ]
+    },
+    "code" : {
+      "coding": [
+        {"system":"https://bbl.health", "code":"{{{code}}}"},
+        "{{{altCode}}}"
+      ],
+      "text": "{{{codeText}}}"
+    },
+    "encounter" : "{{{encounter}}}",
+    "recordedDate" : "{{{recordedDate}}}",
+    "recorder" : "{{{recorder}}}",
+    "asserter" : "{{{asserter}}}",
+    "extension" : ["{{{convertedCode}}}"]
+  },
+  "modelUrl" : "https://bbl.health/modelling/c0449d44-e3bf-431d-9804-0f8a9b005b92"
+}

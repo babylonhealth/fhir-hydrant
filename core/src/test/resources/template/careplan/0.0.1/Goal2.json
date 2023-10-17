@@ -1,0 +1,56 @@
+{
+  "id" : "Goal2",
+  "name" : "Goal 2",
+  "domain" : "CarePlan",
+  "description" : "http://hl7.org/fhir/goal.html",
+  "params" : {
+    "id" : {
+      "type" : "uuid",
+      "description" : "id for Goal resource"
+    },
+    "start" : {
+      "type" : "date",
+      "description" : "http://hl7.org/fhir/goal-definitions.html#Goal.start_x"
+    },
+    "note" : {
+      "type" : "string",
+      "description" : "http://hl7.org/fhir/goal-definitions.html#Goal.note",
+      "tags" : {
+        "spii" : true,
+        "free_text" : true
+      }
+    },
+    "patient" : {
+      "type" : "uuid",
+      "description" : "patient id, provided by CarePlan message",
+      "provided" : true
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "Goal",
+    "meta" : {
+      "profile" : [
+        "https://fhir.bbl.health/StructureDefinition/BblHealthGoal"
+      ]
+    },
+    "id" : "{{{id}}}",
+    "subject" : {
+      "reference" : "https://administration.bbl.health/Patient/{{{patient}}}"
+    },
+    "description" : {
+      "coding" : [
+        {
+          "system" : "https://bbl.health",
+          "code" : "hma5EurU4w"
+        }
+      ]
+    },
+    "note" : [
+      {
+        "text" : "{{{note}}}"
+      }
+    ],
+    "startDate" : "{{{start}}}",
+    "lifecycleStatus" : "planned"
+  }
+}

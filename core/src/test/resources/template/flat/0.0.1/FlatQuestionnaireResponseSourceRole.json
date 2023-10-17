@@ -1,0 +1,19 @@
+{
+  "id" : "FlatQuestionnaireResponseSourceRole",
+  "name" : "flat Questionnaire Response Source Role",
+  "domain" : "testing",
+  "description" : "Questionnaire Response Source Role",
+  "values" : [
+    {
+      "name" : "FLAT_QUESTIONNAIRE_RESPONSE_SOURCE_ENUM_PATIENT",
+      "value" : "https://administration.bbl.health/Patient"
+    },
+    {
+      "name" : "FLAT_QUESTIONNAIRE_RESPONSE_SOURCE_ENUM_RELATED_PERSON",
+      "value" : "https://healthassessment.bbl.health/RelatedPerson"
+    }
+  ],
+  "absentName" : "FLAT_QUESTIONNAIRE_RESPONSE_SOURCE_ENUM_ABSENT",
+  "allowAbsent" : false,
+  "default" : "https://administration.bbl.health/Patient"
+}

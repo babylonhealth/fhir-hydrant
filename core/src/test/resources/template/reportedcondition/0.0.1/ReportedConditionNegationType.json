@@ -1,0 +1,25 @@
+{
+  "id": "ReportedConditionNegationType",
+  "name": "Reported Condition Negation Type",
+  "domain": "reportedcondition",
+  "description": "Condition context, is it asserted as false, or not sure",
+  "values": [
+    {
+      "name": "REPORTED_CONDITION_NEGATION_TYPE_NOT_SURE",
+      "value": {
+        "system": "https://bbl.health",
+        "code": "FOKCL5nV4u",
+        "display": "not sure"
+      }
+    },
+    {
+      "name": "REPORTED_CONDITION_NEGATION_TYPE_FALSE",
+      "value": {
+        "system": "https://bbl.health",
+        "code": "7FHTtG4E0c",
+        "display": "false"
+      }
+    }
+  ],
+  "allowAbsent": false
+}

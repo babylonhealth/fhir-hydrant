@@ -1,0 +1,65 @@
+{
+  "id": "AdmissionEncounterClass",
+  "name": "Admission Encounter Class",
+  "domain": "admission",
+  "description": "The type of encounter, e.g. emergency, inpatient, virtual",
+  "values": [
+    {
+      "value": {
+        "display": "Unknown",
+        "code": "FOKCL5nV4u",
+        "system": "https://bbl.health"
+      },
+      "name": "ADMISSION_ENCOUNTER_CLASS_UNKNOWN"
+    },
+    {
+      "value": {
+        "display": "Inpatient Encounter",
+        "code": "IMP",
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+      },
+      "name": "ADMISSION_ENCOUNTER_CLASS_INPATIENT_ENCOUNTER"
+    },
+    {
+      "value": {
+        "display": "Home Health",
+        "code": "HH",
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+      },
+      "name": "ADMISSION_ENCOUNTER_CLASS_HOME_HEALTH"
+    },
+    {
+      "value": {
+        "display": "Emergency",
+        "code": "EMER",
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+      },
+      "name": "ADMISSION_ENCOUNTER_CLASS_EMERGENCY"
+    },
+    {
+      "value": {
+        "display": "Ambulatory",
+        "code": "AMB",
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+      },
+      "name": "ADMISSION_ENCOUNTER_CLASS_AMBULATORY"
+    },
+    {
+      "value": {
+        "display": "Virtual",
+        "code": "VR",
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+      },
+      "name": "ADMISSION_ENCOUNTER_CLASS_VIRTUAL"
+    },
+    {
+      "value": {
+        "display": "Field",
+        "code": "FLD",
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+      },
+      "name": "ADMISSION_ENCOUNTER_CLASS_FIELD"
+    }
+  ],
+  "allowAbsent": false
+}

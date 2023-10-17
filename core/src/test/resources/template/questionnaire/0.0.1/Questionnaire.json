@@ -1,0 +1,58 @@
+{
+  "id" : "Questionnaire",
+  "name" : "Health Assessment Questionnaire",
+  "domain" : "HealthAssessment",
+  "description" : "https://www.hl7.org/fhir/questionnaireresponse.html#Questionnaire",
+  "params" : {
+    "id" : {
+      "type" : "uuid",
+      "description" : "FHIR id (NOT identifier)"
+    },
+    "name" : {
+      "type" : "string",
+      "description" : "FHIR name - computer readable"
+    },
+    "title" : {
+      "type" : "string",
+      "description" : "FHIR title - human readable"
+    },
+    "description" : {
+      "type" : "string",
+      "description" : "FHIR description"
+    },
+    "code" : {
+      "type" : "QuestionnaireCode",
+      "description" : "FHIR code"
+    },
+    "sectionItem" : {
+      "type" : "QuestionnaireSectionItem",
+      "description" : "item - used for sections",
+      "optional" : true,
+      "repeated" : true
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "Questionnaire",
+    "meta" : {
+      "profile" : [
+        "https://fhir.bbl.health/StructureDefinition/BblHealthAssessmentQuestionnaire"
+      ]
+    },
+    "publisher" : "Babylon",
+    "status" : "active",
+    "id" : "{{{id}}}",
+    "name" : "{{{name}}}",
+    "title" : "{{{title}}}",
+    "description" : "{{{description}}}",
+    "code" : [
+      {
+        "system" : "https://bbl.health",
+        "code" : "{{{code}}}"
+      }
+    ],
+    "item" : [
+      "{{{sectionItem}}}"
+    ],
+    "url" : "https://healthassessment.bbl.health/Questionnaire/{{{id}}}"
+  }
+}

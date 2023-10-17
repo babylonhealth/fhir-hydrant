@@ -1,0 +1,26 @@
+{
+  "id": "FlatQuestionnaireResponseExtensionAmmended",
+  "name": "flat Questionnaire Response Extension Ammended",
+  "domain": "testing",
+  "description": "extracted extension",
+  "params": {
+    "amended": {
+      "type": "boolean",
+      "description": "Whether or not this was the original answer or if it has been subsequently amended."
+    }
+  },
+  "hydrated": {
+    "url": "https://fhir.bbl.health/StructureDefinition/BblQuestionnaireResponseExtensionAmmended",
+    "valueBoolean": "{{{amended}}}",
+    "extension": [
+      {
+        "url": "extensionsCanContainExtensions",
+        "valueString": "and they don't need to be 'urls'!"
+      },
+      {
+        "url": "weNeedTwoExtensions",
+        "valueString": "to make a slice"
+      }
+    ]
+  }
+}

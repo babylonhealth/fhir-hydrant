@@ -1,0 +1,37 @@
+{
+  "id" : "ObservationStatus",
+  "name" : "Observation Status",
+  "domain" : "common",
+  "packageName" : "common",
+  "description" : "https://www.hl7.org/fhir/observation-definitions.html#Observation.status",
+  "values" : [
+    {
+      "value" : "registered"
+    },
+    {
+      "value" : "preliminary"
+    },
+    {
+      "value" : "final"
+    },
+    {
+      "value" : "amended"
+    },
+    {
+      "value" : "corrected"
+    },
+    {
+      "value" : "cancelled"
+    },
+    {
+      "value" : "entered-in-error"
+    },
+    {
+      "value" : "unknown"
+    }
+  ],
+  "system" : "http://hl7.org/fhir/request-status",
+  "url" : "http://hl7.org/fhir/ValueSet/observation-status",
+  "default" : "unknown",
+  "allowAbsent" : false
+}

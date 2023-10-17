@@ -1,0 +1,20 @@
+{
+  "id" : "QuestionnaireResponseAnswer",
+  "name" : "Questionnaire Response Answer",
+  "domain" : "HealthAssessment",
+  "description" : "FHIR questionnaire response item",
+  "params" : {
+    "valueString" : {
+      "type" : "string",
+      "description" : "Answer string",
+      "tags" : {
+        "spii" : true,
+        "redact" : true,
+        "free_text" : true
+      }
+    }
+  },
+  "hydrated" : {
+    "valueString" : "{{{valueString}}}"
+  }
+}

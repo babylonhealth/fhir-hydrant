@@ -1,0 +1,26 @@
+{
+    "id": "LabsServiceRequestStatus",
+    "name": "Labs Service Request Status",
+    "domain": "labs",
+    "description": "status",
+    "values": [
+        {
+            "value": "active"
+        },
+        {
+            "value": "entered-in-error"
+        },
+        {
+            "value": "revoked"
+        },
+        {
+            "value": "unknown"
+        },
+        {
+            "value": "completed"
+        }
+    ],
+    "allowAbsent": false,
+    "default": "active",
+    "system": "http://hl7.org/fhir/request-status"
+}

@@ -1,0 +1,31 @@
+{
+    "id": "MedicationStatementPeriodUnit",
+    "name": "Medication Statement Period Unit",
+    "domain": "prescription",
+    "description": "The unit in which the period is measured",
+    "values": [
+        {
+            "value": "s"
+        },
+        {
+            "value": "min"
+        },
+        {
+            "value": "h"
+        },
+        {
+            "value": "d"
+        },
+        {
+            "value": "wk"
+        },
+        {
+            "value": "mo"
+        },
+        {
+            "value": "a"
+        }
+    ],
+    "allowAbsent": true,
+    "system": "http://unitsofmeasure.org"
+}

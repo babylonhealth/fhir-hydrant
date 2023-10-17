@@ -1,0 +1,105 @@
+{
+  "id": "PatientSummary",
+  "name": "PatientSummary",
+  "description": "PatientSummary",
+  "domain": "summary",
+  "params": {
+    "updatedAt": {
+      "type": "dateTime",
+      "description": "The date at which the latest contributing record for the aggregate was consumed"
+    },
+    "id": {
+      "type": "uuid",
+      "description": "id of the summary"
+    },
+    "patient": {
+      "type": "PatientProfile",
+      "description": "The patient profile",
+      "contained": true,
+      "optional": true
+    },
+    "claims": {
+      "type": "ClaimEvent",
+      "description": "claims",
+      "repeated": true
+    },
+    "admissions": {
+      "type": "AdmissionEvent",
+      "description": "admissions",
+      "repeated": true
+    },
+    "conditions": {
+      "type": "ConditionEvent",
+      "description": "conditions",
+      "repeated": true
+    },
+    "cohorts": {
+      "type": "CohortItem",
+      "description": "cohorts",
+      "repeated": true,
+      "deprecated": true
+    },
+    "activeCohorts": {
+      "type": "ActiveCohortItem",
+      "description": "active cohorts",
+      "repeated": true
+    },
+    "inactiveCohorts": {
+      "type": "InactiveCohortItem",
+      "description": "inactive cohorts",
+      "repeated": true
+    },
+    "healthIQ": {
+      "type": "HealthIQEvent",
+      "description": "healthiq risk predictions",
+      "repeated": true
+    },
+    "medication": {
+      "type": "MedicationEvent",
+      "description": "medications",
+      "repeated": true
+    },
+    "dateOfLastAppointment": {
+      "type": "dateTime",
+      "description": "the date of a patient's last appointment (if they've had one)",
+      "optional": true
+    }
+  },
+  "hydrated": {
+    "resourceType": "Composition",
+    "id": "{{{id}}}",
+    "type": {
+      "coding": [
+        {
+          "system": "https://summary.bbl.health/Composition",
+          "code": "patient-v1"
+        }
+      ]
+    },
+    "author": [
+      {
+        "reference": "https://machine.bbl.health/Practitioner/patient-summary-aggregator"
+      }
+    ],
+    "date": "{{{updatedAt}}}",
+    "title": "Summary of patient",
+    "status": "amended",
+    "subject": "{{{patient}}}",
+    "event": [
+      "{{{admissions}}}",
+      "{{{claims}}}",
+      "{{{conditions}}}",
+      "{{{cohorts}}}",
+      "{{{activeCohorts}}}",
+      "{{{inactiveCohorts}}}",
+      "{{{healthIQ}}}",
+      "{{{medication}}}"
+    ],
+    "extension": [
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionLastAppointmentDateTime",
+        "valueDateTime": "{{{dateOfLastAppointment}}}"
+      }
+    ]
+  }
+}

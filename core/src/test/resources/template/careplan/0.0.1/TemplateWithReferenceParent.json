@@ -1,0 +1,29 @@
+{
+  "id" : "TemplateWithReferenceParent",
+  "name" : "TemplateWithReferenceParent",
+  "domain" : "careplan",
+  "description" : "For testing of profilegen, when creating a profile for a repeated Complex Type containing a reference field",
+  "params" : {
+    "patient" : {
+      "type" : "uuid",
+      "description" : "A required field that we dont care about for test"
+    },
+    "contributors" : {
+      "type" : "TemplateWithReference",
+      "description" : "The reference field that is being tested",
+      "repeated" : true,
+      "optional" : true
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "CarePlan",
+    "status" : "active",
+    "intent" : "plan",
+    "subject": {
+      "reference" : "https://administration.bbl.health/Patient/{{{patient}}}"
+    },
+    "contributor" : [
+      "{{{contributors}}}"
+    ]
+  }
+}

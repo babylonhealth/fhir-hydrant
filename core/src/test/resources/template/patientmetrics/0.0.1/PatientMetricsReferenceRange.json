@@ -1,0 +1,45 @@
+{
+  "id": "PatientMetricsReferenceRange",
+  "name": "Reference range",
+  "domain": "PatientMetrics",
+  "description": "Reference range",
+  "params": {
+    "low": {
+      "type": "decimal",
+      "description": "Lower bound of range."
+    },
+    "high": {
+      "type": "decimal",
+      "description": "Upper bound of range."
+    },
+    "text": {
+      "type": "string",
+      "description": "Type of reference range, e.g. 'normal', 'recommended'..."
+    },
+    "unit": {
+      "type": "string",
+      "provided": true,
+      "description": "Unit"
+    },
+    "valueCode": {
+      "type": "code",
+      "provided": true,
+      "description": "Coded unit"
+    }
+  },
+  "hydrated": {
+    "low": {
+      "value": "{{{low}}}",
+      "code": "{{{valueCode}}}",
+      "unit": "{{{unit}}}",
+      "system": "http://unitsofmeasure.org"
+    },
+    "high": {
+      "value": "{{{high}}}",
+      "code": "{{{valueCode}}}",
+      "unit": "{{{unit}}}",
+      "system": "http://unitsofmeasure.org"
+    },
+    "text": "{{{text}}}"
+  }
+}

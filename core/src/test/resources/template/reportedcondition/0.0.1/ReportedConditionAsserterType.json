@@ -1,0 +1,29 @@
+{
+  "id" : "ReportedConditionAsserterType",
+  "name" : "Reported Condition Asserter Type",
+  "domain" : "reportedcondition",
+  "description" : "The domain and resource type of the asserter",
+  "values" : [
+    {
+      "name" : "REPORTED_CONDITION_ASSERTER_TYPE_PRACTITIONER_CLINICIAN",
+      "value" : "https://clinician.bbl.health/Practitioner"
+    },
+    {
+      "name" : "REPORTED_CONDITION_ASSERTER_TYPE_PRACTITIONER_MACHINE",
+      "value" : "https://machine.bbl.health/Practitioner"
+    },
+    {
+      "name" : "REPORTED_CONDITION_ASSERTER_TYPE_PATIENT",
+      "value" : "https://patient.bbl.health/Patient"
+    },
+    {
+      "name" : "REPORTED_CONDITION_ASSERTER_TYPE_RELATED_PERSON_HEALTH_ASSESSMENT",
+      "value" : "https://healthassessment.bbl.health/RelatedPerson"
+    },
+    {
+      "name" : "REPORTED_CONDITION_ASSERTER_TYPE_UNKNOWN_EXTERNAL_PRACTITIONER",
+      "value" : "https://external.bbl.health/Practitioner"
+    }
+  ],
+  "allowAbsent" : false
+}

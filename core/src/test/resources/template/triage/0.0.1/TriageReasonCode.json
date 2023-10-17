@@ -1,0 +1,18 @@
+{
+  "id" : "TriageReasonCode",
+  "name" : "Triage Reason Code",
+  "domain" : "Triage",
+  "packageName" : "triage",
+  "description" : "https://www.hl7.org/fhir/encounter-definitions.html#Encounter.status",
+  "values" : [
+    {
+      "name" : "TRIAGE_REASON_CODE_COVID",
+      "value" : "5pXXRaWHRU"
+    }
+  ],
+  "system" : "https://bbl.health",
+  "url" : "https://fhir.bbl.health/ValueSet/BblTriageReason",
+  "absentName" : "TRIAGE_REASON_CODE_ABSENT",
+  "default" : "5pXXRaWHRU",
+  "allowAbsent" : false
+}

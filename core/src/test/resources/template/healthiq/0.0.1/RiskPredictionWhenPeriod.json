@@ -1,0 +1,21 @@
+{
+    "id": "RiskPredictionWhenPeriod",
+    "name": "Risk Prediction When Period",
+    "domain": "healthiq",
+    "description": "for what period is this prediction valid",
+    "notes": {},
+    "params": {
+        "start": {
+            "type": "dateTime",
+            "description": "start datetime when this prediction is applicable"
+        },
+        "end": {
+            "type": "dateTime",
+            "description": "end datetime until when this prediction is applicable"
+        }
+    },
+    "hydrated": {
+        "start": "{{{start}}}",
+        "end": "{{{end}}}"
+    }
+}

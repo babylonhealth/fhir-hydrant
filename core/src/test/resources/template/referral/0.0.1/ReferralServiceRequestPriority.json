@@ -1,0 +1,23 @@
+{
+    "id": "ReferralServiceRequestPriority",
+    "name": "Referral Service Request Priority",
+    "domain": "referral",
+    "description": "Priority of the referral",
+    "allowAbsent": false,
+    "url": "http://hl7.org/fhir/ValueSet/request-priority",
+    "values": [
+        {
+            "value": "routine"
+        },
+        {
+            "value": "urgent"
+        },
+        {
+            "value": "asap"
+        },
+        {
+            "value": "stat"
+        }
+    ],
+    "default": "routine"
+}

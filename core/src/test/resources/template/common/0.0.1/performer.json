@@ -1,0 +1,20 @@
+{
+  "id" : "Performer",
+  "name" : "Performer",
+  "domain" : "common",
+  "description" : "Based on https://www.hl7.org/fhir/observation.html",
+  "packageName" : "common",
+  "params" : {
+    "performerType" : {
+      "type" : "PerformerType",
+      "description" : "https://www.hl7.org/fhir/observation-definitions.html#Observation.performer"
+    },
+    "performer" : {
+      "type" : "uuid",
+      "description" : "https://www.hl7.org/fhir/observation-definitions.html#Observation.performer"
+    }
+  },
+  "hydrated" : {
+    "reference" : "{{{performerType}}}/{{{performer}}}"
+  }
+}

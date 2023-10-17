@@ -1,0 +1,22 @@
+{
+  "id" : "ReportedConditionAsserter",
+  "name" : "Reported Condition Asserter",
+  "domain" : "reportedcondition",
+  "description" : "Who asserted the Condition. For use in FHIR Condition.asserter field",
+  "params" : {
+    "asserterType" : {
+      "type" : "ReportedConditionAsserterType",
+      "description" : "The domain and resource type of the asserter"
+    },
+    "asserter" : {
+      "type" : "string",
+      "description" : "The uuid of the clinician or patient, or the string of the machine practitioner",
+      "tags" : {
+        "other_id" : true
+      }
+    }
+  },
+  "hydrated" : {
+    "reference" : "{{{asserterType}}}/{{{asserter}}}"
+  }
+}

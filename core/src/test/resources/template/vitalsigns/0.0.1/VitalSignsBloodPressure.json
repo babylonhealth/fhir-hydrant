@@ -1,0 +1,94 @@
+{
+  "id" : "VitalSignsBloodPressure",
+  "name" : "Blood Pressure",
+  "domain" : "VitalSigns",
+  "description" : "Blood pressure observation (https://www.hl7.org/fhir/observation.html)",
+  "packageName" : "vitalsigns",
+  "params" : {
+    "id" : {
+      "type" : "uuid",
+      "description" : "id for Observation resource"
+    },
+    "patient" : {
+      "type" : "uuid",
+      "description" : "https://www.hl7.org/fhir/observation-definitions.html#Observation.subject"
+    },
+    "effectiveDateTime" : {
+      "type" : "dateTime",
+      "description" : "https://www.hl7.org/fhir/observation-definitions.html#Observation.effective_x_"
+    },
+    "encounter" : {
+      "type" : "EncounterReference",
+      "optional" : true,
+      "description" : "https://www.hl7.org/fhir/observation-definitions.html#Observation.encounter"
+    },
+    "diastolicBpValue" : {
+      "type" : "integer",
+      "description" : "Diastolic Blood Pressure"
+    },
+    "systolicBpValue" : {
+      "type" : "integer",
+      "description" : "Systolic Blood Pressure"
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "Observation",
+    "meta" : {
+      "profile" : [
+        "https://fhir.bbl.health/StructureDefinition/BblVitalSignsBloodPressure"
+      ]
+    },
+    "id" : "{{{id}}}",
+    "status" : "final",
+    "encounter" : "{{{encounter}}}",
+    "subject" : {
+      "reference" : "https://patient.bbl.health/Patient/{{{patient}}}"
+    },
+    "effectiveDateTime" : "{{{effectiveDateTime}}}",
+    "code" : {
+      "coding" : [
+        {
+          "system" : "https://bbl.health",
+          "code" : "DcuIExT7O8",
+          "display" : "Blood pressure"
+        }
+      ]
+    },
+    "component" : [
+      {
+        "code" : {
+          "coding" : [
+            {
+              "code" : "yP1EGhN9d8",
+              "display" : "Systolic arterial pressure",
+              "system" : "https://bbl.health"
+            }
+          ]
+        },
+        "valueQuantity" : {
+          "code" : "mm[Hg]",
+          "system" : "http://unitsofmeasure.org",
+          "unit" : "mmHg",
+          "value" : "{{{systolicBpValue}}}"
+        }
+      },
+      {
+        "code" : {
+          "coding" : [
+            {
+              "code" : "kETZtQ0TFK",
+              "display" : "Diastolic blood pressure",
+              "system" : "https://bbl.health"
+            }
+          ]
+        },
+        "valueQuantity" : {
+          "code" : "mm[Hg]",
+          "system" : "http://unitsofmeasure.org",
+          "unit" : "mmHg",
+          "value" : "{{{diastolicBpValue}}}"
+        }
+      }
+    ]
+  }
+}

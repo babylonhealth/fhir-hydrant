@@ -1,0 +1,25 @@
+{
+  "id" : "MedicationStatementInformationSourceType",
+  "name" : "Medication Statement Information Source Type",
+  "domain" : "prescription",
+  "description" : "The domain and type of information source",
+  "values" : [
+    {
+      "name" : "PRESCRIPTION_MEDICATION_STATEMENT_INFORMATION_SOURCE_TYPE_PRACTITIONER",
+      "value" : "https://clinician.bbl.health/Practitioner"
+    },
+    {
+      "name" : "PRESCRIPTION_MEDICATION_STATEMENT_INFORMATION_SOURCE_TYPE_UNKNOWN_EXTERNAL_PRACTITIONER",
+      "value" : "https://external.bbl.health/Practitioner"
+    },
+    {
+      "name" : "PRESCRIPTION_MEDICATION_STATEMENT_INFORMATION_SOURCE_TYPE_ORGANIZATION",
+      "value" : "https://carequality.bbl.health/Organization"
+    },
+    {
+      "name" : "PRESCRIPTION_MEDICATION_STATEMENT_INFORMATION_SOURCE_TYPE_UNKNOWN_EXTERNAL_ORGANIZATION",
+      "value" : "https://external.bbl.health/Organization"
+    }
+  ],
+  "allowAbsent" : false
+}

@@ -1,0 +1,19 @@
+{
+  "id" : "QuestionnaireItemType",
+  "name" : "Questionnaire Item Type",
+  "domain" : "HealthAssessment",
+  "description" : "Item type",
+  "values" : [
+    {
+      "name" : "QUESTIONNAIRE_ITEM_TYPE_STRING",
+      "value" : "string"
+    },
+    {
+      "name" : "QUESTIONNAIRE_ITEM_TYPE_CHOICE",
+      "value" : "choice"
+    }
+  ],
+  "absentName" : "QUESTIONNAIRE_ITEM_TYPE_ABSENT",
+  "allowAbsent" : false,
+  "default" : "string"
+}

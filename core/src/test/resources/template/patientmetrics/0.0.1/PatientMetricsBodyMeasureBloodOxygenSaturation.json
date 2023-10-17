@@ -1,0 +1,17 @@
+{
+  "id" : "PatientMetricsBodyMeasureBloodOxygenSaturation",
+  "name" : "Body Measurement Blood Oxygen Saturation as a percentage",
+  "domain" : "testing",
+  "description" : "Specific body measurement observation for blood oxygen staturation measured as a percentage",
+  "extends" : "PatientMetricsBodyMeasure",
+  "group" : "blood",
+  "force_gen_profile" : true,
+  "default" : false,
+  "implement" : {
+    "code" : "iWW1T2ld21",
+    "display" : "Blood Oxygen Saturation",
+    "valueCode" : "%",
+    "unit" : "%",
+    "category": ["PATIENT_METRICS_BODY_MEASURE_CATEGORY_VITAL_SIGN"]
+  }
+}

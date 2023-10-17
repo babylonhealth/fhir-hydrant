@@ -1,0 +1,57 @@
+{
+  "id" : "PropagateHereList",
+  "name" : "PropagateHereList",
+  "domain" : "testing",
+  "description" : "Test that provided works for list templates",
+  "params" : {
+    "id" : {
+      "type" : "uuid",
+      "description" : "id provided by wrapper",
+      "provided" : true
+    },
+    "subject" : {
+      "type" : "uuid",
+      "description" : "subject provided by wrapper",
+      "provided" : true
+    },
+    "practitioner" : {
+      "type" : "string",
+      "description" : "practitioner provided by wrapper",
+      "provided" : true
+    },
+    "status" : {
+      "type" : "string",
+      "description" : "status"
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "Encounter",
+    "id" : "{{{id}}}",
+    "subject" : {
+      "reference" : "Patient/{{{subject}}}"
+    },
+    "status" : "planned",
+    "class" : {
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code" : "VR",
+      "display" : "virtual"
+    },
+    "participant" : [
+      {
+        "individual" : {
+          "reference" : "Practitioner/{{{practitioner}}}"
+        },
+        "type" : [
+          {
+            "coding" : [
+              {
+                "code" : "{{{status}}}",
+                "system" : "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

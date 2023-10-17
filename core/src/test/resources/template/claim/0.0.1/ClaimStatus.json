@@ -1,0 +1,25 @@
+{
+    "id": "ClaimStatus",
+    "name": "Claim Status",
+    "domain": "claim",
+    "description": "The status of the claim: active, cancelled, draft or entered-in-error",
+    "notes": {},
+    "values": [
+        {
+            "value": "active"
+        },
+        {
+            "value": "cancelled"
+        },
+        {
+            "value": "draft"
+        },
+        {
+            "value": "entered-in-error"
+        }
+    ],
+    "allowAbsent": false,
+    "default": "active",
+    "url" : "http://hl7.org/fhir/ValueSet/fm-status",
+    "system" : "http://hl7.org/fhir/fm-status"
+}

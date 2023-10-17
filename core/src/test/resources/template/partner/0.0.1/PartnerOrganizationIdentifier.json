@@ -1,0 +1,22 @@
+{
+    "id": "PartnerOrganizationIdentifier",
+    "name": "Partner Organization Identifier",
+    "version": "0.0.1",
+    "domain": "partner",
+    "description": "An external consumer/client system identifier for a partner organization.",
+    "notes": {},
+    "params": {
+        "system": {
+            "type": "uri",
+            "description": "The external ID system URL."
+        },
+        "value": {
+            "type": "string",
+            "description": "The external ID value."
+        }
+    },
+    "hydrated": {
+        "system": "{{{system}}}",
+        "value": "{{{value}}}"
+    }
+}

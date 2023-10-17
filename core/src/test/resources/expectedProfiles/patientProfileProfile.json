@@ -1,0 +1,366 @@
+[
+  {
+    "fileName": "profiles/BblPatientProfile.StructureDefinition.json",
+    "rsc": {
+      "resourceType": "StructureDefinition",
+      "id": "BblPatientProfile",
+      "url": "https://fhir.bbl.health/StructureDefinition/BblPatientProfile",
+      "meta": {
+        "profile": [
+          "https://fhir.bbl.health/StructureDefinition/BblStructureDefinition"
+        ]
+      },
+      "name": "Patient",
+      "date": "2020-04-20",
+      "kind": "resource",
+      "type": "Patient",
+      "title": "Patient Profile",
+      "status": "active",
+      "abstract": false,
+      "derivation": "constraint",
+      "description": "The profile of a patient",
+      "fhirVersion": "4.0.1",
+      "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Patient",
+      "differential": {
+        "element": [
+          {
+            "id": "Patient.id",
+            "min": 1,
+            "path": "Patient.id"
+          },
+          {
+            "id": "Patient.active",
+            "min": 1,
+            "path": "Patient.active"
+          },
+          {
+            "id": "Patient.name",
+            "min": 0,
+            "path": "Patient.name"
+          },
+          {
+            "id": "Patient.name.use",
+            "min": 1,
+            "path": "Patient.name.use",
+            "fixedCode": "usual"
+          },
+          {
+            "id": "Patient.name.text",
+            "min": 0,
+            "path": "Patient.name.text"
+          },
+          {
+            "id": "Patient.name.family",
+            "min": 0,
+            "path": "Patient.name.family"
+          },
+          {
+            "id": "Patient.name.given",
+            "min": 0,
+            "path": "Patient.name.given"
+          },
+          {
+            "id": "Patient.telecom",
+            "min": 0,
+            "path": "Patient.telecom",
+            "slicing": {
+              "rules": "open",
+              "discriminator": [
+                {
+                  "type": "value",
+                  "path": "system"
+                }
+              ]
+            }
+          },
+          {
+            "id": "Patient.telecom.system",
+            "min": 1,
+            "path": "Patient.telecom.system"
+          },
+          {
+            "id": "Patient.telecom.value",
+            "min": 1,
+            "path": "Patient.telecom.value"
+          },
+          {
+            "id": "Patient.telecom:Email",
+            "min": 0,
+            "path": "Patient.telecom",
+            "sliceName": "Email"
+          },
+          {
+            "id": "Patient.telecom:Email.system",
+            "min": 1,
+            "path": "Patient.telecom.system",
+            "fixedCode": "email"
+          },
+          {
+            "id": "Patient.telecom:Email.value",
+            "min": 1,
+            "path": "Patient.telecom.value"
+          },
+          {
+            "id": "Patient.telecom:Phone",
+            "min": 0,
+            "path": "Patient.telecom",
+            "sliceName": "Phone"
+          },
+          {
+            "id": "Patient.telecom:Phone.system",
+            "min": 1,
+            "path": "Patient.telecom.system",
+            "fixedCode": "phone"
+          },
+          {
+            "id": "Patient.telecom:Phone.value",
+            "min": 1,
+            "path": "Patient.telecom.value"
+          },
+          {
+            "id": "Patient.gender",
+            "min": 0,
+            "path": "Patient.gender",
+            "binding": {
+              "strength": "required",
+              "valueSet": "http://hl7.org/fhir/ValueSet/administrative-gender"
+            }
+          },
+          {
+            "id": "Patient.birthDate",
+            "min": 0,
+            "path": "Patient.birthDate"
+          },
+          {
+            "id": "Patient.address",
+            "min": 0,
+            "path": "Patient.address"
+          },
+          {
+            "id": "Patient.address.use",
+            "min": 1,
+            "path": "Patient.address.use",
+            "fixedCode": "home"
+          },
+          {
+            "id": "Patient.address.type",
+            "min": 1,
+            "path": "Patient.address.type",
+            "fixedCode": "both"
+          },
+          {
+            "id": "Patient.address.line",
+            "min": 0,
+            "path": "Patient.address.line"
+          },
+          {
+            "id": "Patient.address.postalCode",
+            "min": 0,
+            "path": "Patient.address.postalCode"
+          },
+          {
+            "id": "Patient.address.city",
+            "min": 0,
+            "path": "Patient.address.city"
+          },
+          {
+            "id": "Patient.extension.url",
+            "min": 1,
+            "path": "Patient.extension.url",
+            "fixedUri": "https://fhir.bbl.health/StructureDefinition/BblPatientExtensionSexAtBirth"
+          },
+          {
+            "id": "Patient.extension.value[x]",
+            "path": "Patient.extension.value[x]",
+            "type": [
+              {
+                "code": "Coding"
+              }
+            ]
+          },
+          {
+            "id": "Patient.extension.value[x]:valueCoding",
+            "min": 0,
+            "path": "Patient.extension.valueCoding",
+            "type": [
+              {
+                "code": "Coding"
+              }
+            ],
+            "binding": {
+              "strength": "required",
+              "valueSet": "https://fhir.bbl.health/ValueSet/BblSexAtBirth"
+            }
+          },
+          {
+            "id": "Patient.contained",
+            "max": "0",
+            "path": "Patient.contained"
+          },
+          {
+            "id": "Patient.text",
+            "max": "0",
+            "path": "Patient.text"
+          },
+          {
+            "id": "Patient.photo",
+            "max": "0",
+            "path": "Patient.photo"
+          },
+          {
+            "id": "Patient.multipleBirth[x]",
+            "max": "0",
+            "path": "Patient.multipleBirth[x]"
+          },
+          {
+            "id": "Patient.modifierExtension",
+            "max": "0",
+            "path": "Patient.modifierExtension"
+          },
+          {
+            "id": "Patient.maritalStatus",
+            "max": "0",
+            "path": "Patient.maritalStatus"
+          },
+          {
+            "id": "Patient.managingOrganization",
+            "max": "0",
+            "path": "Patient.managingOrganization"
+          },
+          {
+            "id": "Patient.link",
+            "max": "0",
+            "path": "Patient.link"
+          },
+          {
+            "id": "Patient.language",
+            "max": "0",
+            "path": "Patient.language"
+          },
+          {
+            "id": "Patient.implicitRules",
+            "max": "0",
+            "path": "Patient.implicitRules"
+          },
+          {
+            "id": "Patient.generalPractitioner",
+            "max": "0",
+            "path": "Patient.generalPractitioner"
+          },
+          {
+            "id": "Patient.deceased[x]",
+            "max": "0",
+            "path": "Patient.deceased[x]"
+          },
+          {
+            "id": "Patient.contact",
+            "max": "0",
+            "path": "Patient.contact"
+          },
+          {
+            "id": "Patient.communication",
+            "max": "0",
+            "path": "Patient.communication"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName": "extensions/BblPatientExtensionSexAtBirth.StructureDefinition.json",
+    "rsc": {
+      "resourceType": "StructureDefinition",
+      "id": "BblPatientExtensionSexAtBirth",
+      "url": "https://fhir.bbl.health/StructureDefinition/BblPatientExtensionSexAtBirth",
+      "meta": {
+        "profile": [
+          "https://fhir.bbl.health/StructureDefinition/BblStructureDefinition"
+        ]
+      },
+      "name": "SexAtBirth",
+      "date": "2020-04-20",
+      "kind": "complex-type",
+      "type": "Extension",
+      "title": "BblPatientExtensionSexAtBirth",
+      "status": "active",
+      "abstract": false,
+      "description": "Sex assigned at birth",
+      "fhirVersion": "4.0.1",
+      "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+      "context": [
+        {
+          "type": "element",
+          "expression": "Patient"
+        }
+      ],
+      "differential": {
+        "element": [
+          {
+            "id": "Extension",
+            "max": "1",
+            "path": "Extension"
+          },
+          {
+            "id": "Extension.url",
+            "min": 1,
+            "path": "Extension.url",
+            "fixedUri": "https://fhir.bbl.health/StructureDefinition/BblPatientExtensionSexAtBirth"
+          },
+          {
+            "id": "Extension.value[x]",
+            "path": "Extension.value[x]",
+            "type": [
+              {
+                "code": "Coding"
+              }
+            ]
+          },
+          {
+            "id": "Extension.value[x]:valueCoding",
+            "min": 0,
+            "path": "Extension.valueCoding",
+            "type": [
+              {
+                "code": "Coding"
+              }
+            ],
+            "binding": {
+              "strength": "required",
+              "valueSet": "https://fhir.bbl.health/ValueSet/BblSexAtBirth"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName": "valueSets/BblSexAtBirth.ValueSet.json",
+    "rsc": {
+      "resourceType": "ValueSet",
+      "id": "BblSexAtBirth",
+      "url": "https://fhir.bbl.health/ValueSet/BblSexAtBirth",
+      "name": "SexAtBirth",
+      "date": "2020-04-20",
+      "title": "Sex At Birth",
+      "status": "active",
+      "description": "Sex assigned at birth",
+      "compose": {
+        "include": [
+          {
+            "system": "https://bbl.health",
+            "concept": [
+              {
+                "code": "Wv8a787W8u",
+                "display": "Male"
+              },
+              {
+                "code": "JVmqxlC1dc",
+                "display": "Female"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+]

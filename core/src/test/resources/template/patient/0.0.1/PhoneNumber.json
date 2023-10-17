@@ -1,0 +1,19 @@
+{
+  "id" : "PhoneNumber",
+  "name" : "PhoneNumber",
+  "description" : "Phone number",
+  "domain" : "patient",
+  "params" : {
+    "phoneNumber" : {
+      "type" : "string",
+      "description" : "The phone number",
+      "tags" : {
+        "pii" : true
+      }
+    }
+  },
+  "hydrated" : {
+    "system" : "phone",
+    "value" : "{{{phoneNumber}}}"
+  }
+}

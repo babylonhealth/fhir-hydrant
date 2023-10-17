@@ -1,0 +1,24 @@
+{
+  "id" : "TriageQuestionnaireItemType",
+  "name" : "Triage Questionnaire Item Type",
+  "domain" : "Triage",
+  "packageName" : "triage",
+  "description" : "Type of question",
+  "values" : [
+    {
+      "name" : "TRIAGE_QUESTIONNAIRE_ITEM_TYPE_TEXT",
+      "value" : "text"
+    },
+    {
+      "name" : "TRIAGE_QUESTIONNAIRE_ITEM_TYPE_CHOICE",
+      "value" : "choice"
+    },
+    {
+      "name" : "TRIAGE_QUESTIONNAIRE_ITEM_TYPE_OPEN_CHOICE",
+      "value" : "open-choice"
+    }
+  ],
+  "allowAbsent" : false,
+  "absentName" : "TRIAGE_QUESTIONNAIRE_ITEM_TYPE_ABSENT",
+  "default" : "choice"
+}

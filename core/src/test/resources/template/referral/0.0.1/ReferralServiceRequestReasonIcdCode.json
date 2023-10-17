@@ -1,0 +1,21 @@
+{
+  "id": "ReferralServiceRequestReasonIcdCode",
+  "name": "Referral Service Request Reason ICD-10 Code",
+  "domain": "referral",
+  "description": "The reason for the referral coded with an ICD-10 code",
+  "params": {
+    "code": {
+      "type": "code",
+      "description": "ICD-10 code for the reason for the referral"
+    },
+    "display": {
+      "type": "string",
+      "description": "Text description for the reason code"
+    }
+  },
+  "hydrated": {
+    "code": "{{{code}}}",
+    "display": "{{{display}}}",
+    "system": "http://hl7.org/fhir/sid/icd-10-cm"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id" : "QuestionnaireResponseSourceEnum",
+  "name" : "Questionnaire Response Source Role",
+  "domain" : "HealthAssessment",
+  "description" : "Questionnaire Response Source Role",
+  "values" : [
+    {
+      "name" : "QUESTIONNAIRE_RESPONSE_SOURCE_ENUM_PATIENT",
+      "value" : "https://administration.bbl.health/Patient"
+    },
+    {
+      "name" : "QUESTIONNAIRE_RESPONSE_SOURCE_ENUM_RELATED_PERSON",
+      "value" : "https://healthassessment.bbl.health/RelatedPerson"
+    }
+  ],
+  "absentName" : "QUESTIONNAIRE_RESPONSE_SOURCE_ENUM_ABSENT",
+  "allowAbsent" : false,
+  "default" : "https://administration.bbl.health/Patient"
+}

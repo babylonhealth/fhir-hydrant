@@ -1,0 +1,19 @@
+{
+  "id" : "FlatQuestionnaireItemType",
+  "name" : "flat Questionnaire Item Type",
+  "domain" : "testing",
+  "description" : "Item type",
+  "values" : [
+    {
+      "name" : "FLAT_QUESTIONNAIRE_ITEM_TYPE_STRING",
+      "value" : "string"
+    },
+    {
+      "name" : "FLAT_QUESTIONNAIRE_ITEM_TYPE_CHOICE",
+      "value" : "choice"
+    }
+  ],
+  "absentName" : "QUESTIONNAIRE_ITEM_TYPE_ABSENT",
+  "allowAbsent" : false,
+  "default" : "string"
+}

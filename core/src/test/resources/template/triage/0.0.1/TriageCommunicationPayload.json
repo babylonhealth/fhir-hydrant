@@ -1,0 +1,30 @@
+{
+  "id" : "TriageCommunicationPayload",
+  "name" : "Triage Communication Payload",
+  "domain" : "Triage",
+  "packageName" : "triage",
+  "description" : "Content of the communication (code of the outcome)",
+  "params" : {
+    "code" : {
+      "type" : "TriageCommunicationPayloadCode",
+      "description" : "Code of the outcome of the communication"
+    },
+    "display" : {
+      "type" : "string",
+      "description" : "Test describing the outcome of the communication"
+    }
+  },
+  "hydrated" : {
+    "contentString" : "{{{display}}}",
+    "extension" : [
+      {
+        "url" : "http://hl7.org/fhir/5.0/StructureDefintion/extension-Communication.payload.contentCodeableConcept",
+        "valueCodeableConcept" : {
+          "coding" : [
+            "{{{code}}}"
+          ]
+        }
+      }
+    ]
+  }
+}

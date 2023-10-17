@@ -1,0 +1,21 @@
+{
+  "id" : "ReportedConditionRecorderType",
+  "name" : "Reported Condition Recorder Type",
+  "domain" : "reportedcondition",
+  "description" : "The domain and resource type of the recorder",
+  "values" : [
+    {
+      "name" : "REPORTED_CONDITION_RECORDER_TYPE_CLINICIAN",
+      "value" : "https://clinician.bbl.health/Practitioner"
+    },
+    {
+      "name" : "REPORTED_CONDITION_RECORDER_TYPE_MACHINE",
+      "value" : "https://machine.bbl.health/Practitioner"
+    },
+    {
+      "name" : "REPORTED_CONDITION_RECORDER_TYPE_UNKNOWN_EXTERNAL_PRACTITIONER",
+      "value" : "https://external.bbl.health/Practitioner"
+    }
+  ],
+  "allowAbsent" : false
+}

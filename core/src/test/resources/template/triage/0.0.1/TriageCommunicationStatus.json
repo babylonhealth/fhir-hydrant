@@ -1,0 +1,46 @@
+{
+  "id" : "TriageCommunicationStatus",
+  "name" : "Triage Communication Status",
+  "domain" : "Triage",
+  "packageName" : "triage",
+  "description" : "Status of the communication",
+  "values" : [
+    {
+      "name" : "TRIAGE_COMMUNICATION_STATUS_PREPARATION",
+      "value" : "preparation"
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_STATUS_IN_PROGRESS",
+      "value" : "in-progress"
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_STATUS_NOT_DONE",
+      "value" : "not-done"
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_STATUS_ON_HOLD",
+      "value" : "on-hold"
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_STATUS_STOPPED",
+      "value" : "stopped"
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_STATUS_COMPLETED",
+      "value" : "completed"
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_STATUS_ENTERED_IN_ERROR",
+      "value" : "entered-in-error"
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_STATUS_UNKNOWN",
+      "value" : "unknown"
+    }
+  ],
+  "system" : "http://hl7.org/fhir/event-status",
+  "url" : "http://hl7.org/fhir/ValueSet/event-status",
+  "default" : "unknown",
+  "allowAbsent" : false,
+  "absentName" : "TRIAGE_COMMUNICATION_STATUS_ABSENT"
+}

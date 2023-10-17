@@ -1,0 +1,73 @@
+{
+  "id": "HealthIQEvent",
+  "name": "HealthIQEvent",
+  "description": "HealthIQEvent",
+  "domain": "summary",
+  "params": {
+    "period": {
+      "type": "RiskPredictionWhenPeriod",
+      "description": "The period for which this prediction is valid"
+    },
+    "outcomeCoding": {
+      "type": "RiskPredictionOutcomeCoding",
+      "description": "type of risk prediction"
+    },
+    "probabilityDecimal": {
+      "type": "decimal",
+      "description": "a decimal value between 0 & 1"
+    },
+    "occurrenceDateTime": {
+      "type": "dateTime",
+      "description": "datetime when this prediction was calculated"
+    },
+    "modelID": {
+      "type": "code",
+      "description": "model ID e.g. new_admissions, readmissions"
+    },
+    "modelVersion": {
+      "type": "code",
+      "description": "model version e.g. \"v1.2\""
+    },
+    "id": {
+      "type": "uuid",
+      "description": "The id of the specific healthiq prediction. Marked as optional for backwards compatibility, but should always be present",
+      "optional": true
+    }
+  },
+  "hydrated": {
+    "id": "{{{id}}}",
+    "extension": [
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionHealthIQOutcomeCoding",
+        "valueCoding": "{{{outcomeCoding}}}"
+      },
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionHealthIQProbability",
+        "valueDecimal": "{{{probabilityDecimal}}}"
+      },
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionHealthIQOccurrenceTimestamp",
+        "valueDateTime": "{{{occurrenceDateTime}}}"
+      },
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionHealthIQModel",
+        "valueCode": "{{{modelID}}}"
+      },
+      {
+        "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionHealthIQModelVersion",
+        "valueCode": "{{{modelVersion}}}"
+      }
+    ],
+    "code": [
+      {
+        "coding": [
+          {
+            "system": "https://summary.bbl.health/EventType",
+            "code": "healthiq-prediction"
+          }
+        ]
+      }
+    ],
+    "period": "{{{period}}}"
+  }
+}

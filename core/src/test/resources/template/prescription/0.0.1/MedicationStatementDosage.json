@@ -1,0 +1,47 @@
+{
+    "id": "MedicationStatementDosage",
+    "name": "Medication Statement Dosage",
+    "domain": "prescription",
+    "description": "",
+    "notes": {},
+    "params": {
+        "doseAndRate": {
+            "type": "MedicationStatementDosageDoseAndRate",
+            "description": "The dosage and rate information of the medication",
+            "repeated": true
+        },
+        "asNeededBoolean": {
+            "type": "boolean",
+            "description": "A boolean specifying if the medication should be taken as the need arises by the subject",
+            "optional": true
+        },
+        "route": {
+            "type": "MedicationStatementDosageRoute",
+            "description": "The route the subject should take the medication through",
+            "repeated": true
+        },
+        "routeText": {
+          "type": "string",
+          "description": "The route the subject should take the medication through",
+          "optional": true
+        },
+        "timing": {
+            "type": "MedicationStatementDosageTiming",
+            "description": "When the medication should be administered",
+            "optional": true
+        }
+    },
+    "hydrated": {
+        "asNeededBoolean": "{{{asNeededBoolean}}}",
+        "route": {
+            "coding": [
+                "{{{route}}}"
+            ],
+            "text": "{{{routeText}}}"
+        },
+        "doseAndRate": [
+            "{{{doseAndRate}}}"
+        ],
+        "timing": "{{{timing}}}"
+    }
+}

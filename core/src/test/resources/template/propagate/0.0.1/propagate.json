@@ -1,0 +1,48 @@
+{
+  "id" : "Propagate",
+  "name" : "Propagate",
+  "domain" : "testing",
+  "description" : "send a parameter to children without having to specify on each one",
+  "params" : {
+    "patientId" : {
+      "type" : "uuid",
+      "description" : "patient id that gets propagated",
+      "tags" : {
+        "pii" : true
+      }
+    },
+    "propagate" : {
+      "type" : "PropagateHere",
+      "description" : "thing that patient id gets propagated to"
+    },
+    "timestamp" : {
+      "type" : "dateTime",
+      "description" : "time stamp for some reason"
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "Observation",
+    "id" : "1234567890",
+    "status" : "final",
+    "code" : {
+      "coding" : [
+        "{{{propagate}}}"
+      ]
+    },
+    "subject" : {
+      "reference" : "https://administration.bbl.health/Patient/{{{patientId}}}"
+    },
+    "performer" : [
+      {
+        "reference" : "https://administration.bbl.health/Practitioner/8a5f6cae-64a3-4405-8908-c1568ecc2cb6"
+      }
+    ],
+    "effectiveDateTime" : "{{{timestamp}}}",
+    "valueQuantity" : {
+      "value" : 5,
+      "unit" : "lbs",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "[lb_av]"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id" : "TriageCommunicationCategory",
+  "name" : "Triage Communication Category",
+  "domain" : "Triage",
+  "packageName" : "triage",
+  "description" : "Category of the communication",
+  "values" : [
+    {
+      "name" : "TRIAGE_COMMUNICATION_CATEGORY_ALERT",
+      "value" : "alert"
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_CATEGORY_NOTIFICATION",
+      "value" : "notification"
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_CATEGORY_REMINDER",
+      "value" : "reminder"
+    },
+    {
+      "name" : "TRIAGE_COMMUNICATION_CATEGORY_INSTRUCTION",
+      "value" : "instruction"
+    }
+  ],
+  "system" : "http://terminology.hl7.org/CodeSystem/communication-category",
+  "url" : "https://fhir.bbl.health/ValueSets/CommunicationStatus",
+  "default" : "instruction",
+  "absentName" : "TRIAGE_COMMUNICATION_CATEGORY_ABSENT",
+  "allowAbsent" : false
+}

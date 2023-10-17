@@ -1,0 +1,16 @@
+{
+    "id": "ClaimCurrency",
+    "name": "Claim Currency",
+    "domain": "claim",
+    "description": "Currency a claim was paid in",
+    "notes": {},
+    "values": [
+        {
+            "value": "USD"
+        }
+    ],
+    "allowAbsent": false,
+    "default": "USD",
+    "url" : "http://hl7.org/fhir/ValueSet/currencies",
+    "system" : "urn:iso:std:iso:4217"
+}

@@ -1,0 +1,114 @@
+{
+  "id": "ReferralServiceRequest",
+  "name": "Referral ServiceRequest",
+  "domain": "referral",
+  "description": "Profile created to collect details of referrals requested",
+  "params": {
+    "id": {
+      "type": "uuid",
+      "description": "Id for the referral"
+    },
+    "subject": {
+      "type": "uuid",
+      "description": "Patient uuid who is being referred"
+    },
+    "occurrenceDateTime": {
+      "type": "dateTime",
+      "description": "",
+      "optional": true
+    },
+    "authoredOn": {
+      "type": "dateTime",
+      "description": "When the referral was made"
+    },
+    "requester": {
+      "type": "uuid",
+      "description": "Clinician requesting the referral"
+    },
+    "reasonStartDate": {
+      "type": "ReferralServiceRequestReasonStartDate",
+      "description": "When the condition that was the reason for the referral started",
+      "optional": true
+    },
+    "preAuthorisationConsent": {
+      "type": "ReferralServiceRequestConsentForPreAuthorisation",
+      "description": "Patient Consent for Pre-Authorisation"
+    },
+    "status": {
+      "type": "ReferralServiceRequestStatus",
+      "description": "Status of the referral"
+    },
+    "intent": {
+      "type": "ReferralServiceRequestIntent",
+      "description": "Intent of the referral"
+    },
+    "priority": {
+      "type": "ReferralServiceRequestPriority",
+      "description": "Priority of the referral"
+    },
+    "encounter": {
+      "type": "string",
+      "description": "Clinical portal consultation id"
+    },
+    "reasonCode": {
+      "type": "ReferralServiceRequestReasonCode",
+      "description": "A code for the reason for the referral",
+      "repeated": true
+    },
+    "reasonReference": {
+      "type": "uuid",
+      "description": "A reference to a reported condition, which is reason for the referral",
+      "repeated": true
+    },
+    "performerType": {
+      "type": "ReferralServiceRequestPerformerType",
+      "description": "Role of the performer being referred to"
+    }
+  },
+  "hydrated": {
+    "resourceType": "ServiceRequest",
+    "meta": {
+      "profile": [
+        "https://fhir.bbl.health/StructureDefinition/BblReferralServiceRequest"
+      ]
+    },
+    "id": "{{{id}}}",
+    "subject": {
+      "reference": "https://patient.bbl.health/Patient/{{{subject}}}"
+    },
+    "extension": [
+      "{{{reasonStartDate}}}",
+      "{{{preAuthorisationConsent}}}"
+    ],
+    "code": {
+      "coding": [
+        {
+          "display": "Patient referral",
+          "code": "sUL3lsffD3",
+          "system": "https://bbl.health"
+        }
+      ]
+    },
+    "occurrenceDateTime": "{{{occurrenceDateTime}}}",
+    "authoredOn": "{{{authoredOn}}}",
+    "requester": {
+      "reference": "https://clinician.bbl.health/Practitioner/{{{requester}}}"
+    },
+    "status": "{{{status}}}",
+    "intent": "{{{intent}}}",
+    "priority": "{{{priority}}}",
+    "encounter": {
+      "reference": "https://consultation.bbl.health/Encounter/{{{encounter}}}"
+    },
+    "reasonCode": [
+      "{{{reasonCode}}}"
+    ],
+    "reasonReference": [
+      {
+        "reference": "https://reportedcondition.bbl.health/Condition/{{{reasonReference}}}"
+      }
+    ],
+    "performerType": "{{{performerType}}}"
+  },
+  "modelUrl": "https://bbl.health/modelling/d7efbcea-13f2-400f-b32d-eaa0c000135c/submit"
+}

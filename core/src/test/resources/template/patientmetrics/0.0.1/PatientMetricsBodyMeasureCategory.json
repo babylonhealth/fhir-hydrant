@@ -1,0 +1,22 @@
+{
+    "id": "PatientMetricsBodyMeasureCategory",
+    "name": "Patient Metrics Body Measure Category",
+    "version": "0.0.1",
+    "domain": "testing",
+    "description": "Type of procedure requested.",
+    "values": [
+        {
+            "value": {
+                "coding": [
+                    {
+                        "display": "Vital Signs",
+                        "code": "vital-signs",
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                    }
+                ]
+            },
+            "name": "PATIENT_METRICS_BODY_MEASURE_CATEGORY_VITAL_SIGN"
+        }
+    ],
+    "allowAbsent": false
+}

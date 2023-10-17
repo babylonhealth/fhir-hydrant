@@ -1,0 +1,23 @@
+{
+  "id" : "FlatQuestionnaireResponseAuthorRole",
+  "name" : "flat Questionnaire Response Author Role",
+  "domain" : "testing",
+  "description" : "Questionnaire Response Author Role",
+  "values" : [
+    {
+      "name" : "FLAT_QUESTIONNAIRE_RESPONSE_AUTHOR_ROLE_PATIENT",
+      "value" : "https://administration.bbl.health/Patient"
+    },
+    {
+      "name" : "FLAT_QUESTIONNAIRE_RESPONSE_AUTHOR_ROLE_MEMBER",
+      "value" : "https://healthassessment.bbl.health/RelatedPerson"
+    },
+    {
+      "name" : "FLAT_QUESTIONNAIRE_RESPONSE_AUTHOR_ROLE_PRACTITIONER",
+      "value" : "https://administration.bbl.health/Practitioner"
+    }
+  ],
+  "allowAbsent" : false,
+  "default" : "https://administration.bbl.health/Patient",
+  "absentName" : "FLAT_QUESTIONNAIRE_RESPONSE_AUTHOR_ROLE_ABSENT"
+}

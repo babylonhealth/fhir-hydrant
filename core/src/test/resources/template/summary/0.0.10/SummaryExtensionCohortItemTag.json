@@ -1,0 +1,17 @@
+{
+  "id": "SummaryExtensionCohortItemTag",
+  "name": "Summary Extension Cohort Item History Tag",
+  "domain": "summary",
+  "description": "Tags for the cohort which contains this patient",
+  "notes": {},
+  "params": {
+    "tag": {
+      "type": "CohortTag",
+      "description": "A tag for the cohort which contains this patient"
+    }
+  },
+  "hydrated": {
+    "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionCohortItemTag",
+    "valueCoding": "{{{tag}}}"
+  }
+}

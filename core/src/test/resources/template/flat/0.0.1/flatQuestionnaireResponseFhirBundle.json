@@ -1,0 +1,21 @@
+{
+  "id" : "FlatQuestionnaireResponseFhirBundle",
+  "name" : "flat QuestionnaireResponse - Risk Assessment FHIR Bundle",
+  "domain" : "testing",
+  "description" : "same as the protobuf comment",
+  "params" : {
+    "response" : {
+      "type" : "FlatQuestionnaireResponse",
+      "description" : "same as the protobuf comment",
+      "flatten" : true
+    },
+    "relatedPerson" : {
+      "type" : "FlatQuestionnaireResponseRelatedPerson",
+      "description" : "same as the protobuf comment"
+    }
+  },
+  "hydrated" : [
+    "{{{response}}}",
+    "{{{relatedPerson}}}"
+  ]
+}

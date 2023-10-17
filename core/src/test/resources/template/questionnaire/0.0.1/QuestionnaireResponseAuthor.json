@@ -1,0 +1,29 @@
+{
+  "id" : "QuestionnaireResponseAuthor",
+  "name" : "Questionnaire Response Author",
+  "domain" : "HealthAssessment",
+  "description" : "Entity that submits the questionnaire or question answer",
+  "remap" : [
+    {
+      "match" : {
+        "id" : "babylon-machine-practitioner/healthcheck"
+      },
+      "hydrated" : {
+        "reference" : "https://machine.bbl.health/Practitioner/healthcheck"
+      }
+    }
+  ],
+  "params" : {
+    "id" : {
+      "type" : "string",
+      "description" : "UUID for clinician, string for machine practitioner"
+    },
+    "role" : {
+      "type" : "QuestionnaireResponseAuthorRole",
+      "description" : "FHIR reference resourceType - Role of the author. "
+    }
+  },
+  "hydrated" : {
+    "reference" : "{{{role}}}/{{{id}}}"
+  }
+}

@@ -1,0 +1,39 @@
+{
+    "id": "MedicationStatementDosageDoseAndRate",
+    "name": "Medication Statement Dosage Dose And Rate",
+    "domain": "prescription",
+    "description": "",
+    "notes": {},
+    "params": {
+        "doseValue": {
+            "type": "decimal",
+            "description": "The value of the dosage",
+            "optional": true
+        },
+        "doseUnit": {
+            "type": "string",
+            "description": "The unit the dosage is being measured in",
+            "optional": true
+        },
+        "rateValue": {
+            "type": "decimal",
+            "description": "The rate at which the dosage should be taken",
+            "optional": true
+        },
+        "rateUnit": {
+            "type": "string",
+            "description": "The unit the rate is being measured in",
+            "optional": true
+        }
+    },
+    "hydrated": {
+        "doseQuantity": {
+            "value": "{{{doseValue}}}",
+            "unit": "{{{doseUnit}}}"
+        },
+        "rateQuantity": {
+            "value": "{{{rateValue}}}",
+            "unit": "{{{rateUnit}}}"
+        }
+    }
+}

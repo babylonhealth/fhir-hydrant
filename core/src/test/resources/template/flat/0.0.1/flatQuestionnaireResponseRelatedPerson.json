@@ -1,0 +1,23 @@
+{
+  "id" : "FlatQuestionnaireResponseRelatedPerson",
+  "name" : "flat Questionnaire Response Related Person",
+  "domain" : "testing",
+  "description" : "same as the protobuf comment",
+  "params" : {
+    "id" : {
+      "type" : "uuid",
+      "description" : "same as the protobuf comment"
+    },
+    "patient" : {
+      "type" : "uuid",
+      "description" : "same as the protobuf comment"
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "RelatedPerson",
+    "id" : "{{{id}}}",
+    "patient" : {
+      "reference" : "https://administration.bbl.health/Patient/{{{patient}}}"
+    }
+  }
+}

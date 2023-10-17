@@ -1,0 +1,16 @@
+{  
+    "id": "LabsServiceRequestList",
+    "name": "LabsServiceRequestList",
+    "domain": "labs",
+    "description": "List of ServiceRequests linked to an Encounter",
+    "params": {
+        "serviceRequest": {
+            "type": "LabsServiceRequest",
+            "description": "A request for diagnostic reports for a patient. Each ServiceRequest contains information about what is being requested, by whom, for whom and why the request has been put in. There may be multiple ServiceRequest's in each message.",
+            "repeated": true
+        }
+    },
+    "hydrated": [
+        "{{{serviceRequest}}}"
+    ]
+}

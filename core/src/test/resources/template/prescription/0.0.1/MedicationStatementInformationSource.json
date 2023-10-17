@@ -1,0 +1,19 @@
+{
+  "id" : "MedicationStatementInformationSource",
+  "name" : "Medication Statement Information Source",
+  "domain" : "prescription",
+  "description" : "Source of the medication statement",
+  "params" : {
+    "informationSourceType" : {
+      "type" : "MedicationStatementInformationSourceType",
+      "description" : "The domain and resource type of the recorder"
+    },
+    "informationSource" : {
+      "type" : "string",
+      "description" : "The id of the information source in the provided type"
+    }
+  },
+  "hydrated" : {
+    "reference" : "{{{informationSourceType}}}/{{{informationSource}}}"
+  }
+}

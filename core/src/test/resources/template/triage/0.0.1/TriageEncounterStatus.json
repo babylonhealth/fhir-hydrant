@@ -1,0 +1,50 @@
+{
+  "id" : "TriageEncounterStatus",
+  "name" : "Triage Encounter Status",
+  "domain" : "Triage",
+  "packageName" : "triage",
+  "description" : "Status of the encounter",
+  "values" : [
+    {
+      "name" : "TRIAGE_ENCOUNTER_STATUS_PLANNED",
+      "value" : "planned"
+    },
+    {
+      "name" : "TRIAGE_ENCOUNTER_STATUS_ARRIVED",
+      "value" : "arrived"
+    },
+    {
+      "name" : "TRIAGE_ENCOUNTER_STATUS_TRIAGED",
+      "value" : "triaged"
+    },
+    {
+      "name" : "TRIAGE_ENCOUNTER_STATUS_IN_PROGRESS",
+      "value" : "in-progress"
+    },
+    {
+      "name" : "TRIAGE_ENCOUNTER_STATUS_ON_LEAVE",
+      "value" : "onleave"
+    },
+    {
+      "name" : "TRIAGE_ENCOUNTER_STATUS_FINISHED",
+      "value" : "finished"
+    },
+    {
+      "name" : "TRIAGE_ENCOUNTER_STATUS_CANCELLED",
+      "value" : "cancelled"
+    },
+    {
+      "name" : "TRIAGE_ENCOUNTER_STATUS_ENTERED_IN_ERROR",
+      "value" : "entered-in-error"
+    },
+    {
+      "name" : "TRIAGE_ENCOUNTER_STATUS_UNKNOWN",
+      "value" : "unknown"
+    }
+  ],
+  "system" : "http://hl7.org/fhir/encounter-status",
+  "url" : "http://hl7.org/fhir/ValueSet/encounter-status",
+  "absentName" : "TRIAGE_ENCOUNTER_STATUS_ABSENT",
+  "default" : "unknown",
+  "allowAbsent" : false
+}

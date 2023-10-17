@@ -1,0 +1,71 @@
+{
+    "id": "PartnerOrganization",
+    "name": "Partner Organization",
+    "version": "0.0.1",
+    "domain": "partner",
+    "description": "Hierarchical information about a partner organization for a customer.",
+    "notes": {},
+    "params": {
+        "id": {
+            "type": "string",
+            "description": "The unique identifier for a partner organization, which will always be of the form of lowercase letters separated by hyphens."
+        },
+        "identifier": {
+            "type": "PartnerOrganizationIdentifier",
+            "description": "Identifiers used by external consumers/client systems to reference a partner organization.",
+            "repeated": true
+        },
+        "active": {
+            "type": "boolean",
+            "description": "Whether a partner organization is still active."
+        },
+        "name": {
+            "type": "string",
+            "description": "The name of a partner organization."
+        },
+        "alias": {
+            "type": "string",
+            "description": "The display name of a partner organization."
+        },
+        "partOf": {
+            "type": "string",
+            "description": "The parent organization of a partner organization.",
+            "optional": true
+        },
+        "typeLabel": {
+            "type": "string",
+            "description": "The type label of a partner organization, such as Reseller, Affiliate, Service, etc."
+        }
+    },
+    "hydrated": {
+        "resourceType": "Organization",
+        "meta": {
+            "profile": [
+                "https://fhir.bbl.health/StructureDefinition/BblPartnerOrganization"
+            ]
+        },
+        "id": "{{{id}}}",
+        "extension": [
+            {
+                "url": "https://fhir.bbl.health/StructureDefinition/BblPartnerOrganizationTypeLabel",
+                "valueString": "{{{typeLabel}}}"
+            }
+        ],
+        "identifier": [
+            {
+                "system": "https://partner.bbl.health/Organization",
+                "value": "{{{id}}}"
+            },
+            "{{{identifier}}}"
+        ],
+        "active": "{{{active}}}",
+        "name": "{{{name}}}",
+        "alias": [
+            "{{{alias}}}"
+        ],
+        "partOf": {
+            "reference": "https://partner.bbl.health/Organization/{{{partOf}}}"
+        }
+    },
+    "modelUrl": "https://bbl.health/modelling/adf81eb6-8b2e-4079-9da8-7a5bdb18eab3/submit"
+}

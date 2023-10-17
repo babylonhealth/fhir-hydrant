@@ -1,0 +1,159 @@
+{
+  "id" : "PatientIdentifierSystem",
+  "name" : "Patient Identifier System",
+  "description" : "Systems namespaces for patient identifiers",
+  "version" : "0.0.1",
+  "domain" : "patient",
+  "packageName" : "patient",
+  "allowAbsent" : false,
+  "abstract" : false,
+  "values" : [
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_HIGI_ID",
+      "value" : "https://higi.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_CORE_RUBY_ID",
+      "value" : "https://coreruby.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_UK_NHS_NUMBER",
+      "value" : "https://fhir.nhs.uk/Id/nhs-number"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_CANVAS_ID",
+      "value" : "https://canvas-sample-app.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_US_SOCIAL_SECURITY_NUMBER",
+      "value" : "http://hl7.org/fhir/sid/us-ssn"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_HSH_MEDICAID_VBC",
+      "value" : "https://hsh-medicaid-vbc.bbl.health/Patient",
+      "description": "Do not use. It is deprecated."
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_FIDELIS_MEDICAID_B_360",
+      "value" : "https://fidelis-medicaid-b-360.bbl.health/Patient",
+      "description": "Do not use. It is deprecated."
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_PEACH_STATE_MEDICAID_B_360",
+      "value" : "https://peach-state-medicaid-b-360.bbl.health/Patient",
+      "description": "Do not use. It is deprecated."
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_MAGNOLIA_MEDICAID_B_360",
+      "value" : "https://magnolia-medicaid-b-360.bbl.health/Patient",
+      "description": "Do not use. It is deprecated."
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_IOWA_TOTAL_CARE_MEDICAID_B_360",
+      "value" : "https://iowa-total-care-medicaid-b-360.bbl.health/Patient",
+      "description": "Do not use. It is deprecated."
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_BUPA_GOLDEN_ID",
+      "value" : "https://golden.bupa.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_PSI_CANVAS",
+      "value" : "https://psi-canvas.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_PRUDENTIAL",
+      "value" : "https://pru.bbl.heath/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_HSH_MEDICAID_VBC_AMISYS",
+      "value" : "https://hsh-medicaid-vbc.amisys.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_HSH_MEDICAID_VBC_MEDICAID",
+      "value" : "https://hsh-medicaid-vbc.medicaid.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_HSH_MEDICAID_VBC_PARTNER",
+      "value" : "https://hsh-medicaid-vbc.partner.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_FIDELIS_MEDICAID_B_360_AMISYS",
+      "value" : "https://fidelis-medicaid-b-360.amisys.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_FIDELIS_MEDICAID_B_360_MEDICAID",
+      "value" : "https://fidelis-medicaid-b-360.medicaid.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_FIDELIS_MEDICAID_B_360_PARTNER",
+      "value" : "https://fidelis-medicaid-b-360.partner.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_PEACH_STATE_MEDICAID_B_360_AMISYS",
+      "value" : "https://peach-state-medicaid-b-360.amisys.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_PEACH_STATE_MEDICAID_B_360_MEDICAID",
+      "value" : "https://peach-state-medicaid-b-360.medicaid.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_PEACH_STATE_MEDICAID_B_360_PARTNER",
+      "value" : "https://peach-state-medicaid-b-360.partner.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_MAGNOLIA_MEDICAID_B_360_AMISYS",
+      "value" : "https://magnolia-medicaid-b-360.amisys.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_MAGNOLIA_MEDICAID_B_360_MEDICAID",
+      "value" : "https://magnolia-medicaid-b-360.medicaid.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_MAGNOLIA_MEDICAID_B_360_PARTNER",
+      "value" : "https://magnolia-medicaid-b-360.partner.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_IOWA_TOTAL_CARE_MEDICAID_B_360_AMISYS",
+      "value" : "https://iowa-total-care-medicaid-b-360.amisys.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_IOWA_TOTAL_CARE_MEDICAID_B_360_MEDICAID",
+      "value" : "https://iowa-total-care-medicaid-b-360.medicaid.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_IOWA_TOTAL_CARE_MEDICAID_B_360_PARTNER",
+      "value" : "https://iowa-total-care-medicaid-b-360.partner.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_PRESBYTERIAN_B_360_AMISYS",
+      "value" : "https://presbyterian-medicare-advantage-b-360.amisys.bbl.health/Patient",
+      "description": "Do not use. It is deprecated."
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_PRESBYTERIAN_B_360_MEDICAID",
+      "value" : "https://presbyterian-medicare-advantage-b-360.medicaid.bbl.health/Patient",
+      "description": "Do not use. It is deprecated."
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_PRESBYTERIAN_B_360_PARTNER",
+      "value" : "https://presbyterian-medicare-advantage-b-360.partner.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_US_MEDICARE",
+      "value" : "http://hl7.org/fhir/sid/us-medicare"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_TELUS",
+      "value" : "https://telus.bbl.health/Patient"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_UNKNOWN",
+      "value" : "unknown"
+    },
+    {
+      "name" : "PATIENT_IDENTIFIER_SYSTEM_PRESBYTERIAN_B_360_MEMBER",
+      "value" : "https://presbyterian-medicare-advantage-b-360.member.bbl.health/Patient"
+    }
+  ]
+}

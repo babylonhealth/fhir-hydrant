@@ -1,0 +1,24 @@
+{
+  "id" : "CodingCodeValues",
+  "name" : "Coding code",
+  "domain" : "testing",
+  "description" : "the three codes",
+  "values" : [
+    {
+      "name" : "CODING_1",
+      "value" : "420420"
+    },
+    {
+      "name" : "CODING_2",
+      "value" : "696969"
+    },
+    {
+      "name" : "CODING_3",
+      "value" : "331337"
+    }
+  ],
+  "system" : "https://bbl.health",
+  "default" : "420420",
+  "absentName" : "CODING_ABSENT",
+  "allowAbsent" : false
+}

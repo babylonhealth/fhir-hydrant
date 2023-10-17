@@ -1,0 +1,28 @@
+{
+  "id" : "PatientMetricsBodyMeasureHeightInM",
+  "name" : "Body Measure Height in m",
+  "domain" : "testing",
+  "order" : 1,
+  "description" : "body measurement height",
+  "extends" : "PatientMetricsBodyMeasure",
+  "implement" : {
+    "code" : "D_ViDKoBWF",
+    "display" : "Body height",
+    "valueCode" : "m",
+    "unit" : "[m]",
+    "interpretation": "9rTncufFB3",
+    "interpretationDisplay": "Exercise physically impossible",
+    "referenceRanges": [
+      {
+        "low": 1.50,
+        "high": 1.94,
+        "text": "normal"
+      },
+      {
+        "low": 0.00,
+        "high": 0.01,
+        "text": "possibly an ant?"
+      }
+    ]
+  }
+}

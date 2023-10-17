@@ -1,0 +1,97 @@
+{
+    "id": "MedicationStatement",
+    "name": "Medication Statement",
+    "domain": "prescription",
+    "description": "Profile created for modelling medication statement.",
+    "notes": {
+        "MedicationStatement.id": "This field should be unique, such as a UUID."
+    },
+    "params": {
+        "id": {
+            "type": "uuid",
+            "description": "The Identifier of the Medication Statement, this should be unique"
+        },
+        "status": {
+            "type": "MedicationStatementStatus",
+            "description": "The status of the medication"
+        },
+        "medication": {
+            "type": "MedicationStatementMedication",
+            "description": "The medicine information stored within Coding object(s)",
+            "repeated": true
+        },
+        "medicationText": {
+            "type": "string",
+            "description": "The name of the medication"
+        },
+        "subject": {
+            "type": "uuid",
+            "description": "The subject taking the medication"
+        },
+        "context": {
+            "type": "EncounterReference",
+            "description": "A reference to Encounter resource",
+            "optional": true
+        },
+        "startDate": {
+            "type": "dateTime",
+            "description": "The start date the subject should take the medication",
+            "optional": true
+        },
+        "endDate": {
+            "type": "dateTime",
+            "description": "The end date the subject should take the medication till",
+            "optional": true
+        },
+        "dateAsserted": {
+            "type": "dateTime",
+            "description": "The date when the medication statement was asserted by the information source",
+            "optional": true
+        },
+        "note": {
+            "type": "markdown",
+            "description": "Notes regarding the medication statement, if any",
+            "optional": true
+        },
+        "informationSource": {
+            "type": "MedicationStatementInformationSource",
+            "description": "The source of the medication statement",
+            "optional": true
+        },
+        "dosage": {
+            "type": "MedicationStatementDosage",
+            "description": "The dosage information of the medication taken by the subject"
+        }
+    },
+    "hydrated": {
+        "resourceType": "MedicationStatement",
+        "meta": {
+            "profile": [
+                "https://fhir.bbl.health/StructureDefinition/BblMedicationStatement"
+            ]
+        },
+        "id": "{{{id}}}",
+        "status": "{{{status}}}",
+        "medicationCodeableConcept": {
+            "coding": [ "{{{medication}}}" ],
+            "text": "{{{medicationText}}}"
+        },
+        "subject": {
+            "reference": "https://patient.bbl.health/Patient/{{{subject}}}"
+        },
+        "effectivePeriod": {
+                "start": "{{{startDate}}}",
+                "end": "{{{endDate}}}"
+            },
+        "note": [
+            { "text": "{{{note}}}" }
+        ],
+        "dosage": [
+            "{{{dosage}}}"
+        ],
+        "informationSource": "{{{informationSource}}}",
+        "context": "{{{context}}}",
+        "dateAsserted": "{{{dateAsserted}}}"
+    },
+    "modelUrl": "https://bbl.health/modelling/d5265d6c-6f80-44c3-a0cf-dc3f79a8f308/submit"
+}

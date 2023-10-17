@@ -1,0 +1,40 @@
+{
+  "id" : "TriageQuestionnaire",
+  "name" : "TriageQuestionnaire",
+  "domain" : "Triage",
+  "packageName" : "triage",
+  "description" : "Questionnaire that is being answered",
+  "params" : {
+    "id" : {
+      "type" : "uuid",
+      "description" : "FHIR id (NOT identifier)"
+    },
+    "item" : {
+      "type" : "TriageQuestionnaireItem",
+      "description" : "Questions in the questionnaire",
+      "optional" : true,
+      "repeated" : true
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "Questionnaire",
+    "meta" : {
+      "profile" : [
+        "https://fhir.bbl.health/StructureDefinition/BblTriageQuestionnaire"
+      ]
+    },
+    "status" : "active",
+    "description" : "Checkbase questionnaire",
+    "id" : "{{{id}}}",
+    "code" : [
+      {
+        "system" : "https://bbl.health",
+        "code" : "n0RsISVgKY"
+      }
+    ],
+    "item" : [
+      "{{{item}}}"
+    ],
+    "url" : "https://fhir.bbl.health/Questionnaire/{{{id}}}"
+  }
+}

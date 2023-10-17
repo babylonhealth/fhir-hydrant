@@ -1,0 +1,1490 @@
+[
+  {
+    "fileName": "valueSets/BblPatientMetricsBodyMeasureCategory.ValueSet.json",
+    "rsc": {
+      "resourceType": "ValueSet",
+      "id": "BblPatientMetricsBodyMeasureCategory",
+      "url": "https://fhir.bbl.health/ValueSet/BblPatientMetricsBodyMeasureCategory",
+      "name": "Category",
+      "date": "2020-04-20",
+      "title": "Patient Metrics Body Measure Category",
+      "status": "active",
+      "description": "Type of procedure requested.",
+      "compose": {
+        "include": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "concept": [
+              {
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName": "profiles/BblPatientMetricsBodyMeasure.StructureDefinition.json",
+    "rsc": {
+      "resourceType": "StructureDefinition",
+      "id": "BblPatientMetricsBodyMeasure",
+      "url": "https://fhir.bbl.health/StructureDefinition/BblPatientMetricsBodyMeasure",
+      "meta": {
+        "profile": [
+          "https://fhir.bbl.health/StructureDefinition/BblStructureDefinition"
+        ]
+      },
+      "name": "PatientMetricsBodyMeasure",
+      "date": "2020-04-20",
+      "kind": "resource",
+      "type": "Observation",
+      "title": "Body Measure",
+      "status": "active",
+      "abstract": false,
+      "derivation": "constraint",
+      "description": "body measurement",
+      "fhirVersion": "4.0.1",
+      "baseDefinition": "https://fhir.bbl.health/StructureDefinition/BblObservation",
+      "differential": {
+        "element": [
+          {
+            "id": "Observation.id",
+            "min": 1,
+            "path": "Observation.id",
+            "fixedString": "1"
+          },
+          {
+            "id": "Observation.status",
+            "min": 1,
+            "path": "Observation.status",
+            "fixedCode": "final"
+          },
+          {
+            "id": "Observation.code",
+            "min": 1,
+            "path": "Observation.code",
+            "binding": {
+              "strength": "required",
+              "valueSet": "https://fhir.bbl.health/ValueSet/BblPatientMetricsBodyMeasureCode"
+            }
+          },
+          {
+            "id": "Observation.code.coding",
+            "min": 1,
+            "path": "Observation.code.coding"
+          },
+          {
+            "id": "Observation.code.coding.system",
+            "min": 1,
+            "path": "Observation.code.coding.system",
+            "fixedUri": "https://bbl.health"
+          },
+          {
+            "id": "Observation.code.coding.code",
+            "min": 1,
+            "path": "Observation.code.coding.code"
+          },
+          {
+            "id": "Observation.code.coding.display",
+            "min": 1,
+            "path": "Observation.code.coding.display"
+          },
+          {
+            "id": "Observation.value[x]",
+            "path": "Observation.value[x]",
+            "type": [
+              {
+                "code": "Quantity"
+              }
+            ]
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity",
+            "min": 1,
+            "path": "Observation.valueQuantity",
+            "type": [
+              {
+                "code": "Quantity"
+              }
+            ]
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity.value",
+            "min": 1,
+            "path": "Observation.valueQuantity.value"
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity.unit",
+            "min": 1,
+            "path": "Observation.valueQuantity.unit"
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity.system",
+            "min": 1,
+            "path": "Observation.valueQuantity.system",
+            "fixedUri": "http://unitsofmeasure.org"
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity.code",
+            "min": 1,
+            "path": "Observation.valueQuantity.code"
+          },
+          {
+            "id": "Observation.interpretation",
+            "min": 0,
+            "path": "Observation.interpretation"
+          },
+          {
+            "id": "Observation.interpretation.coding.code",
+            "min": 0,
+            "path": "Observation.interpretation.coding.code",
+            "binding": {
+              "strength": "required",
+              "valueSet": "https://fhir.bbl.health/ValueSet/BblPatientMetricsBodyMeasureInterpretation"
+            }
+          },
+          {
+            "id": "Observation.interpretation.coding.display",
+            "min": 0,
+            "path": "Observation.interpretation.coding.display"
+          },
+          {
+            "id": "Observation.interpretation.coding.system",
+            "min": 1,
+            "path": "Observation.interpretation.coding.system",
+            "fixedUri": "https://bbl.health"
+          },
+          {
+            "id": "Observation.category",
+            "min": 0,
+            "path": "Observation.category",
+            "binding": {
+              "strength": "required",
+              "valueSet": "https://fhir.bbl.health/ValueSet/BblPatientMetricsBodyMeasureCategory"
+            }
+          },
+          {
+            "id": "Observation.referenceRange",
+            "min": 0,
+            "path": "Observation.referenceRange"
+          },
+          {
+            "id": "Observation.referenceRange.low",
+            "min": 1,
+            "path": "Observation.referenceRange.low"
+          },
+          {
+            "id": "Observation.referenceRange.low.value",
+            "min": 1,
+            "path": "Observation.referenceRange.low.value"
+          },
+          {
+            "id": "Observation.referenceRange.low.code",
+            "min": 1,
+            "path": "Observation.referenceRange.low.code"
+          },
+          {
+            "id": "Observation.referenceRange.low.unit",
+            "min": 1,
+            "path": "Observation.referenceRange.low.unit"
+          },
+          {
+            "id": "Observation.referenceRange.low.system",
+            "min": 1,
+            "path": "Observation.referenceRange.low.system",
+            "fixedUri": "http://unitsofmeasure.org"
+          },
+          {
+            "id": "Observation.referenceRange.high",
+            "min": 1,
+            "path": "Observation.referenceRange.high"
+          },
+          {
+            "id": "Observation.referenceRange.high.value",
+            "min": 1,
+            "path": "Observation.referenceRange.high.value"
+          },
+          {
+            "id": "Observation.referenceRange.high.code",
+            "min": 1,
+            "path": "Observation.referenceRange.high.code"
+          },
+          {
+            "id": "Observation.referenceRange.high.unit",
+            "min": 1,
+            "path": "Observation.referenceRange.high.unit"
+          },
+          {
+            "id": "Observation.referenceRange.high.system",
+            "min": 1,
+            "path": "Observation.referenceRange.high.system",
+            "fixedUri": "http://unitsofmeasure.org"
+          },
+          {
+            "id": "Observation.referenceRange.text",
+            "min": 1,
+            "path": "Observation.referenceRange.text"
+          },
+          {
+            "id": "Observation.contained",
+            "max": "0",
+            "path": "Observation.contained"
+          },
+          {
+            "id": "Observation.text",
+            "max": "0",
+            "path": "Observation.text"
+          },
+          {
+            "id": "Observation.subject",
+            "max": "0",
+            "path": "Observation.subject"
+          },
+          {
+            "id": "Observation.specimen",
+            "max": "0",
+            "path": "Observation.specimen"
+          },
+          {
+            "id": "Observation.referenceRange.type",
+            "max": "0",
+            "path": "Observation.referenceRange.type"
+          },
+          {
+            "id": "Observation.referenceRange.modifierExtension",
+            "max": "0",
+            "path": "Observation.referenceRange.modifierExtension"
+          },
+          {
+            "id": "Observation.referenceRange.extension",
+            "max": "0",
+            "path": "Observation.referenceRange.extension"
+          },
+          {
+            "id": "Observation.referenceRange.appliesTo",
+            "max": "0",
+            "path": "Observation.referenceRange.appliesTo"
+          },
+          {
+            "id": "Observation.referenceRange.age",
+            "max": "0",
+            "path": "Observation.referenceRange.age"
+          },
+          {
+            "id": "Observation.performer",
+            "max": "0",
+            "path": "Observation.performer"
+          },
+          {
+            "id": "Observation.partOf",
+            "max": "0",
+            "path": "Observation.partOf"
+          },
+          {
+            "id": "Observation.note",
+            "max": "0",
+            "path": "Observation.note"
+          },
+          {
+            "id": "Observation.modifierExtension",
+            "max": "0",
+            "path": "Observation.modifierExtension"
+          },
+          {
+            "id": "Observation.method",
+            "max": "0",
+            "path": "Observation.method"
+          },
+          {
+            "id": "Observation.language",
+            "max": "0",
+            "path": "Observation.language"
+          },
+          {
+            "id": "Observation.issued",
+            "max": "0",
+            "path": "Observation.issued"
+          },
+          {
+            "id": "Observation.implicitRules",
+            "max": "0",
+            "path": "Observation.implicitRules"
+          },
+          {
+            "id": "Observation.hasMember",
+            "max": "0",
+            "path": "Observation.hasMember"
+          },
+          {
+            "id": "Observation.focus",
+            "max": "0",
+            "path": "Observation.focus"
+          },
+          {
+            "id": "Observation.extension",
+            "max": "0",
+            "path": "Observation.extension"
+          },
+          {
+            "id": "Observation.encounter",
+            "max": "0",
+            "path": "Observation.encounter"
+          },
+          {
+            "id": "Observation.effective[x]",
+            "max": "0",
+            "path": "Observation.effective[x]"
+          },
+          {
+            "id": "Observation.device",
+            "max": "0",
+            "path": "Observation.device"
+          },
+          {
+            "id": "Observation.derivedFrom",
+            "max": "0",
+            "path": "Observation.derivedFrom"
+          },
+          {
+            "id": "Observation.dataAbsentReason",
+            "max": "0",
+            "path": "Observation.dataAbsentReason"
+          },
+          {
+            "id": "Observation.component",
+            "max": "0",
+            "path": "Observation.component"
+          },
+          {
+            "id": "Observation.bodySite",
+            "max": "0",
+            "path": "Observation.bodySite"
+          },
+          {
+            "id": "Observation.basedOn",
+            "max": "0",
+            "path": "Observation.basedOn"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName": "valueSets/BblPatientMetricsBodyMeasureCode.ValueSet.json",
+    "rsc": {
+      "resourceType": "ValueSet",
+      "id": "BblPatientMetricsBodyMeasureCode",
+      "url": "https://fhir.bbl.health/ValueSet/BblPatientMetricsBodyMeasureCode",
+      "name": "Code",
+      "date": "2020-04-20",
+      "title": "Body Measure code Enum",
+      "status": "active",
+      "description": "The valueset for Body Measure code",
+      "compose": {
+        "include": [
+          {
+            "system": "https://bbl.health",
+            "concept": [
+              {
+                "code": "BXPPBhmkeC",
+                "display": "Blood Glucose"
+              },
+              {
+                "code": "iWW1T2ld21",
+                "display": "Blood Oxygen Saturation"
+              },
+              {
+                "code": "D_ViDKoBWF",
+                "display": "Body height"
+              },
+              {
+                "code": "ykWNn2DwyB",
+                "display": "Body weight"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName": "valueSets/BblPatientMetricsBodyMeasureInterpretation.ValueSet.json",
+    "rsc": {
+      "resourceType": "ValueSet",
+      "id": "BblPatientMetricsBodyMeasureInterpretation",
+      "url": "https://fhir.bbl.health/ValueSet/BblPatientMetricsBodyMeasureInterpretation",
+      "name": "Interpretation",
+      "date": "2020-04-20",
+      "title": "Body Measure interpretation Enum",
+      "status": "active",
+      "description": "The valueset for Body Measure interpretation",
+      "compose": {
+        "include": [
+          {
+            "system": "https://bbl.health",
+            "concept": [
+              {
+                "code": "9rTncufFB3",
+                "display": "Exercise physically impossible"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName": "valueSets/BblPatientMetricsBodyMeasureCategory.ValueSet.json",
+    "rsc": {
+      "resourceType": "ValueSet",
+      "id": "BblPatientMetricsBodyMeasureCategory",
+      "url": "https://fhir.bbl.health/ValueSet/BblPatientMetricsBodyMeasureCategory",
+      "name": "Category",
+      "date": "2020-04-20",
+      "title": "Body Measure category Enum",
+      "status": "active",
+      "description": "The valueset for Body Measure category",
+      "compose": {
+        "include": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "concept": [
+              {
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName": "profiles/BblPatientMetricsBodyMeasure-groupblood.StructureDefinition.json",
+    "rsc": {
+      "resourceType": "StructureDefinition",
+      "id": "BblPatientMetricsBodyMeasure-groupblood",
+      "url": "https://fhir.bbl.health/StructureDefinition/BblPatientMetricsBodyMeasure-groupblood",
+      "meta": {
+        "profile": [
+          "https://fhir.bbl.health/StructureDefinition/BblStructureDefinition"
+        ]
+      },
+      "name": "Blood",
+      "date": "2020-04-20",
+      "kind": "resource",
+      "type": "Observation",
+      "title": "Body Measure for group: blood",
+      "status": "active",
+      "abstract": false,
+      "derivation": "constraint",
+      "description": "body measurement for group: blood",
+      "fhirVersion": "4.0.1",
+      "baseDefinition": "https://fhir.bbl.health/StructureDefinition/BblPatientMetricsBodyMeasure",
+      "differential": {
+        "element": [
+          {
+            "id": "Observation.id",
+            "min": 1,
+            "path": "Observation.id",
+            "fixedString": "1"
+          },
+          {
+            "id": "Observation.status",
+            "min": 1,
+            "path": "Observation.status",
+            "fixedCode": "final"
+          },
+          {
+            "id": "Observation.code",
+            "min": 1,
+            "path": "Observation.code",
+            "binding": {
+              "strength": "required",
+              "valueSet": "https://fhir.bbl.health/ValueSet/BblPatientMetricsBodyMeasureCodeBlood"
+            }
+          },
+          {
+            "id": "Observation.code.coding",
+            "min": 1,
+            "path": "Observation.code.coding"
+          },
+          {
+            "id": "Observation.code.coding.system",
+            "min": 1,
+            "path": "Observation.code.coding.system",
+            "fixedUri": "https://bbl.health"
+          },
+          {
+            "id": "Observation.code.coding.code",
+            "min": 1,
+            "path": "Observation.code.coding.code"
+          },
+          {
+            "id": "Observation.code.coding.display",
+            "min": 1,
+            "path": "Observation.code.coding.display"
+          },
+          {
+            "id": "Observation.value[x]",
+            "path": "Observation.value[x]",
+            "type": [
+              {
+                "code": "Quantity"
+              }
+            ]
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity",
+            "min": 1,
+            "path": "Observation.valueQuantity",
+            "type": [
+              {
+                "code": "Quantity"
+              }
+            ]
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity.value",
+            "min": 1,
+            "path": "Observation.valueQuantity.value"
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity.unit",
+            "min": 1,
+            "path": "Observation.valueQuantity.unit"
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity.system",
+            "min": 1,
+            "path": "Observation.valueQuantity.system",
+            "fixedUri": "http://unitsofmeasure.org"
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity.code",
+            "min": 1,
+            "path": "Observation.valueQuantity.code"
+          },
+          {
+            "id": "Observation.interpretation",
+            "min": 0,
+            "path": "Observation.interpretation"
+          },
+          {
+            "id": "Observation.interpretation.coding.code",
+            "min": 0,
+            "path": "Observation.interpretation.coding.code"
+          },
+          {
+            "id": "Observation.interpretation.coding.display",
+            "min": 0,
+            "path": "Observation.interpretation.coding.display"
+          },
+          {
+            "id": "Observation.interpretation.coding.system",
+            "min": 1,
+            "path": "Observation.interpretation.coding.system",
+            "fixedUri": "https://bbl.health"
+          },
+          {
+            "id": "Observation.category",
+            "min": 0,
+            "path": "Observation.category",
+            "binding": {
+              "strength": "required",
+              "valueSet": "https://fhir.bbl.health/ValueSet/BblPatientMetricsBodyMeasureCategoryBlood"
+            }
+          },
+          {
+            "id": "Observation.referenceRange",
+            "min": 0,
+            "path": "Observation.referenceRange"
+          },
+          {
+            "id": "Observation.referenceRange.low",
+            "min": 1,
+            "path": "Observation.referenceRange.low"
+          },
+          {
+            "id": "Observation.referenceRange.low.value",
+            "min": 1,
+            "path": "Observation.referenceRange.low.value"
+          },
+          {
+            "id": "Observation.referenceRange.low.code",
+            "min": 1,
+            "path": "Observation.referenceRange.low.code"
+          },
+          {
+            "id": "Observation.referenceRange.low.unit",
+            "min": 1,
+            "path": "Observation.referenceRange.low.unit"
+          },
+          {
+            "id": "Observation.referenceRange.low.system",
+            "min": 1,
+            "path": "Observation.referenceRange.low.system",
+            "fixedUri": "http://unitsofmeasure.org"
+          },
+          {
+            "id": "Observation.referenceRange.high",
+            "min": 1,
+            "path": "Observation.referenceRange.high"
+          },
+          {
+            "id": "Observation.referenceRange.high.value",
+            "min": 1,
+            "path": "Observation.referenceRange.high.value"
+          },
+          {
+            "id": "Observation.referenceRange.high.code",
+            "min": 1,
+            "path": "Observation.referenceRange.high.code"
+          },
+          {
+            "id": "Observation.referenceRange.high.unit",
+            "min": 1,
+            "path": "Observation.referenceRange.high.unit"
+          },
+          {
+            "id": "Observation.referenceRange.high.system",
+            "min": 1,
+            "path": "Observation.referenceRange.high.system",
+            "fixedUri": "http://unitsofmeasure.org"
+          },
+          {
+            "id": "Observation.referenceRange.text",
+            "min": 1,
+            "path": "Observation.referenceRange.text"
+          },
+          {
+            "id": "Observation.contained",
+            "max": "0",
+            "path": "Observation.contained"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName": "valueSets/BblPatientMetricsBodyMeasureCodeBlood.ValueSet.json",
+    "rsc": {
+      "resourceType": "ValueSet",
+      "id": "BblPatientMetricsBodyMeasureCodeBlood",
+      "url": "https://fhir.bbl.health/ValueSet/BblPatientMetricsBodyMeasureCodeBlood",
+      "name": "BloodCode",
+      "date": "2020-04-20",
+      "title": "Body Measure code Enum for group: blood",
+      "status": "active",
+      "description": "The valueset for Body Measure code of group: blood",
+      "compose": {
+        "include": [
+          {
+            "system": "https://bbl.health",
+            "concept": [
+              {
+                "code": "BXPPBhmkeC",
+                "display": "Blood Glucose"
+              },
+              {
+                "code": "iWW1T2ld21",
+                "display": "Blood Oxygen Saturation"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName": "valueSets/BblPatientMetricsBodyMeasureCategoryBlood.ValueSet.json",
+    "rsc": {
+      "resourceType": "ValueSet",
+      "id": "BblPatientMetricsBodyMeasureCategoryBlood",
+      "url": "https://fhir.bbl.health/ValueSet/BblPatientMetricsBodyMeasureCategoryBlood",
+      "name": "BloodCategory",
+      "date": "2020-04-20",
+      "title": "Body Measure category Enum for group: blood",
+      "status": "active",
+      "description": "The valueset for Body Measure category of group: blood",
+      "compose": {
+        "include": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "concept": [
+              {
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName": "profiles/BblPatientMetricsBodyMeasureHeightInM.StructureDefinition.json",
+    "rsc": {
+      "resourceType": "StructureDefinition",
+      "id": "BblPatientMetricsBodyMeasureHeightInM",
+      "url": "https://fhir.bbl.health/StructureDefinition/BblPatientMetricsBodyMeasureHeightInM",
+      "meta": {
+        "profile": [
+          "https://fhir.bbl.health/StructureDefinition/BblStructureDefinition"
+        ]
+      },
+      "name": "PatientMetricsBodyMeasureHeightInM",
+      "date": "2020-04-20",
+      "kind": "resource",
+      "type": "Observation",
+      "title": "Body Measure Height in m",
+      "status": "active",
+      "abstract": false,
+      "derivation": "constraint",
+      "description": "body measurement height",
+      "fhirVersion": "4.0.1",
+      "baseDefinition": "https://fhir.bbl.health/StructureDefinition/BblPatientMetricsBodyMeasure",
+      "differential": {
+        "element": [
+          {
+            "id": "Observation.id",
+            "min": 1,
+            "path": "Observation.id",
+            "fixedString": "1"
+          },
+          {
+            "id": "Observation.status",
+            "min": 1,
+            "path": "Observation.status",
+            "fixedCode": "final"
+          },
+          {
+            "id": "Observation.code",
+            "min": 1,
+            "path": "Observation.code",
+            "patternCodeableConcept": {
+              "coding": [
+                {
+                  "code": "D_ViDKoBWF",
+                  "system": "https://bbl.health",
+                  "display": "Body height"
+                }
+              ]
+            }
+          },
+          {
+            "id": "Observation.value[x]",
+            "path": "Observation.value[x]",
+            "type": [
+              {
+                "code": "Quantity"
+              }
+            ]
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity",
+            "min": 1,
+            "path": "Observation.valueQuantity",
+            "type": [
+              {
+                "code": "Quantity"
+              }
+            ]
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity.value",
+            "min": 1,
+            "path": "Observation.valueQuantity.value"
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity.unit",
+            "min": 1,
+            "path": "Observation.valueQuantity.unit",
+            "fixedString": "[m]"
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity.system",
+            "min": 1,
+            "path": "Observation.valueQuantity.system",
+            "fixedUri": "http://unitsofmeasure.org"
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity.code",
+            "min": 1,
+            "path": "Observation.valueQuantity.code",
+            "fixedCode": "m"
+          },
+          {
+            "id": "Observation.interpretation",
+            "min": 1,
+            "path": "Observation.interpretation",
+            "patternCodeableConcept": {
+              "coding": [
+                {
+                  "code": "9rTncufFB3",
+                  "system": "https://bbl.health",
+                  "display": "Exercise physically impossible"
+                }
+              ]
+            }
+          },
+          {
+            "id": "Observation.referenceRange",
+            "min": 0,
+            "max": "2",
+            "path": "Observation.referenceRange",
+            "slicing": {
+              "rules": "open",
+              "discriminator": [
+                {
+                  "type": "value",
+                  "path": "text"
+                }
+              ]
+            }
+          },
+          {
+            "id": "Observation.referenceRange.age",
+            "max": "0",
+            "path": "Observation.referenceRange.age"
+          },
+          {
+            "id": "Observation.referenceRange.modifierExtension",
+            "max": "0",
+            "path": "Observation.referenceRange.modifierExtension"
+          },
+          {
+            "id": "Observation.referenceRange.high.unit",
+            "min": 1,
+            "path": "Observation.referenceRange.high.unit",
+            "fixedString": "[m]"
+          },
+          {
+            "id": "Observation.referenceRange.high.system",
+            "min": 1,
+            "path": "Observation.referenceRange.high.system",
+            "fixedUri": "http://unitsofmeasure.org"
+          },
+          {
+            "id": "Observation.referenceRange.extension",
+            "max": "0",
+            "path": "Observation.referenceRange.extension"
+          },
+          {
+            "id": "Observation.referenceRange.high.code",
+            "min": 1,
+            "path": "Observation.referenceRange.high.code",
+            "fixedCode": "m"
+          },
+          {
+            "id": "Observation.referenceRange.low.unit",
+            "min": 1,
+            "path": "Observation.referenceRange.low.unit",
+            "fixedString": "[m]"
+          },
+          {
+            "id": "Observation.referenceRange.appliesTo",
+            "max": "0",
+            "path": "Observation.referenceRange.appliesTo"
+          },
+          {
+            "id": "Observation.referenceRange.low.system",
+            "min": 1,
+            "path": "Observation.referenceRange.low.system",
+            "fixedUri": "http://unitsofmeasure.org"
+          },
+          {
+            "id": "Observation.referenceRange.text",
+            "min": 1,
+            "path": "Observation.referenceRange.text"
+          },
+          {
+            "id": "Observation.referenceRange.low.code",
+            "min": 1,
+            "path": "Observation.referenceRange.low.code",
+            "fixedCode": "m"
+          },
+          {
+            "id": "Observation.referenceRange.type",
+            "max": "0",
+            "path": "Observation.referenceRange.type"
+          },
+          {
+            "id": "Observation.referenceRange.low.value",
+            "min": 1,
+            "path": "Observation.referenceRange.low.value"
+          },
+          {
+            "id": "Observation.referenceRange.high.value",
+            "min": 1,
+            "path": "Observation.referenceRange.high.value"
+          },
+          {
+            "id": "Observation.referenceRange:Normal",
+            "min": 0,
+            "max": "1",
+            "path": "Observation.referenceRange",
+            "sliceName": "Normal"
+          },
+          {
+            "id": "Observation.referenceRange:Normal.low.value",
+            "min": 1,
+            "path": "Observation.referenceRange.low.value",
+            "fixedDecimal": 1.50
+          },
+          {
+            "id": "Observation.referenceRange:Normal.low.code",
+            "min": 1,
+            "path": "Observation.referenceRange.low.code",
+            "fixedCode": "m"
+          },
+          {
+            "id": "Observation.referenceRange:Normal.low.unit",
+            "min": 1,
+            "path": "Observation.referenceRange.low.unit",
+            "fixedString": "[m]"
+          },
+          {
+            "id": "Observation.referenceRange:Normal.low.system",
+            "min": 1,
+            "path": "Observation.referenceRange.low.system",
+            "fixedUri": "http://unitsofmeasure.org"
+          },
+          {
+            "id": "Observation.referenceRange:Normal.high.value",
+            "min": 1,
+            "path": "Observation.referenceRange.high.value",
+            "fixedDecimal": 1.94
+          },
+          {
+            "id": "Observation.referenceRange:Normal.high.code",
+            "min": 1,
+            "path": "Observation.referenceRange.high.code",
+            "fixedCode": "m"
+          },
+          {
+            "id": "Observation.referenceRange:Normal.high.unit",
+            "min": 1,
+            "path": "Observation.referenceRange.high.unit",
+            "fixedString": "[m]"
+          },
+          {
+            "id": "Observation.referenceRange:Normal.high.system",
+            "min": 1,
+            "path": "Observation.referenceRange.high.system",
+            "fixedUri": "http://unitsofmeasure.org"
+          },
+          {
+            "id": "Observation.referenceRange:Normal.text",
+            "min": 1,
+            "path": "Observation.referenceRange.text",
+            "fixedString": "normal"
+          },
+          {
+            "id": "Observation.referenceRange:Normal.type",
+            "max": "0",
+            "path": "Observation.referenceRange.type"
+          },
+          {
+            "id": "Observation.referenceRange:Normal.modifierExtension",
+            "max": "0",
+            "path": "Observation.referenceRange.modifierExtension"
+          },
+          {
+            "id": "Observation.referenceRange:Normal.extension",
+            "max": "0",
+            "path": "Observation.referenceRange.extension"
+          },
+          {
+            "id": "Observation.referenceRange:Normal.appliesTo",
+            "max": "0",
+            "path": "Observation.referenceRange.appliesTo"
+          },
+          {
+            "id": "Observation.referenceRange:Normal.age",
+            "max": "0",
+            "path": "Observation.referenceRange.age"
+          },
+          {
+            "id": "Observation.referenceRange:PossiblyAnAnt",
+            "min": 0,
+            "max": "1",
+            "path": "Observation.referenceRange",
+            "sliceName": "PossiblyAnAnt"
+          },
+          {
+            "id": "Observation.referenceRange:PossiblyAnAnt.low.value",
+            "min": 1,
+            "path": "Observation.referenceRange.low.value",
+            "fixedDecimal": 0
+          },
+          {
+            "id": "Observation.referenceRange:PossiblyAnAnt.low.code",
+            "min": 1,
+            "path": "Observation.referenceRange.low.code",
+            "fixedCode": "m"
+          },
+          {
+            "id": "Observation.referenceRange:PossiblyAnAnt.low.unit",
+            "min": 1,
+            "path": "Observation.referenceRange.low.unit",
+            "fixedString": "[m]"
+          },
+          {
+            "id": "Observation.referenceRange:PossiblyAnAnt.low.system",
+            "min": 1,
+            "path": "Observation.referenceRange.low.system",
+            "fixedUri": "http://unitsofmeasure.org"
+          },
+          {
+            "id": "Observation.referenceRange:PossiblyAnAnt.high.value",
+            "min": 1,
+            "path": "Observation.referenceRange.high.value",
+            "fixedDecimal": 0.01
+          },
+          {
+            "id": "Observation.referenceRange:PossiblyAnAnt.high.code",
+            "min": 1,
+            "path": "Observation.referenceRange.high.code",
+            "fixedCode": "m"
+          },
+          {
+            "id": "Observation.referenceRange:PossiblyAnAnt.high.unit",
+            "min": 1,
+            "path": "Observation.referenceRange.high.unit",
+            "fixedString": "[m]"
+          },
+          {
+            "id": "Observation.referenceRange:PossiblyAnAnt.high.system",
+            "min": 1,
+            "path": "Observation.referenceRange.high.system",
+            "fixedUri": "http://unitsofmeasure.org"
+          },
+          {
+            "id": "Observation.referenceRange:PossiblyAnAnt.text",
+            "min": 1,
+            "path": "Observation.referenceRange.text",
+            "fixedString": "possibly an ant?"
+          },
+          {
+            "id": "Observation.referenceRange:PossiblyAnAnt.type",
+            "max": "0",
+            "path": "Observation.referenceRange.type"
+          },
+          {
+            "id": "Observation.referenceRange:PossiblyAnAnt.modifierExtension",
+            "max": "0",
+            "path": "Observation.referenceRange.modifierExtension"
+          },
+          {
+            "id": "Observation.referenceRange:PossiblyAnAnt.extension",
+            "max": "0",
+            "path": "Observation.referenceRange.extension"
+          },
+          {
+            "id": "Observation.referenceRange:PossiblyAnAnt.appliesTo",
+            "max": "0",
+            "path": "Observation.referenceRange.appliesTo"
+          },
+          {
+            "id": "Observation.referenceRange:PossiblyAnAnt.age",
+            "max": "0",
+            "path": "Observation.referenceRange.age"
+          },
+          {
+            "id": "Observation.contained",
+            "max": "0",
+            "path": "Observation.contained"
+          },
+          {
+            "id": "Observation.category",
+            "max": "0",
+            "path": "Observation.category"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName": "profiles/BblPatientMetricsBodyMeasureWeightInKG.StructureDefinition.json",
+    "rsc": {
+      "resourceType": "StructureDefinition",
+      "id": "BblPatientMetricsBodyMeasureWeightInKG",
+      "url": "https://fhir.bbl.health/StructureDefinition/BblPatientMetricsBodyMeasureWeightInKG",
+      "meta": {
+        "profile": [
+          "https://fhir.bbl.health/StructureDefinition/BblStructureDefinition"
+        ]
+      },
+      "name": "PatientMetricsBodyMeasureWeightInKG",
+      "date": "2020-04-20",
+      "kind": "resource",
+      "type": "Observation",
+      "title": "Body Measure Weight In kg",
+      "status": "active",
+      "abstract": false,
+      "derivation": "constraint",
+      "description": "body measurement weight",
+      "fhirVersion": "4.0.1",
+      "baseDefinition": "https://fhir.bbl.health/StructureDefinition/BblPatientMetricsBodyMeasure",
+      "differential": {
+        "element": [
+          {
+            "id": "Observation.id",
+            "min": 1,
+            "path": "Observation.id",
+            "fixedString": "1"
+          },
+          {
+            "id": "Observation.status",
+            "min": 1,
+            "path": "Observation.status",
+            "fixedCode": "final"
+          },
+          {
+            "id": "Observation.code",
+            "min": 1,
+            "path": "Observation.code",
+            "patternCodeableConcept": {
+              "coding": [
+                {
+                  "code": "ykWNn2DwyB",
+                  "system": "https://bbl.health",
+                  "display": "Body weight"
+                }
+              ]
+            }
+          },
+          {
+            "id": "Observation.value[x]",
+            "path": "Observation.value[x]",
+            "type": [
+              {
+                "code": "Quantity"
+              }
+            ]
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity",
+            "min": 1,
+            "path": "Observation.valueQuantity",
+            "type": [
+              {
+                "code": "Quantity"
+              }
+            ]
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity.value",
+            "min": 1,
+            "path": "Observation.valueQuantity.value"
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity.unit",
+            "min": 1,
+            "path": "Observation.valueQuantity.unit",
+            "fixedString": "kg"
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity.system",
+            "min": 1,
+            "path": "Observation.valueQuantity.system",
+            "fixedUri": "http://unitsofmeasure.org"
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity.code",
+            "min": 1,
+            "path": "Observation.valueQuantity.code",
+            "fixedCode": "kg"
+          },
+          {
+            "id": "Observation.interpretation",
+            "min": 1,
+            "path": "Observation.interpretation",
+            "patternCodeableConcept": {
+              "coding": [
+                {
+                  "code": "9rTncufFB3",
+                  "system": "https://bbl.health",
+                  "display": "Exercise physically impossible"
+                }
+              ]
+            }
+          },
+          {
+            "id": "Observation.contained",
+            "max": "0",
+            "path": "Observation.contained"
+          },
+          {
+            "id": "Observation.referenceRange",
+            "max": "0",
+            "path": "Observation.referenceRange"
+          },
+          {
+            "id": "Observation.category",
+            "max": "0",
+            "path": "Observation.category"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName" : "profiles/BblPatientMetricsBodyMeasureBloodGlucose.StructureDefinition.json",
+    "rsc" : {
+      "resourceType" : "StructureDefinition",
+      "id" : "BblPatientMetricsBodyMeasureBloodGlucose",
+      "url" : "https://fhir.bbl.health/StructureDefinition/BblPatientMetricsBodyMeasureBloodGlucose",
+      "meta" : {
+        "profile" : [
+          "https://fhir.bbl.health/StructureDefinition/BblStructureDefinition"
+        ]
+      },
+      "name" : "PatientMetricsBodyMeasureBloodGlucose",
+      "date" : "2020-04-20",
+      "kind" : "resource",
+      "type" : "Observation",
+      "title" : "Body Measurement Blood Glucose in mmol/L",
+      "status" : "active",
+      "abstract" : false,
+      "derivation" : "constraint",
+      "description" : "Specific body measurement observation for blood glucose level measured in mmol/L",
+      "fhirVersion" : "4.0.1",
+      "baseDefinition" : "https://fhir.bbl.health/StructureDefinition/BblPatientMetricsBodyMeasure-groupblood",
+      "differential" : {
+        "element" : [
+          {
+            "id" : "Observation.id",
+            "min" : 1,
+            "path" : "Observation.id",
+            "fixedString" : "1"
+          },
+          {
+            "id" : "Observation.status",
+            "min" : 1,
+            "path" : "Observation.status",
+            "fixedCode" : "final"
+          },
+          {
+            "id" : "Observation.code",
+            "min" : 1,
+            "path" : "Observation.code",
+            "patternCodeableConcept" : {
+              "coding" : [
+                {
+                  "code" : "BXPPBhmkeC",
+                  "system" : "https://bbl.health",
+                  "display" : "Blood Glucose"
+                }
+              ]
+            }
+          },
+          {
+            "id" : "Observation.value[x]",
+            "path" : "Observation.value[x]",
+            "type" : [
+              {
+                "code" : "Quantity"
+              }
+            ]
+          },
+          {
+            "id" : "Observation.value[x]:valueQuantity",
+            "min" : 1,
+            "path" : "Observation.valueQuantity",
+            "type" : [
+              {
+                "code" : "Quantity"
+              }
+            ]
+          },
+          {
+            "id" : "Observation.value[x]:valueQuantity.value",
+            "min" : 1,
+            "path" : "Observation.valueQuantity.value"
+          },
+          {
+            "id" : "Observation.value[x]:valueQuantity.unit",
+            "min" : 1,
+            "path" : "Observation.valueQuantity.unit",
+            "fixedString" : "mmol/L"
+          },
+          {
+            "id" : "Observation.value[x]:valueQuantity.system",
+            "min" : 1,
+            "path" : "Observation.valueQuantity.system",
+            "fixedUri" : "http://unitsofmeasure.org"
+          },
+          {
+            "id" : "Observation.value[x]:valueQuantity.code",
+            "min" : 1,
+            "path" : "Observation.valueQuantity.code",
+            "fixedCode" : "mmol/L"
+          },
+          {
+            "id" : "Observation.interpretation",
+            "min" : 1,
+            "path" : "Observation.interpretation",
+            "patternCodeableConcept" : {
+              "coding" : [
+                {
+                  "system" : "https://bbl.health"
+                }
+              ]
+            }
+          },
+          {
+            "id" : "Observation.contained",
+            "max" : "0",
+            "path" : "Observation.contained"
+          },
+          {
+            "id" : "Observation.referenceRange",
+            "max" : "0",
+            "path" : "Observation.referenceRange"
+          },
+          {
+            "id" : "Observation.category",
+            "max" : "0",
+            "path" : "Observation.category"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName": "profiles/BblPatientMetricsBodyMeasureBloodOxygenSaturation.StructureDefinition.json",
+    "rsc": {
+      "resourceType": "StructureDefinition",
+      "id": "BblPatientMetricsBodyMeasureBloodOxygenSaturation",
+      "url": "https://fhir.bbl.health/StructureDefinition/BblPatientMetricsBodyMeasureBloodOxygenSaturation",
+      "meta": {
+        "profile": [
+          "https://fhir.bbl.health/StructureDefinition/BblStructureDefinition"
+        ]
+      },
+      "name": "PatientMetricsBodyMeasureBloodOxygenSaturation",
+      "date": "2020-04-20",
+      "kind": "resource",
+      "type": "Observation",
+      "title": "Body Measurement Blood Oxygen Saturation as a percentage",
+      "status": "active",
+      "abstract": false,
+      "derivation": "constraint",
+      "description": "Specific body measurement observation for blood oxygen staturation measured as a percentage",
+      "fhirVersion": "4.0.1",
+      "baseDefinition": "https://fhir.bbl.health/StructureDefinition/BblPatientMetricsBodyMeasure-groupblood",
+      "differential": {
+        "element": [
+          {
+            "id": "Observation.id",
+            "min": 1,
+            "path": "Observation.id",
+            "fixedString": "1"
+          },
+          {
+            "id": "Observation.status",
+            "min": 1,
+            "path": "Observation.status",
+            "fixedCode": "final"
+          },
+          {
+            "id": "Observation.code",
+            "min": 1,
+            "path": "Observation.code",
+            "patternCodeableConcept": {
+              "coding": [
+                {
+                  "code": "iWW1T2ld21",
+                  "system": "https://bbl.health",
+                  "display": "Blood Oxygen Saturation"
+                }
+              ]
+            }
+          },
+          {
+            "id": "Observation.value[x]",
+            "path": "Observation.value[x]",
+            "type": [
+              {
+                "code": "Quantity"
+              }
+            ]
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity",
+            "min": 1,
+            "path": "Observation.valueQuantity",
+            "type": [
+              {
+                "code": "Quantity"
+              }
+            ]
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity.value",
+            "min": 1,
+            "path": "Observation.valueQuantity.value"
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity.unit",
+            "min": 1,
+            "path": "Observation.valueQuantity.unit",
+            "fixedString": "%"
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity.system",
+            "min": 1,
+            "path": "Observation.valueQuantity.system",
+            "fixedUri": "http://unitsofmeasure.org"
+          },
+          {
+            "id": "Observation.value[x]:valueQuantity.code",
+            "min": 1,
+            "path": "Observation.valueQuantity.code",
+            "fixedCode": "%"
+          },
+          {
+            "id" : "Observation.interpretation",
+            "min" : 1,
+            "path" : "Observation.interpretation",
+            "patternCodeableConcept" : {
+              "coding" : [
+                {
+                  "system" : "https://bbl.health"
+                }
+              ]
+            }
+          },
+          {
+            "id": "Observation.category",
+            "min": 1,
+            "path": "Observation.category",
+            "patternCodeableConcept": {
+              "coding": [
+                {
+                  "code": "vital-signs",
+                  "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                  "display": "Vital Signs"
+                }
+              ]
+            }
+          },
+          {
+            "id": "Observation.contained",
+            "max": "0",
+            "path": "Observation.contained"
+          },
+          {
+            "id": "Observation.referenceRange",
+            "max": "0",
+            "path": "Observation.referenceRange"
+          }
+        ]
+      }
+    }
+  }
+]

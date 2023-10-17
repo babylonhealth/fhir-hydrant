@@ -1,0 +1,16 @@
+{
+    "id": "LabsServiceRequestNote",
+    "name": "Labs Service Request Note",
+    "domain": "labs",
+    "description": "For all additional information related to the request.",
+    "params": {
+        "text": {
+            "type": "string",
+            "description": "text",
+            "tags": { "free_text": true }
+        }
+    },
+    "hydrated": {
+        "text": "{{{text}}}"
+    }
+}

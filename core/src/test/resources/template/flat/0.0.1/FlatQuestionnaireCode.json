@@ -1,0 +1,24 @@
+{
+  "id" : "FlatQuestionnaireCode",
+  "name" : "flat Health Assessment Questionnaire Code",
+  "domain" : "testing",
+  "description" : "FHIR code for the questionnaire type",
+  "values" : [
+    {
+      "name" : "FLAT_QUESTIONNAIRE_CODE_ADULT",
+      "value" : "ZfwTODyI-T"
+    },
+    {
+      "name" : "FLAT_QUESTIONNAIRE_CODE_PAEDIATRIC",
+      "value" : "KXH00g_3OJ"
+    },
+    {
+      "name" : "FLAT_QUESTIONNAIRE_CODE_PREGNANT",
+      "value" : "PNXu6OsHWH"
+    }
+  ],
+  "absentName" : "QUESTIONNAIRE_CODE_ABSENT",
+  "allowAbsent" : false,
+  "default" : "ZfwTODyI-T",
+  "system" : "https://bbl.health"
+}

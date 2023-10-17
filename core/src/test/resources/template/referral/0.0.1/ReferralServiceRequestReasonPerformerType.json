@@ -1,0 +1,25 @@
+{
+  "id": "ReferralServiceRequestPerformerType",
+  "name": "Referral Service Request Performer Type",
+  "domain": "referral",
+  "description": "The role of performer being referred to",
+  "params": {
+    "specialismCode": {
+      "type": "string",
+      "description": "bbl integer specialism code for the type of performer being referred to"
+    },
+    "specialismDisplay": {
+      "type": "string",
+      "description": "Text description for the performer role"
+    }
+  },
+  "hydrated": {
+    "coding": [
+      {
+        "code": "{{{specialismCode}}}",
+        "display": "{{{specialismDisplay}}}",
+        "system": "https://specialism.bbl.health/CodeSystem"
+      }
+    ]
+  }
+}

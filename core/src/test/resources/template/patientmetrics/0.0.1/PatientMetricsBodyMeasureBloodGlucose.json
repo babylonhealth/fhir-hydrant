@@ -1,0 +1,15 @@
+{
+  "id" : "PatientMetricsBodyMeasureBloodGlucose",
+  "name" : "Body Measurement Blood Glucose in mmol/L",
+  "domain" : "testing",
+  "description" : "Specific body measurement observation for blood glucose level measured in mmol/L",
+  "extends" : "PatientMetricsBodyMeasure",
+  "group" : "blood",
+  "default" : false,
+  "implement" : {
+    "code" : "BXPPBhmkeC",
+    "display" : "Blood Glucose",
+    "valueCode" : "mmol/L",
+    "unit" : "mmol/L"
+  }
+}

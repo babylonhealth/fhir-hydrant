@@ -1,0 +1,20 @@
+{
+  "id" : "EnumWithClashingDefault",
+  "name" : "EnumWithClashingDefault",
+  "domain" : "enum",
+  "description" : "Some enum",
+  "values" : [
+    {
+      "value" : "foo"
+    },
+    {
+      "value" : "bar"
+    },
+    {
+      "value" : "baz"
+    }
+  ],
+  "allowAbsent" : true,
+  "system" : "https://bbl.health",
+  "default" : "baz"
+}

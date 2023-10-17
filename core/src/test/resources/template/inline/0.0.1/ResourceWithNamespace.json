@@ -1,0 +1,35 @@
+{
+  "id" : "ResourceWithNamespace",
+  "name" : "ResourceWithNamespace",
+  "domain" : "Inline",
+  "packageName" : "inline",
+  "description" : "This is to test that inline resources that have custom identifiers can be hydrated",
+  "params" : {
+    "id" : {
+      "type" : "string",
+      "description" : ""
+    },
+    "namespace" : {
+      "type" : "string",
+      "description" : ""
+    },
+    "observations" : {
+      "type" : "InlineResourceWithNamespace",
+      "repeated" : true,
+      "description" : ""
+    }
+  },
+  "hydrated" : {
+    "resourceType" : "DiagnosticReport",
+    "id" : "{{{id}}}",
+    "identifier" : [
+      {
+        "system" : "https://{{{namespace}}}.nested.bbl.health/DiagnosticReport",
+        "value" : "{{{id}}}"
+      }
+    ],
+    "result" : [
+      "{{{observations}}}"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "SummaryExtensionMedicationCoding",
+  "name": "Summary Extension Medication Coding",
+  "domain": "summary",
+  "description": "Coding for a medication taken by this patient",
+  "notes": {},
+  "params": {
+    "medication": {
+      "type": "MedicationStatementMedication",
+      "description": "A coding for a medication taken by the patient"
+    }
+  },
+  "hydrated": {
+    "url": "https://fhir.bbl.health/StructureDefinition/BblSummaryExtensionMedicationCoding",
+    "valueCoding": "{{{medication}}}"
+  }
+}
